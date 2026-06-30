@@ -35,35 +35,17 @@ ul {
     --transition: 0.3s ease;
 }
 
-/* ===== SEMUA TEKS RATA KIRI (PAKSA) ===== */
-body, 
-body *,
-h1, h2, h3, h4, h5, h6,
-p, span, a, li, div, section,
-header, footer, main, article,
-.logo-text, .logo-text h1, .logo-text span,
-.section-title, .section-title h2, .section-title p,
-.sambutan-card, .sambutan-card h3, .sambutan-card p,
-.berita-item, .berita-item h4, .berita-item p,
-.agenda-card, .agenda-card h4, .agenda-card p,
-.foto-card, .foto-card span,
-.profil-item, .profil-item h4,
-.dokumen-box, .dokumen-box h3, .dokumen-box a,
-.agenda-box, .agenda-box h3, .agenda-box p,
-.pub-box, .pub-box h3, .pub-box span,
-.dok-box, .dok-box h3, .dok-box span,
-.saran-section, .saran-section h3, .saran-section p,
-.footer, .footer-col, .footer-col h4, .footer-col p, .footer-col li,
-.top-bar, .top-bar-left, .top-bar-right,
-.nav-menu, .nav-menu li, .nav-menu a,
-.dropdown, .dropdown li, .dropdown a,
-.slide-content, .slide-content h2, .slide-content p,
-.content-wrapper, .content-wrapper *,
-.beranda-grid, .side-column {
+/* ===== SEMUA TEKS RATA KIRI (kecuali Top Bar & Slider) ===== */
+body,
+body *:not(.top-bar):not(.top-bar *):not(.slide-content):not(.slide-content *):not(.slider-btn):not(.slider-dots) {
     text-align: left !important;
 }
 
-/* ===== TOP BAR - SEMUA DI TENGAH ===== */
+/* ===== TOP BAR - TETAP DI TENGAH ===== */
+.top-bar,
+.top-bar * {
+    text-align: center !important;
+}
 .top-bar {
     background: var(--green-dark) !important;
     color: var(--white) !important;
@@ -74,203 +56,46 @@ header, footer, main, article,
     justify-content: center !important;
     align-items: center !important;
     gap: 8px 20px !important;
-    text-align: center !important;
     width: 100% !important;
 }
-
 .top-bar-left {
     display: flex !important;
     flex-wrap: wrap !important;
     justify-content: center !important;
     align-items: center !important;
     gap: 8px 16px !important;
-    text-align: center !important;
 }
-
 .top-bar-left i {
     margin-right: 6px;
     color: var(--green-light);
 }
-
 .top-bar-right {
     display: flex !important;
     justify-content: center !important;
     align-items: center !important;
 }
-
 .top-bar-right .social-icons {
     display: flex !important;
     gap: 12px !important;
     justify-content: center !important;
     align-items: center !important;
 }
-
 .top-bar-right .social-icons a {
     color: var(--green-pale) !important;
     transition: var(--transition);
     font-size: 15px !important;
     line-height: 1 !important;
 }
-
 .top-bar-right .social-icons a:hover {
     color: var(--white) !important;
     transform: translateY(-2px);
 }
 
-/* ===== HEADER ===== */
-.header {
-    background: var(--white);
-    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
-    position: relative;
-    z-index: 999;
+/* ===== SLIDER - TETAP DI TENGAH ===== */
+.slide-content,
+.slide-content * {
+    text-align: center !important;
 }
-.header .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-}
-.logo img {
-    height: 55px;
-    width: auto;
-}
-.logo-text h1 {
-    font-size: 20px;
-    font-weight: 800;
-    color: var(--green-dark);
-    line-height: 1.2;
-    text-align: left !important;
-}
-.logo-text span {
-    font-size: 12px;
-    font-weight: 400;
-    color: var(--green-medium);
-    display: block;
-    letter-spacing: 0.5px;
-    text-align: left !important;
-}
-
-/* ===== NAVIGASI ===== */
-.nav-menu {
-    display: flex;
-    align-items: center;
-    gap: 4px;
-}
-.nav-menu>li {
-    position: relative;
-}
-.nav-menu>li>a {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    padding: 10px 16px;
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--green-dark);
-    border-radius: 8px;
-    transition: var(--transition);
-    text-align: left !important;
-}
-.nav-menu>li>a:hover,
-.nav-menu>li>a.active {
-    background: var(--green-pale);
-    color: var(--green-primary);
-}
-.nav-menu>li>a i {
-    font-size: 13px;
-    color: var(--green-light);
-}
-.nav-menu>li>a .arrow {
-    font-size: 10px;
-    margin-left: 4px;
-    transition: var(--transition);
-}
-.nav-menu>li:hover>a .arrow {
-    transform: rotate(180deg);
-}
-
-/* ===== DROPDOWN ===== */
-.dropdown {
-    position: absolute;
-    top: calc(100% + 6px);
-    left: 0;
-    min-width: 220px;
-    background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow-hover);
-    padding: 8px 0;
-    opacity: 0;
-    visibility: hidden;
-    transform: translateY(10px);
-    transition: var(--transition);
-    border: 1px solid var(--gray-border);
-    z-index: 100;
-}
-.nav-menu>li:hover .dropdown {
-    opacity: 1;
-    visibility: visible;
-    transform: translateY(0);
-}
-.dropdown li a {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    padding: 10px 20px;
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--green-dark);
-    transition: var(--transition);
-    border-left: 3px solid transparent;
-    text-align: left !important;
-}
-.dropdown li a:hover {
-    background: var(--green-pale);
-    border-left-color: var(--green-primary);
-    color: var(--green-primary);
-}
-.dropdown li a i {
-    font-size: 14px;
-    color: var(--green-light);
-    width: 20px;
-    text-align: center;
-}
-
-/* ===== HAMBURGER ===== */
-.hamburger {
-    display: none;
-    flex-direction: column;
-    gap: 5px;
-    cursor: pointer;
-    padding: 6px;
-    background: none;
-    border: none;
-}
-.hamburger span {
-    display: block;
-    width: 28px;
-    height: 3px;
-    background: var(--green-dark);
-    border-radius: 3px;
-    transition: var(--transition);
-}
-.hamburger.active span:nth-child(1) {
-    transform: rotate(45deg) translate(5px, 6px);
-}
-.hamburger.active span:nth-child(2) {
-    opacity: 0;
-}
-.hamburger.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(5px, -6px);
-}
-
-/* ===== SLIDER / HERO ===== */
 .slider-section {
     position: relative;
     overflow: hidden;
@@ -387,6 +212,157 @@ header, footer, main, article,
     background: var(--white);
     border-color: var(--green-primary);
     transform: scale(1.15);
+}
+
+/* ===== HEADER ===== */
+.header {
+    background: var(--white);
+    box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
+    position: relative;
+    z-index: 999;
+}
+.header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+.logo img {
+    height: 55px;
+    width: auto;
+}
+.logo-text h1 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--green-dark);
+    line-height: 1.2;
+}
+.logo-text span {
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--green-medium);
+    display: block;
+    letter-spacing: 0.5px;
+}
+
+/* ===== NAVIGASI ===== */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+.nav-menu > li {
+    position: relative;
+}
+.nav-menu > li > a {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 10px 16px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--green-dark);
+    border-radius: 8px;
+    transition: var(--transition);
+    justify-content: flex-start; /* Rata kiri */
+}
+.nav-menu > li > a:hover,
+.nav-menu > li > a.active {
+    background: var(--green-pale);
+    color: var(--green-primary);
+}
+.nav-menu > li > a i {
+    font-size: 13px;
+    color: var(--green-light);
+}
+.nav-menu > li > a .arrow {
+    font-size: 10px;
+    margin-left: 4px;
+    transition: var(--transition);
+}
+.nav-menu > li:hover > a .arrow {
+    transform: rotate(180deg);
+}
+
+/* ===== DROPDOWN ===== */
+.dropdown {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 0;
+    min-width: 220px;
+    background: var(--white);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow-hover);
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: var(--transition);
+    border: 1px solid var(--gray-border);
+    z-index: 100;
+}
+.nav-menu > li:hover .dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.dropdown li a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 20px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--green-dark);
+    transition: var(--transition);
+    border-left: 3px solid transparent;
+    justify-content: flex-start; /* Rata kiri */
+}
+.dropdown li a:hover {
+    background: var(--green-pale);
+    border-left-color: var(--green-primary);
+    color: var(--green-primary);
+}
+.dropdown li a i {
+    font-size: 14px;
+    color: var(--green-light);
+    width: 20px;
+    text-align: center;
+}
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    padding: 6px;
+    background: none;
+    border: none;
+}
+.hamburger span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: var(--green-dark);
+    border-radius: 3px;
+    transition: var(--transition);
+}
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 6px);
+}
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -6px);
 }
 
 /* ===== CONTENT WRAPPER ===== */
@@ -980,13 +956,13 @@ header, footer, main, article,
     .nav-menu.open {
         display: flex;
     }
-    .nav-menu>li {
+    .nav-menu > li {
         width: 100%;
     }
-    .nav-menu>li>a {
+    .nav-menu > li > a {
         padding: 12px 16px;
         width: 100%;
-        justify-content: space-between;
+        justify-content: flex-start; /* Rata kiri di mobile */
     }
     .dropdown {
         position: static;
@@ -1001,10 +977,10 @@ header, footer, main, article,
         border-radius: 8px;
         margin-bottom: 4px;
     }
-    .nav-menu>li:hover .dropdown {
+    .nav-menu > li:hover .dropdown {
         display: none;
     }
-    .nav-menu>li.open .dropdown {
+    .nav-menu > li.open .dropdown {
         display: block;
     }
     .dropdown li a {
