@@ -35,7 +35,35 @@ ul {
     --transition: 0.3s ease;
 }
 
-/* ===== TOP BAR - PAKSA KE TENGAH ===== */
+/* ===== SEMUA TEKS RATA KIRI (PAKSA) ===== */
+body, 
+body *,
+h1, h2, h3, h4, h5, h6,
+p, span, a, li, div, section,
+header, footer, main, article,
+.logo-text, .logo-text h1, .logo-text span,
+.section-title, .section-title h2, .section-title p,
+.sambutan-card, .sambutan-card h3, .sambutan-card p,
+.berita-item, .berita-item h4, .berita-item p,
+.agenda-card, .agenda-card h4, .agenda-card p,
+.foto-card, .foto-card span,
+.profil-item, .profil-item h4,
+.dokumen-box, .dokumen-box h3, .dokumen-box a,
+.agenda-box, .agenda-box h3, .agenda-box p,
+.pub-box, .pub-box h3, .pub-box span,
+.dok-box, .dok-box h3, .dok-box span,
+.saran-section, .saran-section h3, .saran-section p,
+.footer, .footer-col, .footer-col h4, .footer-col p, .footer-col li,
+.top-bar, .top-bar-left, .top-bar-right,
+.nav-menu, .nav-menu li, .nav-menu a,
+.dropdown, .dropdown li, .dropdown a,
+.slide-content, .slide-content h2, .slide-content p,
+.content-wrapper, .content-wrapper *,
+.beranda-grid, .side-column {
+    text-align: left !important;
+}
+
+/* ===== TOP BAR - SEMUA DI TENGAH ===== */
 .top-bar {
     background: var(--green-dark) !important;
     color: var(--white) !important;
@@ -56,6 +84,7 @@ ul {
     justify-content: center !important;
     align-items: center !important;
     gap: 8px 16px !important;
+    text-align: center !important;
 }
 
 .top-bar-left i {
@@ -117,7 +146,7 @@ ul {
     font-weight: 800;
     color: var(--green-dark);
     line-height: 1.2;
-    text-align: left;
+    text-align: left !important;
 }
 .logo-text span {
     font-size: 12px;
@@ -125,7 +154,7 @@ ul {
     color: var(--green-medium);
     display: block;
     letter-spacing: 0.5px;
-    text-align: left;
+    text-align: left !important;
 }
 
 /* ===== NAVIGASI ===== */
@@ -147,6 +176,7 @@ ul {
     color: var(--green-dark);
     border-radius: 8px;
     transition: var(--transition);
+    text-align: left !important;
 }
 .nav-menu>li>a:hover,
 .nav-menu>li>a.active {
@@ -198,6 +228,7 @@ ul {
     color: var(--green-dark);
     transition: var(--transition);
     border-left: 3px solid transparent;
+    text-align: left !important;
 }
 .dropdown li a:hover {
     background: var(--green-pale);
@@ -272,7 +303,6 @@ ul {
 .slide-content {
     position: relative;
     z-index: 2;
-    text-align: center;
     color: var(--white);
     padding: 0 20px;
     max-width: 700px;
@@ -282,7 +312,6 @@ ul {
     font-weight: 800;
     margin-bottom: 12px;
     text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-    text-align: center;
 }
 .slide-content p {
     font-size: 18px;
@@ -290,7 +319,6 @@ ul {
     opacity: 0.95;
     text-shadow: 0 2px 12px rgba(0, 0, 0, 0.25);
     margin-bottom: 24px;
-    text-align: center;
 }
 .slide-content .btn-slide {
     display: inline-block;
@@ -368,24 +396,8 @@ ul {
     padding: 30px 20px;
 }
 
-/* ===== SEMUA TEKS DI CONTENT WRAPPER RATA KIRI ===== */
-.content-wrapper h1,
-.content-wrapper h2,
-.content-wrapper h3,
-.content-wrapper h4,
-.content-wrapper h5,
-.content-wrapper h6,
-.content-wrapper p,
-.content-wrapper ul,
-.content-wrapper ol,
-.content-wrapper li,
-.content-wrapper div:not(.slider-section):not(.slide-content):not(.beranda-grid):not(.side-column):not(.agenda-grid):not(.foto-grid):not(.profil-grid):not(.dokumen-agenda):not(.pub-dok):not(.saran-section) {
-    text-align: left !important;
-}
-
 /* ===== SECTION TITLES ===== */
 .section-title {
-    text-align: left;
     margin-bottom: 32px;
 }
 .section-title h2 {
@@ -394,7 +406,6 @@ ul {
     color: var(--green-dark);
     position: relative;
     display: block;
-    text-align: left;
 }
 .section-title h2::after {
     content: '';
@@ -410,7 +421,6 @@ ul {
     color: #4a6a4a;
     margin-top: 12px;
     font-size: 15px;
-    text-align: left;
 }
 
 /* ===== BERANDA GRID ===== */
@@ -419,9 +429,6 @@ ul {
     grid-template-columns: 2fr 1fr;
     gap: 30px;
     margin-top: 16px;
-}
-.beranda-grid > div {
-    text-align: left;
 }
 
 /* ===== SAMBUTAN ===== */
@@ -433,7 +440,6 @@ ul {
     border-left: 5px solid var(--green-primary);
     position: relative;
     overflow: hidden;
-    text-align: left;
 }
 .sambutan-card .badge-terbatas {
     position: absolute;
@@ -498,7 +504,6 @@ ul {
     transition: var(--transition);
     align-items: center;
     cursor: pointer;
-    text-align: left;
 }
 .berita-item:hover {
     transform: translateX(6px);
@@ -555,7 +560,6 @@ ul {
     border-left: 4px solid var(--green-light);
     transition: var(--transition);
     cursor: pointer;
-    text-align: left;
 }
 .agenda-card:hover {
     transform: translateY(-4px);
@@ -603,7 +607,6 @@ ul {
     color: var(--green-primary);
     font-size: 14px;
     font-weight: 500;
-    text-align: center;
     padding: 16px;
 }
 .foto-card:hover {
@@ -630,9 +633,6 @@ ul {
     flex-direction: column;
     gap: 28px;
 }
-.side-column > div {
-    text-align: left;
-}
 
 /* ===== PROFIL PD ===== */
 .profil-section {
@@ -641,7 +641,6 @@ ul {
     box-shadow: var(--shadow);
     padding: 28px;
     margin-top: 32px;
-    text-align: left;
 }
 .profil-grid {
     display: grid;
@@ -687,7 +686,6 @@ ul {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 24px;
-    text-align: left;
 }
 .dokumen-box h3,
 .agenda-box h3 {
@@ -766,7 +764,6 @@ ul {
     border-radius: var(--radius);
     box-shadow: var(--shadow);
     padding: 24px;
-    text-align: left;
 }
 .pub-box h3,
 .dok-box h3 {
@@ -850,7 +847,6 @@ ul {
     box-shadow: var(--shadow);
     padding: 32px;
     margin-top: 32px;
-    text-align: left;
 }
 .saran-section h3 {
     font-size: 22px;
@@ -885,7 +881,6 @@ ul {
     color: var(--green-pale);
     padding: 40px 20px 20px;
     margin-top: 40px;
-    text-align: left;
 }
 .footer .container {
     max-width: 1200px;
@@ -918,7 +913,6 @@ ul {
     font-size: 14px;
     line-height: 2;
     opacity: 0.85;
-    text-align: left;
 }
 .footer-col ul li a {
     transition: var(--transition);
@@ -1050,7 +1044,6 @@ ul {
         gap: 24px;
     }
 
-    /* Pastikan top bar tetap center di HP */
     .top-bar {
         flex-direction: column !important;
         align-items: center !important;
