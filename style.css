@@ -42,22 +42,33 @@ ul {
     padding: 6px 20px;
     font-size: 13px;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;     /* ubah dari space-between ke center */
     align-items: center;
     flex-wrap: wrap;
-    gap: 8px;
-    text-align: left;
+    gap: 8px 20px;              /* jarak antar item */
+    text-align: center;
 }
+
 .top-bar-left {
     display: flex;
     gap: 20px;
     align-items: center;
     flex-wrap: wrap;
+    justify-content: center;    /* tambahkan ini */
 }
+
 .top-bar-left i {
     margin-right: 6px;
     color: var(--green-light);
 }
+
+.top-bar-right {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: center;    /* tambahkan ini */
+}
+
 .top-bar-right .social-icons {
     display: flex;
     gap: 12px;
