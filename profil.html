@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil PD | Satpol PP Kabupaten Muba</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .anchor-target { scroll-margin-top: 80px; }
+        .profil-detail {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            margin-top: 20px;
+        }
+        .profil-detail h3 {
+            color: var(--green-dark);
+            font-size: 22px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .profil-detail h3 i { color: var(--green-primary); }
+        .profil-detail p { color: #3a4a3a; line-height: 1.8; font-size: 15px; }
+        .profil-detail ul { list-style: disc; padding-left: 24px; margin: 10px 0; color: #3a4a3a; }
+        .profil-detail ul li { margin-bottom: 6px; line-height: 1.6; }
+        .profil-detail .badge-sub {
+            display: inline-block;
+            background: var(--green-pale);
+            color: var(--green-primary);
+            padding: 2px 14px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <span><i class="fas fa-map-pin"></i> Kabupaten Musi Banyuasin</span>
+            <span><i class="fas fa-envelope"></i> satpolpp@mubakab.go.id</span>
+            <span><i class="fas fa-phone"></i> (0711) 123456</span>
+        </div>
+        <div class="top-bar-right">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232e7d32'/%3E%3Ctext x='50' y='65' font-size='44' text-anchor='middle' fill='white' font-weight='bold'%3ESP%3C/text%3E%3C/svg%3E" alt="Logo Satpol PP" />
+                <div class="logo-text">
+                    <h1>Satpol PP</h1>
+                    <span>Kabupaten Musi Banyuasin</span>
+                </div>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+                <li>
+                    <a href="profil.html" class="active"><i class="fas fa-building"></i> Profil PD <i class="fas fa-chevron-down arrow"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="#profil-pimpinan"><i class="fas fa-user-tie"></i> Profil Pimpinan</a></li>
+                        <li><a href="#sejarah"><i class="fas fa-history"></i> Sejarah</a></li>
+                        <li><a href="#struktur"><i class="fas fa-sitemap"></i> Struktur</a></li>
+                        <li><a href="#visi-misi"><i class="fas fa-bullseye"></i> Visi & Misi</a></li>
+                        <li><a href="#tugas-fungsi"><i class="fas fa-tasks"></i> Tugas & Fungsi</a></li>
+                    </ul>
+                </li>
+                <li><a href="dokumen.html"><i class="fas fa-file-alt"></i> Dokumen</a></li>
+                <li><a href="agenda.html"><i class="fas fa-calendar-check"></i> Agenda</a></li>
+                <li>
+                    <a href="publikasi.html"><i class="fas fa-newspaper"></i> Publikasi <i class="fas fa-chevron-down arrow"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="publikasi.html#berita"><i class="fas fa-bullhorn"></i> Berita</a></li>
+                        <li><a href="publikasi.html#detail-berita"><i class="fas fa-file-alt"></i> Detail Berita</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="dokumentasi.html"><i class="fas fa-images"></i> Dokumentasi <i class="fas fa-chevron-down arrow"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="dokumentasi.html#galeri"><i class="fas fa-photo-video"></i> Galeri</a></li>
+                        <li><a href="dokumentasi.html#video"><i class="fas fa-video"></i> Video</a></li>
+                    </ul>
+                </li>
+                <li><a href="saran.html"><i class="fas fa-comment-dots"></i> Saran & Kritik</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="content-wrapper">
+        <div class="section-title">
+            <h2>Profil Satpol PP</h2>
+            <p>Mengenal lebih dekat Satuan Polisi Pamong Praja Kabupaten Musi Banyuasin</p>
+        </div>
+
+        <div class="profil-grid" style="margin-bottom: 30px;">
+            <div class="profil-item" onclick="document.getElementById('profil-pimpinan').scrollIntoView({behavior:'smooth'})">
+                <i class="fas fa-user-tie"></i><h4>Profil Pimpinan</h4>
+            </div>
+            <div class="profil-item" onclick="document.getElementById('sejarah').scrollIntoView({behavior:'smooth'})">
+                <i class="fas fa-history"></i><h4>Sejarah</h4>
+            </div>
+            <div class="profil-item" onclick="document.getElementById('struktur').scrollIntoView({behavior:'smooth'})">
+                <i class="fas fa-sitemap"></i><h4>Struktur</h4>
+            </div>
+            <div class="profil-item" onclick="document.getElementById('visi-misi').scrollIntoView({behavior:'smooth'})">
+                <i class="fas fa-bullseye"></i><h4>Visi & Misi</h4>
+            </div>
+            <div class="profil-item" onclick="document.getElementById('tugas-fungsi').scrollIntoView({behavior:'smooth'})">
+                <i class="fas fa-tasks"></i><h4>Tugas & Fungsi</h4>
+            </div>
+        </div>
+
+        <div id="profil-pimpinan" class="profil-detail anchor-target">
+            <span class="badge-sub"><i class="fas fa-user-tie"></i> Pimpinan</span>
+            <h3><i class="fas fa-user-tie"></i> Profil Pimpinan</h3>
+            <p><strong>Kepala Satuan Polisi Pamong Praja Kabupaten Muba</strong></p>
+            <p>Nama: <strong>Kolonel (Purn) Drs. H. Ahmad Fauzi, M.Si</strong></p>
+            <p>Beliau merupakan sosok yang berpengalaman dalam bidang penegakan hukum dan ketertiban. Dengan latar belakang militer dan akademisi, beliau memimpin Satpol PP dengan tegas namun humanis, mengedepankan pendekatan preventif dalam menjaga ketertiban umum.</p>
+            <p style="margin-top:8px;"><i class="fas fa-calendar-alt" style="color:var(--green-primary);"></i> Masa Jabatan: 2023 - 2028</p>
+        </div>
+
+        <div id="sejarah" class="profil-detail anchor-target">
+            <span class="badge-sub"><i class="fas fa-history"></i> Sejarah</span>
+            <h3><i class="fas fa-history"></i> Sejarah Satpol PP</h3>
+            <p>Satuan Polisi Pamong Praja (Satpol PP) Kabupaten Musi Banyuasin dibentuk berdasarkan Peraturan Daerah Kabupaten Musi Banyuasin Nomor 7 Tahun 2016 tentang Pembentukan dan Susunan Perangkat Daerah. Sebelumnya, fungsi penegakan Perda dan ketertiban umum berada di bawah Bagian Tata Pemerintahan Sekretariat Daerah.</p>
+            <p>Seiring dengan meningkatnya kebutuhan akan penegakan Perda yang lebih terstruktur, Satpol PP resmi berdiri sebagai perangkat daerah yang bertugas membantu Bupati dalam menegakkan Perda dan menyelenggarakan ketertiban umum serta ketenteraman masyarakat.</p>
+        </div>
+
+        <div id="struktur" class="profil-detail anchor-target">
+            <span class="badge-sub"><i class="fas fa-sitemap"></i> Struktur</span>
+            <h3><i class="fas fa-sitemap"></i> Struktur Organisasi</h3>
+            <p>Struktur organisasi Satpol PP Kabupaten Musi Banyuasin terdiri dari:</p>
+            <ul>
+                <li><strong>Kepala Satpol PP</strong> - Kolonel (Purn) Drs. H. Ahmad Fauzi, M.Si</li>
+                <li><strong>Sekretariat</strong> - Bagian Umum dan Kepegawaian</li>
+                <li><strong>Bidang Penegakan Perda</strong> - Pengawasan dan Penindakan Pelanggaran Perda</li>
+                <li><strong>Bidang Ketertiban Umum</strong> - Pengendalian dan Penertiban Masyarakat</li>
+                <li><strong>Bidang Pengembangan Kapasitas</strong> - Pelatihan dan Peningkatan Kemampuan Anggota</li>
+                <li><strong>Kelompok Jabatan Fungsional</strong> - Penyidik dan Pengawas</li>
+            </ul>
+        </div>
+
+        <div id="visi-misi" class="profil-detail anchor-target">
+            <span class="badge-sub"><i class="fas fa-bullseye"></i> Visi & Misi</span>
+            <h3><i class="fas fa-bullseye"></i> Visi dan Misi</h3>
+            <h4 style="color:var(--green-dark); margin:12px 0 6px;">Visi</h4>
+            <p><em>"Terwujudnya Kabupaten Musi Banyuasin yang Tertib, Aman, dan Berbudaya Hukum."</em></p>
+            <h4 style="color:var(--green-dark); margin:16px 0 6px;">Misi</h4>
+            <ul>
+                <li>Meningkatkan efektivitas penegakan Peraturan Daerah di Kabupaten Muba.</li>
+                <li>Menjaga ketertiban umum dan ketenteraman masyarakat secara profesional.</li>
+                <li>Membangun kesadaran hukum masyarakat melalui pendekatan preventif dan edukatif.</li>
+                <li>Meningkatkan kapasitas dan profesionalisme anggota Satpol PP.</li>
+                <li>Bersinergi dengan aparat penegak hukum dan instansi terkait dalam menjaga keamanan dan ketertiban.</li>
+            </ul>
+        </div>
+
+        <div id="tugas-fungsi" class="profil-detail anchor-target">
+            <span class="badge-sub"><i class="fas fa-tasks"></i> Tugas & Fungsi</span>
+            <h3><i class="fas fa-tasks"></i> Tugas dan Fungsi</h3>
+            <p><strong>Tugas:</strong> Melaksanakan penegakan Peraturan Daerah dan Peraturan Bupati, serta menyelenggarakan ketertiban umum dan ketenteraman masyarakat.</p>
+            <h4 style="color:var(--green-dark); margin:12px 0 6px;">Fungsi:</h4>
+            <ul>
+                <li>Perumusan kebijakan teknis di bidang penegakan Perda dan ketertiban umum.</li>
+                <li>Pelaksanaan kebijakan penegakan Perda dan ketertiban umum.</li>
+                <li>Pengawasan dan pengendalian pelaksanaan Perda dan Peraturan Bupati.</li>
+                <li>Pelaksanaan tindakan penertiban terhadap pelanggaran Perda dan ketertiban umum.</li>
+                <li>Pelaksanaan fungsi lain yang diberikan oleh Bupati terkait tugas dan fungsinya.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Satpol PP Kabupaten Muba</h4>
+                    <p>Satuan Polisi Pamong Praja Kabupaten Musi Banyuasin.</p>
+                    <div class="contact-info" style="margin-top:10px;">
+                        <span><i class="fas fa-map-pin"></i> Jl. Kol. H. Burlian, Sekayu, Kab. Muba</span>
+                        <span><i class="fas fa-phone"></i> (0711) 123456</span>
+                        <span><i class="fas fa-envelope"></i> satpolpp@mubakab.go.id</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Profil</h4>
+                    <ul>
+                        <li><a href="profil.html#profil-pimpinan">Profil Pimpinan</a></li>
+                        <li><a href="profil.html#sejarah">Sejarah</a></li>
+                        <li><a href="profil.html#struktur">Struktur</a></li>
+                        <li><a href="profil.html#visi-misi">Visi & Misi</a></li>
+                        <li><a href="profil.html#tugas-fungsi">Tugas & Fungsi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Publikasi</h4>
+                    <ul>
+                        <li><a href="publikasi.html#berita">Berita</a></li>
+                        <li><a href="publikasi.html#detail-berita">Detail Berita</a></li>
+                        <li><a href="dokumentasi.html#galeri">Galeri</a></li>
+                        <li><a href="dokumentasi.html#video">Video</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="dokumen.html">Dokumen</a></li>
+                        <li><a href="agenda.html">Agenda</a></li>
+                        <li><a href="saran.html">Saran & Kritik</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Satpol PP Kabupaten Musi Banyuasin. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

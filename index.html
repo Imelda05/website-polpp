@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Beranda | Satpol PP Kabupaten Muba</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <span><i class="fas fa-map-pin"></i> Kabupaten Musi Banyuasin</span>
+            <span><i class="fas fa-envelope"></i> satpolpp@mubakab.go.id</span>
+            <span><i class="fas fa-phone"></i> (0711) 123456</span>
+        </div>
+        <div class="top-bar-right">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232e7d32'/%3E%3Ctext x='50' y='65' font-size='44' text-anchor='middle' fill='white' font-weight='bold'%3ESP%3C/text%3E%3C/svg%3E" alt="Logo Satpol PP" />
+                <div class="logo-text">
+                    <h1>Satpol PP</h1>
+                    <span>Kabupaten Musi Banyuasin</span>
+                </div>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Beranda</a></li>
+                <li>
+                    <a href="profil.html"><i class="fas fa-building"></i> Profil PD <i class="fas fa-chevron-down arrow"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="profil.html#profil-pimpinan"><i class="fas fa-user-tie"></i> Profil Pimpinan</a></li>
+                        <li><a href="profil.html#sejarah"><i class="fas fa-history"></i> Sejarah</a></li>
+                        <li><a href="profil.html#struktur"><i class="fas fa-sitemap"></i> Struktur</a></li>
+                        <li><a href="profil.html#visi-misi"><i class="fas fa-bullseye"></i> Visi & Misi</a></li>
+                        <li><a href="profil.html#tugas-fungsi"><i class="fas fa-tasks"></i> Tugas & Fungsi</a></li>
+                    </ul>
+                </li>
+                <li><a href="dokumen.html"><i class="fas fa-file-alt"></i> Dokumen</a></li>
+                <li><a href="agenda.html"><i class="fas fa-calendar-check"></i> Agenda</a></li>
+                <li>
+                    <a href="publikasi.html"><i class="fas fa-newspaper"></i> Publikasi <i class="fas fa-chevron-down arrow"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="publikasi.html#berita"><i class="fas fa-bullhorn"></i> Berita</a></li>
+                        <li><a href="publikasi.html#detail-berita"><i class="fas fa-file-alt"></i> Detail Berita</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="dokumentasi.html"><i class="fas fa-images"></i> Dokumentasi <i class="fas fa-chevron-down arrow"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="dokumentasi.html#galeri"><i class="fas fa-photo-video"></i> Galeri</a></li>
+                        <li><a href="dokumentasi.html#video"><i class="fas fa-video"></i> Video</a></li>
+                    </ul>
+                </li>
+                <li><a href="saran.html"><i class="fas fa-comment-dots"></i> Saran & Kritik</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- SLIDER -->
+    <section class="slider-section">
+        <div class="slider-track" id="sliderTrack">
+            <div class="slide" style="background-image: linear-gradient(135deg, #1a4d1a, #2e7d32), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%232e7d32%22/%3E%3Ccircle cx=%22200%22 cy=%22300%22 r=%22120%22 fill=%22%2343a047%22 opacity=%220.3%22/%3E%3Ccircle cx=%22600%22 cy=%22100%22 r=%22180%22 fill=%22%2366bb6a%22 opacity=%220.2%22/%3E%3C/svg%3E');">
+                <div class="slide-content">
+                    <h2>Selamat Datang di Satpol PP</h2>
+                    <p>Satuan Polisi Pamong Praja Kabupaten Musi Banyuasin — Menegakkan Perda, Melindungi Masyarakat.</p>
+                    <a href="profil.html" class="btn-slide">Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: linear-gradient(135deg, #1a4d1a, #388e3c), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23388e3c%22/%3E%3Ccircle cx=%22300%22 cy=%22150%22 r=%22160%22 fill=%22%2343a047%22 opacity=%220.25%22/%3E%3Ccircle cx=%22500%22 cy=%22350%22 r=%22100%22 fill=%22%2366bb6a%22 opacity=%220.2%22/%3E%3C/svg%3E');">
+                <div class="slide-content">
+                    <h2>Penegakan Peraturan Daerah</h2>
+                    <p>Komitmen kuat dalam menegakkan Peraturan Daerah dan menjaga ketertiban umum di wilayah Muba.</p>
+                    <a href="publikasi.html" class="btn-slide">Lihat Kegiatan <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+            <div class="slide" style="background-image: linear-gradient(135deg, #1a4d1a, #2e7d32), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%232e7d32%22/%3E%3Ccircle cx=%22100%22 cy=%22400%22 r=%22140%22 fill=%22%2343a047%22 opacity=%220.25%22/%3E%3Ccircle cx=%22650%22 cy=%22200%22 r=%22200%22 fill=%22%2366bb6a%22 opacity=%220.15%22/%3E%3C/svg%3E');">
+                <div class="slide-content">
+                    <h2>Perlindungan Masyarakat</h2>
+                    <p>Satpol PP hadir sebagai pelindung dan pengayom masyarakat dalam menciptakan lingkungan yang aman dan tertib.</p>
+                    <a href="dokumentasi.html" class="btn-slide">Lihat Dokumentasi <i class="fas fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <button class="slider-btn prev" id="prevSlide"><i class="fas fa-chevron-left"></i></button>
+        <button class="slider-btn next" id="nextSlide"><i class="fas fa-chevron-right"></i></button>
+
+        <div class="slider-dots" id="sliderDots">
+            <span class="active" data-index="0"></span>
+            <span data-index="1"></span>
+            <span data-index="2"></span>
+        </div>
+    </section>
+
+    <!-- CONTENT -->
+    <div class="content-wrapper">
+        <div class="section-title">
+            <h2>Beranda</h2>
+            <p>Informasi terbaru dan kegiatan Satuan Polisi Pamong Praja Kabupaten Musi Banyuasin</p>
+        </div>
+
+        <div class="beranda-grid">
+            <!-- KOLOM KIRI -->
+            <div>
+                <div class="sambutan-card">
+                    <span class="badge-terbatas"><i class="fas fa-lock"></i> Terbatas</span>
+                    <h3>Sambutan Kepala Satpol PP</h3>
+                    <p class="jabatan">Kepala Satuan Polisi Pamong Praja Kabupaten Muba</p>
+                    <p>Assalamu'alaikum warahmatullahi wabarakatuh. Puji syukur ke hadirat Allah SWT, kami menyambut Anda di website resmi Satpol PP Kabupaten Musi Banyuasin. Kami berkomitmen untuk memberikan pelayanan terbaik dalam penegakan Perda dan ketertiban umum demi terciptanya masyarakat yang aman dan tertib.</p>
+                    <a href="#" class="btn-sambutan">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                </div>
+
+                <div style="margin-top: 28px;">
+                    <h3 style="font-size: 20px; color: var(--green-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-bullhorn" style="color: var(--green-primary);"></i> Berita Terbaru
+                    </h3>
+                    <div class="berita-list">
+                        <div class="berita-item">
+                            <div class="date-badge"><span class="day">15</span><span class="month">Jun</span></div>
+                            <div class="berita-info"><h4>Satpol PP Gelar Razia Protokol Kesehatan</h4><p>Kegiatan razia di pasar tradisional untuk menegakkan aturan protokol kesehatan.</p></div>
+                        </div>
+                        <div class="berita-item">
+                            <div class="date-badge"><span class="day">12</span><span class="month">Jun</span></div>
+                            <div class="berita-info"><h4>Pembinaan Kesiapsiagaan Anggota Satpol PP</h4><p>Pelatihan fisik dan kedisiplinan bagi anggota Satpol PP Kabupaten Muba.</p></div>
+                        </div>
+                        <div class="berita-item">
+                            <div class="date-badge"><span class="day">08</span><span class="month">Jun</span></div>
+                            <div class="berita-info"><h4>Rapat Koordinasi Penertiban PKL</h4><p>Sinergi dengan Satpol PP dan Dinas Perdagangan untuk penertiban PKL.</p></div>
+                        </div>
+                        <div class="berita-item">
+                            <div class="date-badge"><span class="day">05</span><span class="month">Jun</span></div>
+                            <div class="berita-info"><h4>Satpol PP Dukung Program Muba Bersih</h4><p>Partisipasi aktif dalam gerakan kebersihan dan penataan kota.</p></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- KOLOM KANAN -->
+            <div class="side-column">
+                <div>
+                    <h3 style="font-size: 20px; color: var(--green-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-calendar-alt" style="color: var(--green-primary);"></i> Agenda Pimpinan
+                    </h3>
+                    <div class="agenda-grid">
+                        <div class="agenda-card"><div class="agenda-date"><i class="far fa-calendar-alt"></i> 20 Juni 2026</div><h4>Rapat Koordinasi Forkopimda</h4><p>Sinergi penegakan Perda dan ketertiban umum</p></div>
+                        <div class="agenda-card"><div class="agenda-date"><i class="far fa-calendar-alt"></i> 18 Juni 2026</div><h4>Kunjungan ke Pasar Tradisional</h4><p>Monitoring dan evaluasi penertiban PKL</p></div>
+                        <div class="agenda-card"><div class="agenda-date"><i class="far fa-calendar-alt"></i> 15 Juni 2026</div><h4>Rapat Internal Satpol PP</h4><p>Evaluasi kinerja dan perencanaan program</p></div>
+                        <div class="agenda-card"><div class="agenda-date"><i class="far fa-calendar-alt"></i> 12 Juni 2026</div><h4>Pelatihan Penegakan Hukum</h4><p>Peningkatan kapasitas anggota Satpol PP</p></div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 style="font-size: 20px; color: var(--green-dark); margin-bottom: 14px; display: flex; align-items: center; gap: 10px;">
+                        <i class="fas fa-images" style="color: var(--green-primary);"></i> Galeri Foto
+                    </h3>
+                    <div class="foto-grid">
+                        <div class="foto-card"><div class="foto-placeholder"><i class="fas fa-image"></i><span>Kegiatan Razia</span></div></div>
+                        <div class="foto-card"><div class="foto-placeholder"><i class="fas fa-image"></i><span>Pembinaan Anggota</span></div></div>
+                        <div class="foto-card"><div class="foto-placeholder"><i class="fas fa-image"></i><span>Penertiban PKL</span></div></div>
+                        <div class="foto-card"><div class="foto-placeholder"><i class="fas fa-image"></i><span>Rapat Koordinasi</span></div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Satpol PP Kabupaten Muba</h4>
+                    <p>Satuan Polisi Pamong Praja Kabupaten Musi Banyuasin berkomitmen untuk menegakkan Peraturan Daerah dan menjaga ketertiban umum demi terciptanya masyarakat yang aman dan tertib.</p>
+                    <div class="contact-info" style="margin-top: 10px;">
+                        <span><i class="fas fa-map-pin"></i> Jl. Kol. H. Burlian, Sekayu, Kab. Muba</span>
+                        <span><i class="fas fa-phone"></i> (0711) 123456</span>
+                        <span><i class="fas fa-envelope"></i> satpolpp@mubakab.go.id</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Profil</h4>
+                    <ul>
+                        <li><a href="profil.html#profil-pimpinan">Profil Pimpinan</a></li>
+                        <li><a href="profil.html#sejarah">Sejarah</a></li>
+                        <li><a href="profil.html#struktur">Struktur</a></li>
+                        <li><a href="profil.html#visi-misi">Visi & Misi</a></li>
+                        <li><a href="profil.html#tugas-fungsi">Tugas & Fungsi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Publikasi</h4>
+                    <ul>
+                        <li><a href="publikasi.html#berita">Berita</a></li>
+                        <li><a href="publikasi.html#detail-berita">Detail Berita</a></li>
+                        <li><a href="dokumentasi.html#galeri">Galeri</a></li>
+                        <li><a href="dokumentasi.html#video">Video</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="dokumen.html">Dokumen</a></li>
+                        <li><a href="agenda.html">Agenda</a></li>
+                        <li><a href="saran.html">Saran & Kritik</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Satpol PP Kabupaten Musi Banyuasin. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

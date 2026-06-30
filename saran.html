@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saran & Kritik | Satpol PP Kabupaten Muba</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <style>
+        .saran-form-wrapper {
+            background: var(--white);
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            padding: 40px;
+            max-width: 800px;
+            margin: 20px auto 0;
+        }
+        .saran-form-wrapper .form-group { margin-bottom: 20px; }
+        .saran-form-wrapper label {
+            display: block; font-weight: 600; color: var(--green-dark);
+            margin-bottom: 6px; font-size: 14px;
+        }
+        .saran-form-wrapper input,
+        .saran-form-wrapper textarea,
+        .saran-form-wrapper select {
+            width: 100%; padding: 12px 16px; border: 2px solid var(--gray-border);
+            border-radius: 8px; font-family: 'Poppins', sans-serif; font-size: 14px;
+            transition: var(--transition); background: var(--gray-light);
+        }
+        .saran-form-wrapper input:focus,
+        .saran-form-wrapper textarea:focus,
+        .saran-form-wrapper select:focus {
+            outline: none; border-color: var(--green-primary);
+            background: var(--white); box-shadow: 0 0 0 4px rgba(46,125,50,0.1);
+        }
+        .saran-form-wrapper textarea { min-height: 140px; resize: vertical; }
+        .saran-form-wrapper .btn-submit {
+            padding: 14px 40px; background: var(--green-primary); color: var(--white);
+            border: none; border-radius: 50px; font-weight: 700; font-size: 16px;
+            cursor: pointer; transition: var(--transition); font-family: 'Poppins', sans-serif;
+        }
+        .saran-form-wrapper .btn-submit:hover {
+            background: var(--green-dark); transform: translateY(-3px);
+            box-shadow: 0 8px 30px rgba(46,125,50,0.35);
+        }
+        .saran-form-wrapper .info-text {
+            background: var(--green-pale); padding: 16px 20px; border-radius: 8px;
+            margin-bottom: 24px; font-size: 14px; color: #2a4a2a;
+            border-left: 4px solid var(--green-primary);
+        }
+        .saran-form-wrapper .info-text i { color: var(--green-primary); margin-right: 8px; }
+        @media (max-width:480px){ .saran-form-wrapper { padding: 24px 16px; } }
+    </style>
+</head>
+<body>
+
+    <!-- TOP BAR -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <span><i class="fas fa-map-pin"></i> Kabupaten Musi Banyuasin</span>
+            <span><i class="fas fa-envelope"></i> satpolpp@mubakab.go.id</span>
+            <span><i class="fas fa-phone"></i> (0711) 123456</span>
+        </div>
+        <div class="top-bar-right">
+            <div class="social-icons">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-youtube"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- HEADER -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%232e7d32'/%3E%3Ctext x='50' y='65' font-size='44' text-anchor='middle' fill='white' font-weight='bold'%3ESP%3C/text%3E%3C/svg%3E" alt="Logo Satpol PP" />
+                <div class="logo-text">
+                    <h1>Satpol PP</h1>
+                    <span>Kabupaten Musi Banyuasin</span>
+                </div>
+            </div>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
+            </button>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html"><i class="fas fa-home"></i> Beranda</a></li>
+                <li>
+                    <a href="profil.html"><i class="fas fa-building"></i> Profil PD <i class="fas fa-chevron-down arrow"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="profil.html#profil-pimpinan"><i class="fas fa-user-tie"></i> Profil Pimpinan</a></li>
+                        <li><a href="profil.html#sejarah"><i class="fas fa-history"></i> Sejarah</a></li>
+                        <li><a href="profil.html#struktur"><i class="fas fa-sitemap"></i> Struktur</a></li>
+                        <li><a href="profil.html#visi-misi"><i class="fas fa-bullseye"></i> Visi & Misi</a></li>
+                        <li><a href="profil.html#tugas-fungsi"><i class="fas fa-tasks"></i> Tugas & Fungsi</a></li>
+                    </ul>
+                </li>
+                <li><a href="dokumen.html"><i class="fas fa-file-alt"></i> Dokumen</a></li>
+                <li><a href="agenda.html"><i class="fas fa-calendar-check"></i> Agenda</a></li>
+                <li>
+                    <a href="publikasi.html"><i class="fas fa-newspaper"></i> Publikasi <i class="fas fa-chevron-down arrow"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="publikasi.html#berita"><i class="fas fa-bullhorn"></i> Berita</a></li>
+                        <li><a href="publikasi.html#detail-berita"><i class="fas fa-file-alt"></i> Detail Berita</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="dokumentasi.html"><i class="fas fa-images"></i> Dokumentasi <i class="fas fa-chevron-down arrow"></i></a>
+                    <ul class="dropdown">
+                        <li><a href="dokumentasi.html#galeri"><i class="fas fa-photo-video"></i> Galeri</a></li>
+                        <li><a href="dokumentasi.html#video"><i class="fas fa-video"></i> Video</a></li>
+                    </ul>
+                </li>
+                <li><a href="saran.html" class="active"><i class="fas fa-comment-dots"></i> Saran & Kritik</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- CONTENT -->
+    <div class="content-wrapper">
+        <div class="section-title">
+            <h2>Saran &amp; Kritik</h2>
+            <p>Kami sangat menghargai masukan dari masyarakat untuk perbaikan pelayanan Satpol PP Kabupaten Musi Banyuasin</p>
+        </div>
+
+        <div class="saran-form-wrapper">
+            <div class="info-text">
+                <i class="fas fa-info-circle"></i> 
+                Setiap saran dan kritik yang Anda sampaikan akan kami tindak lanjuti sebagai bahan evaluasi dan peningkatan kualitas pelayanan Satpol PP Kabupaten Muba.
+            </div>
+
+            <form id="saranForm" onsubmit="return false;">
+                <div class="form-group">
+                    <label for="nama"><i class="fas fa-user"></i> Nama Lengkap</label>
+                    <input type="text" id="nama" placeholder="Masukkan nama Anda" required />
+                </div>
+                <div class="form-group">
+                    <label for="email"><i class="fas fa-envelope"></i> Email</label>
+                    <input type="email" id="email" placeholder="Masukkan email Anda" required />
+                </div>
+                <div class="form-group">
+                    <label for="kategori"><i class="fas fa-tag"></i> Kategori</label>
+                    <select id="kategori">
+                        <option value="saran">Saran</option>
+                        <option value="kritik">Kritik</option>
+                        <option value="masukan">Masukan Umum</option>
+                        <option value="pengaduan">Pengaduan</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="pesan"><i class="fas fa-comment"></i> Pesan</label>
+                    <textarea id="pesan" placeholder="Tulis saran atau kritik Anda di sini..." required></textarea>
+                </div>
+                <button type="submit" class="btn-submit" onclick="submitSaran()">
+                    <i class="fas fa-paper-plane"></i> Kirim Saran &amp; Kritik
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Satpol PP Kabupaten Muba</h4>
+                    <p>Satuan Polisi Pamong Praja Kabupaten Musi Banyuasin.</p>
+                    <div class="contact-info" style="margin-top:10px;">
+                        <span><i class="fas fa-map-pin"></i> Jl. Kol. H. Burlian, Sekayu, Kab. Muba</span>
+                        <span><i class="fas fa-phone"></i> (0711) 123456</span>
+                        <span><i class="fas fa-envelope"></i> satpolpp@mubakab.go.id</span>
+                    </div>
+                </div>
+                <div class="footer-col">
+                    <h4>Profil</h4>
+                    <ul>
+                        <li><a href="profil.html#profil-pimpinan">Profil Pimpinan</a></li>
+                        <li><a href="profil.html#sejarah">Sejarah</a></li>
+                        <li><a href="profil.html#struktur">Struktur</a></li>
+                        <li><a href="profil.html#visi-misi">Visi & Misi</a></li>
+                        <li><a href="profil.html#tugas-fungsi">Tugas & Fungsi</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Publikasi</h4>
+                    <ul>
+                        <li><a href="publikasi.html#berita">Berita</a></li>
+                        <li><a href="publikasi.html#detail-berita">Detail Berita</a></li>
+                        <li><a href="d
