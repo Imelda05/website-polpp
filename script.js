@@ -73,23 +73,47 @@ if (track) {
     startAutoSlide();
 }
 
-// ===== HAMBURGER MENU =====
-var hamburger = document.getElementById('hamburger');
+// ===== HAMBURGER MENU (titik 3) =====
+var hamburgerBtn = document.getElementById('hamburgerBtn');
 var navMenu = document.getElementById('navMenu');
-if (hamburger && navMenu) {
-    hamburger.addEventListener('click', function() {
-        hamburger.classList.toggle('active');
+var overlay = document.getElementById('menuOverlay');
+
+if (hamburgerBtn && navMenu) {
+    function toggleMenu() {
         navMenu.classList.toggle('open');
+        overlay.classList.toggle('active');
+        // Ubah ikon titik tiga menjadi silang saat menu terbuka
+        var icon = hamburgerBtn.querySelector('i');
+        if (navMenu.classList.contains('open')) {
+            icon.className = 'fas fa-times';
+        } else {
+            icon.className = 'fas fa-ellipsis-v';
+        }
+    }
+
+    hamburgerBtn.addEventListener('click', function(e) {
+        e.stopPropagation();
+        toggleMenu();
     });
 
-    document.querySelectorAll('.nav-menu a').forEach(function(link) {
+    // Tutup menu saat klik overlay
+    overlay.addEventListener('click', function() {
+        if (navMenu.classList.contains('open')) {
+            toggleMenu();
+        }
+    });
+
+    // Tutup menu saat klik link di dalam menu (mobile)
+    navMenu.querySelectorAll('a').forEach(function(link) {
         link.addEventListener('click', function() {
-            hamburger.classList.remove('active');
-            navMenu.classList.remove('open');
+            if (window.innerWidth <= 768 && navMenu.classList.contains('open')) {
+                toggleMenu();
+            }
         });
     });
 
-    document.querySelectorAll('.nav-menu > li').forEach(function(li) {
+    // Untuk submenu dropdown di mobile (toggle)
+    navMenu.querySelectorAll('li').forEach(function(li) {
         var link = li.querySelector('a');
         if (li.querySelector('.dropdown')) {
             link.addEventListener('click', function(e) {
