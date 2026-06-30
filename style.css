@@ -35,40 +35,35 @@ ul {
     --transition: 0.3s ease;
 }
 
-/* ===== TOP BAR ===== */
+/* ===== TOP BAR - SEMUA DI TENGAH ===== */
 .top-bar {
     background: var(--green-dark);
     color: var(--white);
     padding: 6px 20px;
     font-size: 13px;
     display: flex;
-    justify-content: center;     /* ubah dari space-between ke center */
-    align-items: center;
     flex-wrap: wrap;
-    gap: 8px 20px;              /* jarak antar item */
+    justify-content: center;
+    align-items: center;
+    gap: 8px 20px;
     text-align: center;
 }
-
 .top-bar-left {
     display: flex;
-    gap: 20px;
-    align-items: center;
     flex-wrap: wrap;
-    justify-content: center;    /* tambahkan ini */
+    justify-content: center;
+    align-items: center;
+    gap: 10px 20px;
 }
-
 .top-bar-left i {
     margin-right: 6px;
     color: var(--green-light);
 }
-
 .top-bar-right {
     display: flex;
-    gap: 12px;
+    justify-content: center;
     align-items: center;
-    justify-content: center;    /* tambahkan ini */
 }
-
 .top-bar-right .social-icons {
     display: flex;
     gap: 12px;
@@ -87,7 +82,7 @@ ul {
 .header {
     background: var(--white);
     box-shadow: 0 2px 20px rgba(0, 0, 0, 0.06);
-    position: relative; /* TIDAK STICKY */
+    position: relative;
     z-index: 999;
 }
 .header .container {
@@ -1046,12 +1041,15 @@ ul {
     }
     .top-bar {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center;
         gap: 4px;
     }
     .top-bar-left {
-        flex-wrap: wrap;
-        gap: 8px 16px;
+        justify-content: center;
+        gap: 6px 12px;
+    }
+    .top-bar-right {
+        justify-content: center;
     }
     .profil-grid {
         grid-template-columns: 1fr 1fr;
