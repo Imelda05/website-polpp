@@ -7,8 +7,145 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
+    <style>
+        /* ===== TAMBAHAN UNTUK HAMBURGER MENU ===== */
+        /* Tombol hamburger - posisi fixed di kanan atas */
+        .hamburger-btn {
+            position: fixed;
+            top: 16px;
+            right: 20px;
+            z-index: 1100;
+            background: var(--green-dark);
+            border: none;
+            color: white;
+            font-size: 28px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            transition: var(--transition);
+            display: none; /* disembunyikan di desktop, muncul di mobile */
+            line-height: 1;
+        }
+        .hamburger-btn:hover {
+            background: var(--green-primary);
+        }
+
+        /* Menu navigasi - dropdown di bawah tombol (tidak menggeser konten) */
+        .nav-menu {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+
+        @media (max-width: 768px) {
+            .hamburger-btn {
+                display: block;
+            }
+
+            /* Sembunyikan menu default, tampilkan sebagai dropdown absolut */
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                right: 20px;
+                background: var(--white);
+                flex-direction: column;
+                padding: 16px 20px;
+                border-radius: var(--radius);
+                box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+                gap: 0;
+                width: 220px;
+                display: none; /* default hidden */
+                z-index: 1100;
+                border: 1px solid var(--gray-border);
+                max-height: 80vh;
+                overflow-y: auto;
+            }
+
+            .nav-menu.open {
+                display: flex;
+            }
+
+            .nav-menu > li {
+                width: 100%;
+            }
+
+            .nav-menu > li > a {
+                padding: 12px 16px;
+                width: 100%;
+                justify-content: flex-start;
+                border-bottom: 1px solid var(--gray-border);
+            }
+
+            .nav-menu > li:last-child > a {
+                border-bottom: none;
+            }
+
+            /* Dropdown submenu di mobile - tampil di bawah item */
+            .dropdown {
+                position: static;
+                box-shadow: none;
+                border: none;
+                padding: 0 0 0 20px;
+                opacity: 1;
+                visibility: visible;
+                transform: none;
+                display: none;
+                background: var(--gray-light);
+                border-radius: 8px;
+                margin-bottom: 4px;
+            }
+
+            .nav-menu > li.open .dropdown {
+                display: block;
+            }
+
+            .dropdown li a {
+                padding: 10px 16px;
+                font-size: 13px;
+                border-left: none;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hamburger-btn {
+                top: 12px;
+                right: 12px;
+                font-size: 24px;
+                padding: 6px 12px;
+            }
+            .nav-menu {
+                top: 60px;
+                right: 12px;
+                width: 200px;
+            }
+        }
+
+        /* Overlay gelap (opsional) - bisa ditambahkan jika perlu */
+        .menu-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.3);
+            z-index: 1050;
+        }
+        .menu-overlay.active {
+            display: block;
+        }
+    </style>
 </head>
 <body>
+
+    <!-- Overlay untuk menutup menu saat klik di luar -->
+    <div class="menu-overlay" id="menuOverlay"></div>
+
+    <!-- Tombol Hamburger (titik 3) -->
+    <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
+        <i class="fas fa-ellipsis-v"></i>
+    </button>
 
     <!-- TOP BAR -->
     <div class="top-bar">
@@ -39,10 +176,7 @@
                 </div>
             </div>
 
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-
+            <!-- Navigasi Desktop (akan disembunyikan di mobile) -->
             <ul class="nav-menu" id="navMenu">
                 <li><a href="index.html" class="active"><i class="fas fa-home"></i> Beranda</a></li>
                 <li>
@@ -195,7 +329,6 @@
                         <span><i class="fas fa-map-pin"></i> Jl. Kol. H. Burlian, Sekayu, Kab. Muba</span>
                         <span><i class="fas fa-phone"></i> (0711) 123456</span>
                         <span><i class="fas fa-envelope"></i> satpolpp@mubakab.go.id</span>
-                        <span><i class="far fa-clock"></i> 08:00 - 16:00 WIB</span>
                     </div>
                 </div>
                 <div class="footer-col">
