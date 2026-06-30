@@ -35,35 +35,27 @@ ul {
     --transition: 0.3s ease;
 }
 
-/* ===== TOP BAR - SEMUA DI TENGAH (PAKSA) ===== */
+/* ===== TOP BAR - PAKSA KE TENGAH ===== */
 .top-bar {
-    background: var(--green-dark);
-    color: var(--white);
-    padding: 6px 20px;
-    font-size: 13px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;   /* pusatkan semua anak */
-    align-items: center;
-    gap: 8px 20px;
-    text-align: center;
-    width: 100%;
-}
-
-/* Semua anak langsung dari top-bar dipaksa center */
-.top-bar > * {
-    margin: 0;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background: var(--green-dark) !important;
+    color: var(--white) !important;
+    padding: 6px 20px !important;
+    font-size: 13px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px 20px !important;
+    text-align: center !important;
+    width: 100% !important;
 }
 
 .top-bar-left {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    gap: 8px 16px;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 8px 16px !important;
 }
 
 .top-bar-left i {
@@ -72,28 +64,27 @@ ul {
 }
 
 .top-bar-right {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0; /* hilangkan margin yang mungkin mendorong ke kanan */
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 .top-bar-right .social-icons {
-    display: flex;
-    gap: 12px;
-    justify-content: center;
-    align-items: center;
+    display: flex !important;
+    gap: 12px !important;
+    justify-content: center !important;
+    align-items: center !important;
 }
 
 .top-bar-right .social-icons a {
-    color: var(--green-pale);
+    color: var(--green-pale) !important;
     transition: var(--transition);
-    font-size: 15px;
-    line-height: 1;
+    font-size: 15px !important;
+    line-height: 1 !important;
 }
 
 .top-bar-right .social-icons a:hover {
-    color: var(--white);
+    color: var(--white) !important;
     transform: translateY(-2px);
 }
 
@@ -1058,18 +1049,22 @@ ul {
         grid-template-columns: 1fr;
         gap: 24px;
     }
+
+    /* Pastikan top bar tetap center di HP */
     .top-bar {
-        flex-direction: column;
-        align-items: center;
-        gap: 4px;
+        flex-direction: column !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 4px !important;
     }
     .top-bar-left {
-        justify-content: center;
-        gap: 6px 12px;
+        justify-content: center !important;
+        gap: 6px 12px !important;
     }
     .top-bar-right {
-        justify-content: center;
+        justify-content: center !important;
     }
+
     .profil-grid {
         grid-template-columns: 1fr 1fr;
     }
