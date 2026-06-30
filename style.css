@@ -35,7 +35,7 @@ ul {
     --transition: 0.3s ease;
 }
 
-/* ===== TOP BAR - SEMUA DI TENGAH ===== */
+/* ===== TOP BAR - SEMUA DI TENGAH (PAKSA) ===== */
 .top-bar {
     background: var(--green-dark);
     color: var(--white);
@@ -43,11 +43,21 @@ ul {
     font-size: 13px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center;   /* pusatkan semua anak */
     align-items: center;
     gap: 8px 20px;
     text-align: center;
+    width: 100%;
 }
+
+/* Semua anak langsung dari top-bar dipaksa center */
+.top-bar > * {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .top-bar-left {
     display: flex;
     flex-wrap: wrap;
@@ -55,24 +65,33 @@ ul {
     align-items: center;
     gap: 8px 16px;
 }
+
 .top-bar-left i {
     margin-right: 6px;
     color: var(--green-light);
 }
+
 .top-bar-right {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin: 0; /* hilangkan margin yang mungkin mendorong ke kanan */
 }
+
 .top-bar-right .social-icons {
     display: flex;
     gap: 12px;
+    justify-content: center;
+    align-items: center;
 }
+
 .top-bar-right .social-icons a {
     color: var(--green-pale);
     transition: var(--transition);
     font-size: 15px;
+    line-height: 1;
 }
+
 .top-bar-right .social-icons a:hover {
     color: var(--white);
     transform: translateY(-2px);
