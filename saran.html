@@ -6,7 +6,7 @@
     <title>Saran & Kritik | Satpol PP Kabupaten Muba</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="style.css" />
     <style>
         .saran-form-wrapper {
             background: var(--white);
@@ -190,4 +190,38 @@
                     <ul>
                         <li><a href="publikasi.html#berita">Berita</a></li>
                         <li><a href="publikasi.html#detail-berita">Detail Berita</a></li>
-                        <li><a href="d
+                        <li><a href="dokumentasi.html#galeri">Galeri</a></li>
+                        <li><a href="dokumentasi.html#video">Video</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Layanan</h4>
+                    <ul>
+                        <li><a href="dokumen.html">Dokumen</a></li>
+                        <li><a href="agenda.html">Agenda</a></li>
+                        <li><a href="saran.html">Saran & Kritik</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                &copy; 2026 Satpol PP Kabupaten Musi Banyuasin. All rights reserved.
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        function submitSaran() {
+            var nama = document.getElementById('nama').value;
+            var email = document.getElementById('email').value;
+            var pesan = document.getElementById('pesan').value;
+            if (!nama || !email || !pesan) {
+                alert('Mohon lengkapi semua field sebelum mengirim.');
+                return;
+            }
+            alert('Terima kasih, ' + nama + '! Saran/kritik Anda telah kami terima. Tim Satpol PP akan merespon segera.');
+            document.getElementById('saranForm').reset();
+        }
+    </script>
+</body>
+</html>
