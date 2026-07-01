@@ -66,7 +66,7 @@
         .header {
             background: var(--putih);
             box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-            position: relative; /* penting agar absolute menu terikat di sini */
+            position: relative;
             z-index: 999;
         }
         .header .container {
@@ -171,9 +171,9 @@
             text-align: center;
         }
 
-        /* ===== HAMBURGER (tombol titik 3) ===== */
+        /* ===== HAMBURGER ===== */
         .hamburger-btn {
-            display: none; /* default hidden, muncul di mobile */
+            display: none;
             background: var(--hijau-tua);
             border: none;
             color: white;
@@ -564,7 +564,7 @@
             color: #4a5a4a;
         }
 
-        /* ===== FOTO GALERI ===== */
+        /* ===== FOTO ===== */
         .foto-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -930,7 +930,7 @@
         }
 
         /* ========================================================== */
-        /* ===== RESPONSIVE ===== */
+        /* ===== RESPONSIVE (Mobile) ===== */
         /* ========================================================== */
 
         @media (max-width: 992px) {
@@ -941,43 +941,42 @@
         }
 
         @media (max-width: 768px) {
-            /* ===== TAMPILKAN TOMBOL HAMBURGER ===== */
+            /* ===== TAMPILKAN HAMBURGER ===== */
             .hamburger-btn {
                 display: block;
-                position: fixed;   /* tetap di pojok kanan atas */
+                position: fixed;
                 top: 16px;
                 right: 20px;
                 z-index: 1100;
             }
 
-            /* ===== MENU MOBILE (mengikuti scroll) ===== */
+            /* ===== MENU MOBILE (Muncul di atas konten, tidak mendorong) ===== */
             .nav-menu {
-                position: absolute; /* terikat ke .header yang relative */
-                top: 100%;         /* tepat di bawah header */
-                left: 0;
-                right: 0;
+                position: fixed; /* <-- PERUBAHAN: dari absolute ke fixed */
+                top: 70px;       /* Jarak dari atas */
+                right: 20px;     /* Muncul dari sisi kanan */
+                width: 280px;
                 background: var(--putih);
                 flex-direction: column;
-                padding: 16px 20px;
-                border-radius: 0 0 12px 12px;
+                padding: 16px 0;
+                border-radius: 12px;
                 box-shadow: 0 12px 40px rgba(0,0,0,0.25);
                 gap: 0;
                 display: none;
-                z-index: 1050;
-                border: none;
+                z-index: 1100;
+                border: 1px solid #dce8dc;
                 max-height: 80vh;
                 overflow-y: auto;
-                width: 100%;
             }
             .nav-menu.open { display: flex; }
 
             .nav-menu>li { width: 100%; }
             .nav-menu>li>a {
-                padding: 16px 20px;    /* lebih besar */
+                padding: 14px 20px;
                 width: 100%;
                 justify-content: flex-start;
                 border-bottom: 1px solid #dce8dc;
-                font-size: 16px;       /* lebih besar */
+                font-size: 15px;
                 font-weight: 600;
             }
             .nav-menu>li:last-child>a { border-bottom: none; }
@@ -998,8 +997,8 @@
             }
             .nav-menu>li.open .dropdown { display: block; }
             .dropdown li a {
-                padding: 14px 20px;    /* lebih besar */
-                font-size: 15px;       /* lebih besar */
+                padding: 12px 20px;
+                font-size: 14px;
                 font-weight: 500;
                 border-left: none;
             }
@@ -1073,6 +1072,11 @@
                 font-size: 24px;
                 padding: 6px 12px;
             }
+            .nav-menu {
+                top: 60px;
+                right: 12px;
+                width: 240px;
+            }
             .slider-section { height: 260px; }
             .slide-content h2 { font-size: 20px; }
             .slide-content p { font-size: 13px; }
@@ -1097,7 +1101,7 @@
 </head>
 <body>
 
-    <!-- ===== HAMBURGER (tombol titik 3) ===== -->
+    <!-- ===== HAMBURGER ===== -->
     <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
         <i class="fas fa-ellipsis-v"></i>
     </button>
@@ -1131,7 +1135,7 @@
                 </div>
             </div>
 
-            <!-- ===== NAVIGASI ===== -->
+            <!-- NAVIGASI -->
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#" class="active"><i class="fas fa-home"></i> Beranda</a></li>
                 <li>
@@ -1212,10 +1216,10 @@
 
         <div class="beranda-grid">
 
-            <!-- KOLOM KIRI -->
+            <!-- KIRI -->
             <div>
 
-                <!-- ===== SAMBUTAN KEPALA SATPOL PP ===== -->
+                <!-- SAMBUTAN -->
                 <div class="sambutan-wrapper">
                     <div class="sambutan-foto">
                         <img src="https://picsum.photos/seed/kepala/400/400" alt="Kepala Satpol PP" />
@@ -1229,7 +1233,7 @@
                     </div>
                 </div>
 
-                <!-- ===== BERITA TERBARU ===== -->
+                <!-- BERITA TERBARU -->
                 <div style="margin-top: 28px;">
                     <h3 style="font-size: 20px; color: var(--hijau-tua); margin-bottom: 14px; display: flex; align-items: center; gap: 10px;">
                         <i class="fas fa-bullhorn" style="color: var(--hijau);"></i> Berita Terbaru
@@ -1285,10 +1289,10 @@
 
             </div>
 
-            <!-- KOLOM KANAN -->
+            <!-- KANAN -->
             <div class="side-column">
 
-                <!-- ===== AGENDA PIMPINAN ===== -->
+                <!-- AGENDA PIMPINAN -->
                 <div>
                     <h3 style="font-size: 20px; color: var(--hijau-tua); margin-bottom: 14px; display: flex; align-items: center; gap: 10px;">
                         <i class="fas fa-calendar-alt" style="color: var(--hijau);"></i> Agenda Pimpinan
@@ -1317,7 +1321,7 @@
                     </div>
                 </div>
 
-                <!-- ===== GALERI FOTO ===== -->
+                <!-- GALERI FOTO -->
                 <div>
                     <h3 style="font-size: 20px; color: var(--hijau-tua); margin-bottom: 14px; display: flex; align-items: center; gap: 10px;">
                         <i class="fas fa-images" style="color: var(--hijau);"></i> Galeri Foto
