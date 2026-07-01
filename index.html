@@ -4,10 +4,16 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Satpol PP Kabupaten Muba</title>
+    <!-- Font Awesome (ikon) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
     <style>
-        /* ===== RESET ===== */
+        /* ====================================================== */
+        /* ===== ALL CSS (TERMASUK TIPS TAMBAHAN) ===== */
+        /* ====================================================== */
+
+        /* ----- RESET ----- */
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
             font-family: 'Poppins', sans-serif;
@@ -19,7 +25,7 @@
         ul { list-style: none; }
         img { max-width: 100%; display: block; }
 
-        /* ===== WARNA ===== */
+        /* ----- WARNA ----- */
         :root {
             --hijau-tua: #1a4d1a;
             --hijau: #2e7d32;
@@ -30,7 +36,7 @@
             --bayangan: 0 8px 30px rgba(46,125,50,0.12);
         }
 
-        /* ===== TOP BAR ===== */
+        /* ----- TOP BAR (di tengah) ----- */
         .top-bar {
             background: var(--hijau-tua);
             color: var(--putih);
@@ -62,11 +68,11 @@
         }
         .top-bar-right .social-icons a:hover { color: var(--putih); }
 
-        /* ===== HEADER ===== */
+        /* ----- HEADER (sebagai induk untuk menu absolute) ----- */
         .header {
             background: var(--putih);
             box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-            position: relative;
+            position: relative; /* PENTING: agar menu absolute terikat di sini */
             z-index: 999;
         }
         .header .container {
@@ -96,7 +102,7 @@
             display: block;
         }
 
-        /* ===== NAVIGASI DESKTOP ===== */
+        /* ----- NAVIGASI DESKTOP ----- */
         .nav-menu {
             display: flex;
             align-items: center;
@@ -126,7 +132,7 @@
         }
         .nav-menu>li:hover>a .arrow { transform: rotate(180deg); }
 
-        /* ===== DROPDOWN DESKTOP ===== */
+        /* ----- DROPDOWN DESKTOP ----- */
         .dropdown {
             position: absolute;
             top: calc(100% + 6px);
@@ -171,9 +177,9 @@
             text-align: center;
         }
 
-        /* ===== HAMBURGER ===== */
+        /* ----- HAMBURGER (tombol titik 3) ----- */
         .hamburger-btn {
-            display: none;
+            display: none; /* default hidden, muncul di mobile */
             background: var(--hijau-tua);
             border: none;
             color: white;
@@ -187,7 +193,7 @@
         }
         .hamburger-btn:hover { background: var(--hijau); }
 
-        /* ===== SLIDER ===== */
+        /* ----- SLIDER ----- */
         .slider-section {
             position: relative;
             overflow: hidden;
@@ -303,14 +309,14 @@
             transform: scale(1.15);
         }
 
-        /* ===== KONTEN ===== */
+        /* ----- KONTEN ----- */
         .content-wrapper {
             max-width: 1200px;
             margin: 0 auto;
             padding: 30px 20px;
         }
 
-        /* ===== SEMUA TEKS RATA KIRI ===== */
+        /* ----- SEMUA TEKS RATA KIRI (kecuali slider & top bar) ----- */
         .section-title,
         .section-title h2,
         .section-title p,
@@ -355,7 +361,7 @@
             text-align: left !important;
         }
 
-        /* ===== SECTION TITLE ===== */
+        /* ----- SECTION TITLE ----- */
         .section-title { margin-bottom: 32px; }
         .section-title h2 {
             font-size: 30px;
@@ -380,7 +386,7 @@
             font-size: 15px;
         }
 
-        /* ===== GRID ===== */
+        /* ----- GRID BERANDA ----- */
         .beranda-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
@@ -388,7 +394,7 @@
             margin-top: 16px;
         }
 
-        /* ===== SAMBUTAN ===== */
+        /* ----- SAMBUTAN (dengan foto bulat besar) ----- */
         .sambutan-wrapper {
             display: flex;
             gap: 30px;
@@ -461,7 +467,7 @@
             transform: translateX(4px);
         }
 
-        /* ===== BERITA ===== */
+        /* ----- BERITA (foto besar) ----- */
         .berita-list {
             display: flex;
             flex-direction: column;
@@ -524,7 +530,7 @@
             line-height: 1.5;
         }
 
-        /* ===== AGENDA ===== */
+        /* ----- AGENDA ----- */
         .agenda-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -564,7 +570,7 @@
             color: #4a5a4a;
         }
 
-        /* ===== FOTO ===== */
+        /* ----- GALERI FOTO ----- */
         .foto-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -625,7 +631,7 @@
             gap: 28px;
         }
 
-        /* ===== PROFIL ===== */
+        /* ----- PROFIL PD ----- */
         .profil-section {
             background: var(--putih);
             border-radius: 12px;
@@ -664,7 +670,7 @@
             color: var(--hijau-tua);
         }
 
-        /* ===== DOKUMEN & AGENDA ===== */
+        /* ----- DOKUMEN & AGENDA (bawah) ----- */
         .dokumen-agenda {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -740,7 +746,7 @@
             color: var(--hijau-tua);
         }
 
-        /* ===== PUBLIKASI & DOKUMENTASI ===== */
+        /* ----- PUBLIKASI & DOKUMENTASI ----- */
         .pub-dok {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -827,7 +833,7 @@
             color: var(--hijau-tua);
         }
 
-        /* ===== SARAN ===== */
+        /* ----- SARAN ----- */
         .saran-section {
             background: var(--putih);
             border-radius: 12px;
@@ -862,7 +868,7 @@
             box-shadow: 0 8px 30px rgba(46,125,50,0.35);
         }
 
-        /* ===== FOOTER ===== */
+        /* ----- FOOTER ----- */
         .footer {
             background: var(--hijau-tua);
             color: #e8f5e9;
@@ -930,7 +936,7 @@
         }
 
         /* ========================================================== */
-        /* ===== RESPONSIVE (Mobile) ===== */
+        /* ===== RESPONSIVE (TERMASUK TIPS TAMBAHAN) ===== */
         /* ========================================================== */
 
         @media (max-width: 992px) {
@@ -941,49 +947,48 @@
         }
 
         @media (max-width: 768px) {
-            /* ===== TAMPILKAN HAMBURGER ===== */
+            /* ----- TAMPILKAN HAMBURGER ----- */
             .hamburger-btn {
                 display: block;
-                position: fixed;
+                position: fixed;   /* tombol tetap di pojok kanan atas */
                 top: 16px;
                 right: 20px;
                 z-index: 1100;
-                font-size: 36px; /* lebih besar */
-                padding: 8px 16px;
             }
 
-            /* ===== MENU MOBILE (Muncul di atas konten, tidak mendorong) ===== */
+            /* ----- MENU MOBILE (mengikuti scroll, bukan fixed) ----- */
             .nav-menu {
-                position: fixed;
-                top: 75px;
-                right: 20px;
-                width: 280px;
+                position: absolute; /* terikat ke .header yang position:relative */
+                top: 100%;         /* tepat di bawah header */
+                left: 0;
+                right: 0;
                 background: var(--putih);
                 flex-direction: column;
-                padding: 16px 0;
-                border-radius: 12px;
+                padding: 16px 20px;
+                border-radius: 0 0 12px 12px;
                 box-shadow: 0 12px 40px rgba(0,0,0,0.25);
                 gap: 0;
                 display: none;
-                z-index: 1100;
-                border: 1px solid #dce8dc;
+                z-index: 1050;
+                border: none;
                 max-height: 80vh;
                 overflow-y: auto;
+                width: 100%;
             }
             .nav-menu.open { display: flex; }
 
             .nav-menu>li { width: 100%; }
             .nav-menu>li>a {
-                padding: 16px 20px;
+                padding: 16px 20px;    /* LEBIH BESAR */
                 width: 100%;
                 justify-content: flex-start;
                 border-bottom: 1px solid #dce8dc;
-                font-size: 16px;
+                font-size: 16px;       /* LEBIH BESAR */
                 font-weight: 600;
             }
             .nav-menu>li:last-child>a { border-bottom: none; }
 
-            /* ===== DROPDOWN SUBMENU DI MOBILE ===== */
+            /* ----- DROPDOWN SUBMENU DI MOBILE ----- */
             .dropdown {
                 position: static;
                 box-shadow: none;
@@ -999,8 +1004,8 @@
             }
             .nav-menu>li.open .dropdown { display: block; }
             .dropdown li a {
-                padding: 14px 20px;
-                font-size: 15px;
+                padding: 14px 20px;    /* LEBIH BESAR */
+                font-size: 15px;       /* LEBIH BESAR */
                 font-weight: 500;
                 border-left: none;
             }
@@ -1009,7 +1014,7 @@
                 border-left-color: transparent;
             }
 
-            /* ===== SLIDER ===== */
+            /* ----- SLIDER ----- */
             .slider-section { height: 320px; }
             .slide-content h2 { font-size: 28px; }
             .slide-content p { font-size: 15px; }
@@ -1017,7 +1022,7 @@
             .slider-btn.prev { left: 10px; }
             .slider-btn.next { right: 10px; }
 
-            /* ===== SAMBUTAN ===== */
+            /* ----- SAMBUTAN (foto tetap besar, tapi di atas teks) ----- */
             .sambutan-wrapper {
                 flex-direction: column;
                 align-items: center;
@@ -1030,7 +1035,7 @@
             }
             .sambutan-teks { text-align: center; }
 
-            /* ===== BERITA ===== */
+            /* ----- BERITA (foto jadi lebar penuh) ----- */
             .berita-item {
                 flex-direction: column;
                 align-items: flex-start;
@@ -1042,12 +1047,12 @@
                 flex: 0 0 auto;
             }
 
-            /* ===== AGENDA & FOTO ===== */
+            /* ----- AGENDA & FOTO ----- */
             .agenda-grid { grid-template-columns: 1fr; }
             .foto-grid { grid-template-columns: 1fr 1fr; }
             .footer-grid { grid-template-columns: 1fr; gap: 24px; }
 
-            /* ===== TOP BAR ===== */
+            /* ----- TOP BAR ----- */
             .top-bar {
                 flex-direction: column;
                 align-items: center;
@@ -1059,7 +1064,7 @@
             }
             .top-bar-right { justify-content: center; }
 
-            /* ===== PROFIL & LAINNYA ===== */
+            /* ----- PROFIL & LAINNYA ----- */
             .profil-grid { grid-template-columns: 1fr 1fr; }
             .pub-grid,
             .dok-grid { grid-template-columns: 1fr 1fr; }
@@ -1071,13 +1076,8 @@
             .hamburger-btn {
                 top: 12px;
                 right: 12px;
-                font-size: 32px;
-                padding: 6px 14px;
-            }
-            .nav-menu {
-                top: 60px;
-                right: 12px;
-                width: 240px;
+                font-size: 24px;
+                padding: 6px 12px;
             }
             .slider-section { height: 260px; }
             .slide-content h2 { font-size: 20px; }
@@ -1478,7 +1478,7 @@
         </div>
     </footer>
 
-    <!-- ===== JAVASCRIPT (SATU BLOK RAPI) ===== -->
+    <!-- ===== JAVASCRIPT ===== -->
     <script>
         // ===== SLIDER =====
         var track = document.getElementById('sliderTrack');
@@ -1554,7 +1554,7 @@
             startAutoSlide();
         }
 
-        // ===== HAMBURGER + SUBMENU MOBILE =====
+        // ===== HAMBURGER =====
         var hamburgerBtn = document.getElementById('hamburgerBtn');
         var navMenu = document.getElementById('navMenu');
 
@@ -1570,31 +1570,25 @@
                 }
             });
 
-            // Submenu toggle di mobile (tanpa menutup menu utama)
-            var menuItemsWithDropdown = navMenu.querySelectorAll('li');
-            menuItemsWithDropdown.forEach(function(li) {
+            navMenu.querySelectorAll('a').forEach(function(link) {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768 && navMenu.classList.contains('open')) {
+                        navMenu.classList.remove('open');
+                        var icon = hamburgerBtn.querySelector('i');
+                        icon.className = 'fas fa-ellipsis-v';
+                    }
+                });
+            });
+
+            navMenu.querySelectorAll('li').forEach(function(li) {
                 var link = li.querySelector('a');
-                var dropdown = li.querySelector('.dropdown');
-                if (dropdown) {
+                if (li.querySelector('.dropdown')) {
                     link.addEventListener('click', function(e) {
-                        // Hanya di mobile (lebar <= 768px)
                         if (window.innerWidth <= 768) {
                             e.preventDefault();
                             li.classList.toggle('open');
                         }
                     });
-                }
-            });
-
-            // Tutup menu saat klik di luar
-            document.addEventListener('click', function(e) {
-                if (navMenu.classList.contains('open')) {
-                    var isClickInside = navMenu.contains(e.target) || hamburgerBtn.contains(e.target);
-                    if (!isClickInside) {
-                        navMenu.classList.remove('open');
-                        var icon = hamburgerBtn.querySelector('i');
-                        icon.className = 'fas fa-ellipsis-v';
-                    }
                 }
             });
         }
