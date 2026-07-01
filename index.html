@@ -26,6 +26,10 @@
         ul {
             list-style: none;
         }
+        img {
+            max-width: 100%;
+            display: block;
+        }
 
         /* ===== WARNA ===== */
         :root {
@@ -419,63 +423,82 @@
             margin-top: 16px;
         }
 
-        /* ===== SAMBUTAN ===== */
-        .sambutan-card {
+        /* ===== SAMBUTAN dengan FOTO ===== */
+        .sambutan-wrapper {
+            display: flex;
+            gap: 24px;
             background: var(--putih);
             border-radius: 12px;
             box-shadow: var(--bayangan);
-            padding: 28px;
+            padding: 24px;
             border-left: 5px solid var(--hijau);
             position: relative;
             overflow: hidden;
+            align-items: flex-start;
         }
-        .sambutan-card .badge-terbatas {
-            position: absolute;
-            top: 16px;
-            right: 16px;
+        .sambutan-foto {
+            flex: 0 0 120px;
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid var(--hijau-pucat);
+            flex-shrink: 0;
+        }
+        .sambutan-foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .sambutan-teks {
+            flex: 1;
+        }
+        .sambutan-teks .badge-terbatas {
+            display: inline-block;
             background: #ff6b35;
             color: white;
             font-size: 11px;
             font-weight: 700;
-            padding: 4px 14px;
+            padding: 2px 14px;
             border-radius: 50px;
             text-transform: uppercase;
+            margin-bottom: 6px;
         }
-        .sambutan-card h3 {
+        .sambutan-teks h3 {
             font-size: 20px;
             color: var(--hijau-tua);
-            margin-bottom: 4px;
+            margin-bottom: 2px;
         }
-        .sambutan-card .jabatan {
+        .sambutan-teks .jabatan {
             color: var(--hijau-muda);
             font-size: 14px;
             font-weight: 500;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
-        .sambutan-card p {
+        .sambutan-teks p {
             color: #2a3a2a;
             font-size: 14px;
             line-height: 1.8;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
-        .sambutan-card .btn-sambutan {
+        .sambutan-teks .btn-sambutan {
             display: inline-block;
             color: var(--hijau);
             font-weight: 600;
             font-size: 14px;
             transition: 0.3s;
         }
-        .sambutan-card .btn-sambutan:hover {
+        .sambutan-teks .btn-sambutan:hover {
             color: var(--hijau-tua);
         }
-        .sambutan-card .btn-sambutan i {
+        .sambutan-teks .btn-sambutan i {
             transition: 0.3s;
         }
-        .sambutan-card .btn-sambutan:hover i {
+        .sambutan-teks .btn-sambutan:hover i {
             transform: translateX(4px);
         }
 
-        /* ===== BERITA ===== */
+        /* ===== BERITA dengan FOTO ===== */
         .berita-list {
             display: flex;
             flex-direction: column;
@@ -496,25 +519,32 @@
             transform: translateX(6px);
             box-shadow: 0 12px 40px rgba(46, 125, 50, 0.2);
         }
-        .berita-item .date-badge {
-            min-width: 52px;
-            text-align: center;
+        .berita-item .berita-foto {
+            flex: 0 0 70px;
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
             background: var(--hijau-pucat);
-            border-radius: 10px;
-            padding: 4px 8px;
         }
-        .berita-item .date-badge .day {
-            font-size: 20px;
-            font-weight: 800;
-            color: var(--hijau);
-            display: block;
-            line-height: 1.2;
+        .berita-item .berita-foto img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
-        .berita-item .date-badge .month {
-            font-size: 10px;
+        .berita-item .berita-info {
+            flex: 1;
+        }
+        .berita-item .berita-info .date-badge {
+            display: inline-block;
+            background: var(--hijau-pucat);
+            border-radius: 50px;
+            padding: 2px 12px;
+            font-size: 11px;
             font-weight: 600;
-            color: var(--hijau-muda);
-            text-transform: uppercase;
+            color: var(--hijau);
+            margin-bottom: 2px;
         }
         .berita-item .berita-info h4 {
             font-size: 15px;
@@ -572,7 +602,7 @@
             color: #4a5a4a;
         }
 
-        /* ===== FOTO ===== */
+        /* ===== FOTO GALERI (untuk side column) ===== */
         .foto-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -596,15 +626,23 @@
             font-weight: 500;
             padding: 16px;
         }
-        .foto-card:hover {
-            transform: scale(1.02);
-            box-shadow: 0 12px 40px rgba(46, 125, 50, 0.2);
+        .foto-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            inset: 0;
         }
         .foto-card .foto-placeholder {
+            position: relative;
+            z-index: 2;
             display: flex;
             flex-direction: column;
             align-items: center;
             gap: 6px;
+            background: rgba(255,255,255,0.7);
+            padding: 8px 16px;
+            border-radius: 8px;
         }
         .foto-card .foto-placeholder i {
             font-size: 36px;
@@ -613,6 +651,10 @@
         .foto-card .foto-placeholder span {
             font-size: 13px;
             opacity: 0.7;
+        }
+        .foto-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 12px 40px rgba(46, 125, 50, 0.2);
         }
 
         .side-column {
@@ -1031,6 +1073,20 @@
                 right: 10px;
             }
 
+            .sambutan-wrapper {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+            }
+            .sambutan-foto {
+                flex: 0 0 100px;
+                width: 100px;
+                height: 100px;
+            }
+            .sambutan-teks {
+                text-align: center;
+            }
+
             .agenda-grid {
                 grid-template-columns: 1fr;
             }
@@ -1110,21 +1166,18 @@
                 align-items: flex-start;
                 gap: 8px;
             }
-            .berita-item .date-badge {
-                display: flex;
-                gap: 8px;
-                align-items: center;
-                padding: 4px 12px;
+            .berita-item .berita-foto {
+                width: 100%;
+                height: auto;
+                aspect-ratio: 16/9;
             }
-            .berita-item .date-badge .day {
-                font-size: 18px;
+            .sambutan-foto {
+                flex: 0 0 80px;
+                width: 80px;
+                height: 80px;
             }
-            .sambutan-card .badge-terbatas {
-                position: relative;
-                top: auto;
-                right: auto;
-                display: inline-block;
-                margin-bottom: 8px;
+            .sambutan-wrapper {
+                padding: 16px;
             }
             .content-wrapper {
                 padding: 20px 12px;
@@ -1169,7 +1222,7 @@
             </div>
 
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Beranda</a></li>
+                <li><a href="#" class="active"><i class="fas fa-home"></i> Beranda</a></li>
                 <li>
                     <a href="#"><i class="fas fa-building"></i> Profil PD <i class="fas fa-chevron-down arrow"></i></a>
                     <ul class="dropdown">
@@ -1204,21 +1257,21 @@
     <!-- ===== SLIDER ===== -->
     <section class="slider-section">
         <div class="slider-track" id="sliderTrack">
-            <div class="slide" style="background-image: linear-gradient(135deg, #1a4d1a, #2e7d32), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%232e7d32%22/%3E%3Ccircle cx=%22200%22 cy=%22300%22 r=%22120%22 fill=%22%2343a047%22 opacity=%220.3%22/%3E%3Ccircle cx=%22600%22 cy=%22100%22 r=%22180%22 fill=%22%2366bb6a%22 opacity=%220.2%22/%3E%3C/svg%3E');">
+            <div class="slide" style="background-image: linear-gradient(135deg, #1a4d1a, #2e7d32), url('https://picsum.photos/seed/satpol1/1200/600');">
                 <div class="slide-content">
                     <h2>Selamat Datang di Satpol PP</h2>
                     <p>Satuan Polisi Pamong Praja Kabupaten Musi Banyuasin — Menegakkan Perda, Melindungi Masyarakat.</p>
                     <a href="#" class="btn-slide">Pelajari Lebih Lanjut <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="slide" style="background-image: linear-gradient(135deg, #1a4d1a, #388e3c), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%23388e3c%22/%3E%3Ccircle cx=%22300%22 cy=%22150%22 r=%22160%22 fill=%22%2343a047%22 opacity=%220.25%22/%3E%3Ccircle cx=%22500%22 cy=%22350%22 r=%22100%22 fill=%22%2366bb6a%22 opacity=%220.2%22/%3E%3C/svg%3E');">
+            <div class="slide" style="background-image: linear-gradient(135deg, #1a4d1a, #388e3c), url('https://picsum.photos/seed/satpol2/1200/600');">
                 <div class="slide-content">
                     <h2>Penegakan Peraturan Daerah</h2>
                     <p>Komitmen kuat dalam menegakkan Peraturan Daerah dan menjaga ketertiban umum di wilayah Muba.</p>
                     <a href="#" class="btn-slide">Lihat Kegiatan <i class="fas fa-arrow-right"></i></a>
                 </div>
             </div>
-            <div class="slide" style="background-image: linear-gradient(135deg, #1a4d1a, #2e7d32), url('data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22800%22 height=%22500%22%3E%3Crect width=%22800%22 height=%22500%22 fill=%22%232e7d32%22/%3E%3Ccircle cx=%22100%22 cy=%22400%22 r=%22140%22 fill=%22%2343a047%22 opacity=%220.25%22/%3E%3Ccircle cx=%22650%22 cy=%22200%22 r=%22200%22 fill=%22%2366bb6a%22 opacity=%220.15%22/%3E%3C/svg%3E');">
+            <div class="slide" style="background-image: linear-gradient(135deg, #1a4d1a, #2e7d32), url('https://picsum.photos/seed/satpol3/1200/600');">
                 <div class="slide-content">
                     <h2>Perlindungan Masyarakat</h2>
                     <p>Satpol PP hadir sebagai pelindung dan pengayom masyarakat dalam menciptakan lingkungan yang aman dan tertib.</p>
@@ -1249,68 +1302,150 @@
         <div class="beranda-grid">
             <!-- KIRI -->
             <div>
-                <div class="sambutan-card">
-                    <span class="badge-terbatas"><i class="fas fa-lock"></i> Terbatas</span>
-                    <h3>Sambutan Kepala Satpol PP</h3>
-                    <p class="jabatan">Kepala Satuan Polisi Pamong Praja Kabupaten Muba</p>
-                    <p>Assalamu'alaikum warahmatullahi wabarakatuh. Puji syukur ke hadirat Allah SWT, kami menyambut Anda di website resmi Satpol PP Kabupaten Musi Banyuasin. Kami berkomitmen untuk memberikan pelayanan terbaik dalam penegakan Perda dan ketertiban umum demi terciptanya masyarakat yang aman dan tertib.</p>
-                    <a href="#" class="btn-sambutan">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+
+                <!-- ===== SAMBUTAN KEPALA SATPOL PP dengan FOTO ===== -->
+                <div class="sambutan-wrapper">
+                    <div class="sambutan-foto">
+                        <img src="https://picsum.photos/seed/kepala/200/200" alt="Kepala Satpol PP" />
+                    </div>
+                    <div class="sambutan-teks">
+                        <span class="badge-terbatas"><i class="fas fa-lock"></i> Terbatas</span>
+                        <h3>Sambutan Kepala Satpol PP</h3>
+                        <p class="jabatan">Kepala Satuan Polisi Pamong Praja Kabupaten Muba</p>
+                        <p>Assalamu'alaikum warahmatullahi wabarakatuh. Puji syukur ke hadirat Allah SWT, kami menyambut Anda di website resmi Satpol PP Kabupaten Musi Banyuasin. Kami berkomitmen untuk memberikan pelayanan terbaik dalam penegakan Perda dan ketertiban umum demi terciptanya masyarakat yang aman dan tertib.</p>
+                        <a href="#" class="btn-sambutan">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
                 </div>
 
+                <!-- ===== BERITA TERBARU dengan FOTO ===== -->
                 <div style="margin-top: 28px;">
                     <h3 style="font-size: 20px; color: var(--hijau-tua); margin-bottom: 14px; display: flex; align-items: center; gap: 10px;">
                         <i class="fas fa-bullhorn" style="color: var(--hijau);"></i> Berita Terbaru
                     </h3>
                     <div class="berita-list">
+
                         <div class="berita-item">
-                            <div class="date-badge"><span class="day">15</span><span class="month">Jun</span></div>
-                            <div class="berita-info"><h4>Satpol PP Gelar Razia Protokol Kesehatan</h4><p>Kegiatan razia di pasar tradisional untuk menegakkan aturan protokol kesehatan.</p></div>
+                            <div class="berita-foto">
+                                <img src="https://picsum.photos/seed/razia/150/150" alt="Razia" />
+                            </div>
+                            <div class="berita-info">
+                                <span class="date-badge"><i class="far fa-calendar-alt"></i> 15 Juni 2026</span>
+                                <h4>Satpol PP Gelar Razia Protokol Kesehatan</h4>
+                                <p>Kegiatan razia di pasar tradisional untuk menegakkan aturan protokol kesehatan.</p>
+                            </div>
                         </div>
+
                         <div class="berita-item">
-                            <div class="date-badge"><span class="day">12</span><span class="month">Jun</span></div>
-                            <div class="berita-info"><h4>Pembinaan Kesiapsiagaan Anggota Satpol PP</h4><p>Pelatihan fisik dan kedisiplinan bagi anggota Satpol PP Kabupaten Muba.</p></div>
+                            <div class="berita-foto">
+                                <img src="https://picsum.photos/seed/pelatihan/150/150" alt="Pelatihan" />
+                            </div>
+                            <div class="berita-info">
+                                <span class="date-badge"><i class="far fa-calendar-alt"></i> 12 Juni 2026</span>
+                                <h4>Pembinaan Kesiapsiagaan Anggota Satpol PP</h4>
+                                <p>Pelatihan fisik dan kedisiplinan bagi anggota Satpol PP Kabupaten Muba.</p>
+                            </div>
                         </div>
+
                         <div class="berita-item">
-                            <div class="date-badge"><span class="day">08</span><span class="month">Jun</span></div>
-                            <div class="berita-info"><h4>Rapat Koordinasi Penertiban PKL</h4><p>Sinergi dengan Satpol PP dan Dinas Perdagangan untuk penertiban PKL.</p></div>
+                            <div class="berita-foto">
+                                <img src="https://picsum.photos/seed/rapat/150/150" alt="Rapat" />
+                            </div>
+                            <div class="berita-info">
+                                <span class="date-badge"><i class="far fa-calendar-alt"></i> 08 Juni 2026</span>
+                                <h4>Rapat Koordinasi Penertiban PKL</h4>
+                                <p>Sinergi dengan Satpol PP dan Dinas Perdagangan untuk penertiban PKL.</p>
+                            </div>
                         </div>
+
                         <div class="berita-item">
-                            <div class="date-badge"><span class="day">05</span><span class="month">Jun</span></div>
-                            <div class="berita-info"><h4>Satpol PP Dukung Program Muba Bersih</h4><p>Partisipasi aktif dalam gerakan kebersihan dan penataan kota.</p></div>
+                            <div class="berita-foto">
+                                <img src="https://picsum.photos/seed/bersih/150/150" alt="Muba Bersih" />
+                            </div>
+                            <div class="berita-info">
+                                <span class="date-badge"><i class="far fa-calendar-alt"></i> 05 Juni 2026</span>
+                                <h4>Satpol PP Dukung Program Muba Bersih</h4>
+                                <p>Partisipasi aktif dalam gerakan kebersihan dan penataan kota.</p>
+                            </div>
                         </div>
+
                     </div>
                 </div>
+
             </div>
 
             <!-- KANAN -->
             <div class="side-column">
+
+                <!-- ===== AGENDA PIMPINAN ===== -->
                 <div>
                     <h3 style="font-size: 20px; color: var(--hijau-tua); margin-bottom: 14px; display: flex; align-items: center; gap: 10px;">
                         <i class="fas fa-calendar-alt" style="color: var(--hijau);"></i> Agenda Pimpinan
                     </h3>
                     <div class="agenda-grid">
-                        <div class="agenda-card"><div class="agenda-date"><i class="far fa-calendar-alt"></i> 20 Juni 2026</div><h4>Rapat Koordinasi Forkopimda</h4><p>Sinergi penegakan Perda dan ketertiban umum</p></div>
-                        <div class="agenda-card"><div class="agenda-date"><i class="far fa-calendar-alt"></i> 18 Juni 2026</div><h4>Kunjungan ke Pasar Tradisional</h4><p>Monitoring dan evaluasi penertiban PKL</p></div>
-                        <div class="agenda-card"><div class="agenda-date"><i class="far fa-calendar-alt"></i> 15 Juni 2026</div><h4>Rapat Internal Satpol PP</h4><p>Evaluasi kinerja dan perencanaan program</p></div>
-                        <div class="agenda-card"><div class="agenda-date"><i class="far fa-calendar-alt"></i> 12 Juni 2026</div><h4>Pelatihan Penegakan Hukum</h4><p>Peningkatan kapasitas anggota Satpol PP</p></div>
+                        <div class="agenda-card">
+                            <div class="agenda-date"><i class="far fa-calendar-alt"></i> 20 Juni 2026</div>
+                            <h4>Rapat Koordinasi Forkopimda</h4>
+                            <p>Sinergi penegakan Perda dan ketertiban umum</p>
+                        </div>
+                        <div class="agenda-card">
+                            <div class="agenda-date"><i class="far fa-calendar-alt"></i> 18 Juni 2026</div>
+                            <h4>Kunjungan ke Pasar Tradisional</h4>
+                            <p>Monitoring dan evaluasi penertiban PKL</p>
+                        </div>
+                        <div class="agenda-card">
+                            <div class="agenda-date"><i class="far fa-calendar-alt"></i> 15 Juni 2026</div>
+                            <h4>Rapat Internal Satpol PP</h4>
+                            <p>Evaluasi kinerja dan perencanaan program</p>
+                        </div>
+                        <div class="agenda-card">
+                            <div class="agenda-date"><i class="far fa-calendar-alt"></i> 12 Juni 2026</div>
+                            <h4>Pelatihan Penegakan Hukum</h4>
+                            <p>Peningkatan kapasitas anggota Satpol PP</p>
+                        </div>
                     </div>
                 </div>
 
+                <!-- ===== GALERI FOTO (4 foto) ===== -->
                 <div>
                     <h3 style="font-size: 20px; color: var(--hijau-tua); margin-bottom: 14px; display: flex; align-items: center; gap: 10px;">
                         <i class="fas fa-images" style="color: var(--hijau);"></i> Galeri Foto
                     </h3>
                     <div class="foto-grid">
-                        <div class="foto-card"><div class="foto-placeholder"><i class="fas fa-image"></i><span>Kegiatan Razia</span></div></div>
-                        <div class="foto-card"><div class="foto-placeholder"><i class="fas fa-image"></i><span>Pembinaan Anggota</span></div></div>
-                        <div class="foto-card"><div class="foto-placeholder"><i class="fas fa-image"></i><span>Penertiban PKL</span></div></div>
-                        <div class="foto-card"><div class="foto-placeholder"><i class="fas fa-image"></i><span>Rapat Koordinasi</span></div></div>
+                        <div class="foto-card">
+                            <img src="https://picsum.photos/seed/kegiatan1/400/300" alt="Kegiatan 1" />
+                            <div class="foto-placeholder">
+                                <i class="fas fa-image"></i>
+                                <span>Kegiatan Razia</span>
+                            </div>
+                        </div>
+                        <div class="foto-card">
+                            <img src="https://picsum.photos/seed/kegiatan2/400/300" alt="Kegiatan 2" />
+                            <div class="foto-placeholder">
+                                <i class="fas fa-image"></i>
+                                <span>Pembinaan Anggota</span>
+                            </div>
+                        </div>
+                        <div class="foto-card">
+                            <img src="https://picsum.photos/seed/kegiatan3/400/300" alt="Kegiatan 3" />
+                            <div class="foto-placeholder">
+                                <i class="fas fa-image"></i>
+                                <span>Penertiban PKL</span>
+                            </div>
+                        </div>
+                        <div class="foto-card">
+                            <img src="https://picsum.photos/seed/kegiatan4/400/300" alt="Kegiatan 4" />
+                            <div class="foto-placeholder">
+                                <i class="fas fa-image"></i>
+                                <span>Rapat Koordinasi</span>
+                            </div>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
 
-        <!-- ===== PROFIL PD ===== -->
+        <!-- ===== PROFIL PD (ringkasan) ===== -->
         <div class="profil-section">
             <div class="section-title" style="margin-bottom: 16px;">
                 <h2>Profil Satpol PP</h2>
@@ -1566,7 +1701,7 @@
                 });
             });
 
-        console.log('✅ Website Satpol PP siap!');
+        console.log('✅ Website Satpol PP dengan foto-foto siap!');
     </script>
 
 </body>
