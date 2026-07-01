@@ -95,12 +95,11 @@
             display: block;
         }
 
-        /* ===== HAMBURGER (Tombol titik 3) - FIXED di pojok kanan ===== */
+        /* ===== HAMBURGER (Tombol titik 3) - POSISI BARU ===== */
         .hamburger-btn {
-            position: fixed;
-            top: 16px;
-            right: 16px;
-            z-index: 1100;
+            position: relative; /* atau sticky, agar tidak fixed */
+            top: 10px; /* turunkan sedikit */
+            margin-bottom: 10px;
             background: var(--hijau-tua);
             border: none;
             color: white;
@@ -111,7 +110,7 @@
             box-shadow: 0 2px 8px rgba(0,0,0,0.2);
             transition: 0.3s;
             line-height: 1;
-            display: block; /* Selalu terlihat */
+            display: inline-block; /* agar tidak full-width */
         }
         .hamburger-btn:hover { background: var(--hijau); }
 
@@ -1007,10 +1006,13 @@
         @media (max-width: 768px) {
             /* === HAMBURGER TETAP DI KANAN ATAS === */
             .hamburger-btn {
-                font-size: 22px;
-                padding: 6px 12px;
-                top: 16px;
-                right: 16px;
+                position: relative; /* ikut scroll */
+                top: 5px;
+                right: auto;
+                font-size: 20px;
+                padding: 4px 10px;
+                margin-bottom: 8px;
+                display: inline-block;
             }
 
             /* === HEADER MENJADI FLEX WRAP === */
@@ -1136,10 +1138,9 @@
 
         @media (max-width: 480px) {
             .hamburger-btn {
-                font-size: 20px;
-                padding: 4px 10px;
-                top: 12px;
-                right: 12px;
+                font-size: 18px;
+                padding: 4px 8px;
+                top: 2px;
             }
             .nav-menu { margin-top: 6px; }
             .slider-section { height: 220px; }
@@ -1168,7 +1169,7 @@
 </head>
 <body>
 
-    <!-- ===== HAMBURGER (Tombol titik 3) - FIXED di pojok kanan ===== -->
+    <!-- ===== HAMBURGER (Tombol titik 3) - POSISI BARU ===== -->
     <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
         <i class="fas fa-ellipsis-v"></i>
     </button>
@@ -1428,7 +1429,7 @@
             </div>
         </div>
 
-        <!-- ===== PROFIL PD (ringkasan) ===== -->
+        <!-- ===== PROFIL SATPOL PP (DIPINDAHKAN KE BAWAH BERANDA) ===== -->
         <div class="profil-section">
             <div class="section-title" style="margin-bottom: 12px;">
                 <h2>Profil Satpol PP</h2>
