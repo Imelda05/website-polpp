@@ -64,8 +64,7 @@
         .header {
             background: var(--putih);
             box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-            position: sticky;
-            top: 0;
+            position: relative;
             z-index: 999;
         }
         .header .container {
@@ -73,6 +72,7 @@
             margin: 0 auto;
             padding: 10px 16px;
             display: flex;
+            flex-wrap: wrap;
             justify-content: space-between;
             align-items: center;
         }
@@ -95,10 +95,10 @@
             display: block;
         }
 
-        /* ===== HAMBURGER (Tombol titik 3) - STICKY TIDAK MENUTUPI ===== */
+        /* ===== HAMBURGER (Tombol titik 3) - STICKY DI KANAN ATAS ===== */
         .hamburger-btn {
             position: sticky;
-            top: 24px;              /* turunkan agar tidak terlalu tinggi */
+            top: 16px;
             float: right;
             margin-right: 16px;
             margin-bottom: 10px;
@@ -1741,6 +1741,7 @@
                 if (pageId === 'beranda' && sliderElement) {
                     sliderElement.style.display = 'block';
                 }
+                // Scroll ke atas halaman
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
