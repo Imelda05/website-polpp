@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
     <style>
-        /* ===== RESET & WARNA ===== */
+        /* ===== RESET ===== */
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
             font-family: 'Poppins', sans-serif;
@@ -19,6 +19,7 @@
         ul { list-style: none; }
         img { max-width: 100%; display: block; }
 
+        /* ===== WARNA ===== */
         :root {
             --hijau-tua: #1a4d1a;
             --hijau: #2e7d32;
@@ -26,19 +27,20 @@
             --hijau-pucat: #e8f5e9;
             --putih: #ffffff;
             --abu: #f5f8f5;
+            --bayangan: 0 8px 30px rgba(46,125,50,0.12);
         }
 
         /* ===== TOP BAR ===== */
         .top-bar {
             background: var(--hijau-tua);
             color: var(--putih);
-            padding: 6px 16px;
-            font-size: 12px;
+            padding: 6px 20px;
+            font-size: 13px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 4px 12px;
+            gap: 8px 20px;
             text-align: center;
         }
         .top-bar-left {
@@ -46,17 +48,17 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: center;
-            gap: 4px 12px;
+            gap: 8px 16px;
         }
-        .top-bar-left i { margin-right: 4px; color: #66bb6a; }
+        .top-bar-left i { margin-right: 6px; color: #66bb6a; }
         .top-bar-right .social-icons {
             display: flex;
-            gap: 8px;
+            gap: 12px;
         }
         .top-bar-right .social-icons a {
             color: #e8f5e9;
             transition: 0.3s;
-            font-size: 14px;
+            font-size: 15px;
         }
         .top-bar-right .social-icons a:hover { color: var(--putih); }
 
@@ -64,14 +66,13 @@
         .header {
             background: var(--putih);
             box-shadow: 0 2px 20px rgba(0,0,0,0.06);
-            position: sticky;
-            top: 0;
+            position: relative;
             z-index: 999;
         }
         .header .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 10px 16px;
+            padding: 10px 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -79,59 +80,39 @@
         .logo {
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
         }
-        .logo img { height: 45px; width: auto; }
+        .logo img { height: 55px; width: auto; }
         .logo-text h1 {
-            font-size: 18px;
+            font-size: 20px;
             font-weight: 800;
             color: var(--hijau-tua);
             line-height: 1.2;
         }
         .logo-text span {
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 400;
             color: var(--hijau-muda);
             display: block;
         }
 
-        /* ===== HAMBURGER (Tombol titik 3) - POSISI BARU ===== */
-        .hamburger-btn {
-            position: relative; /* atau sticky, agar tidak fixed */
-            top: 10px; /* turunkan sedikit */
-            margin-bottom: 10px;
-            background: var(--hijau-tua);
-            border: none;
-            color: white;
-            font-size: 24px;
-            padding: 6px 12px;
-            border-radius: 6px;
-            cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
-            transition: 0.3s;
-            line-height: 1;
-            display: inline-block; /* agar tidak full-width */
-        }
-        .hamburger-btn:hover { background: var(--hijau); }
-
-        /* ===== NAVIGASI (Desktop) ===== */
+        /* ===== NAVIGASI DESKTOP ===== */
         .nav-menu {
             display: flex;
             align-items: center;
-            gap: 2px;
+            gap: 4px;
         }
         .nav-menu>li { position: relative; }
         .nav-menu>li>a {
             display: flex;
             align-items: center;
             gap: 6px;
-            padding: 8px 14px;
+            padding: 10px 16px;
             font-size: 14px;
             font-weight: 600;
             color: var(--hijau-tua);
-            border-radius: 6px;
+            border-radius: 8px;
             transition: 0.3s;
-            cursor: pointer;
         }
         .nav-menu>li>a:hover,
         .nav-menu>li>a.active {
@@ -145,19 +126,19 @@
         }
         .nav-menu>li:hover>a .arrow { transform: rotate(180deg); }
 
-        /* ===== DROPDOWN ===== */
+        /* ===== DROPDOWN DESKTOP ===== */
         .dropdown {
             position: absolute;
-            top: calc(100% + 4px);
+            top: calc(100% + 6px);
             left: 0;
-            min-width: 200px;
+            min-width: 220px;
             background: var(--putih);
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            padding: 6px 0;
+            border-radius: 12px;
+            box-shadow: 0 12px 40px rgba(0,0,0,0.2);
+            padding: 8px 0;
             opacity: 0;
             visibility: hidden;
-            transform: translateY(8px);
+            transform: translateY(10px);
             transition: 0.3s;
             border: 1px solid #dce8dc;
             z-index: 100;
@@ -171,13 +152,12 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            padding: 8px 18px;
+            padding: 10px 20px;
             font-size: 13px;
             font-weight: 500;
             color: var(--hijau-tua);
             transition: 0.3s;
             border-left: 3px solid transparent;
-            cursor: pointer;
         }
         .dropdown li a:hover {
             background: var(--hijau-pucat);
@@ -191,11 +171,27 @@
             text-align: center;
         }
 
+        /* ===== HAMBURGER ===== */
+        .hamburger-btn {
+            display: none;
+            background: var(--hijau-tua);
+            border: none;
+            color: white;
+            font-size: 28px;
+            padding: 8px 14px;
+            border-radius: 8px;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+            transition: 0.3s;
+            line-height: 1;
+        }
+        .hamburger-btn:hover { background: var(--hijau); }
+
         /* ===== SLIDER ===== */
         .slider-section {
             position: relative;
             overflow: hidden;
-            height: 380px;
+            height: 460px;
             background: var(--hijau-tua);
         }
         .slider-track {
@@ -230,26 +226,26 @@
             max-width: 700px;
         }
         .slide-content h2 {
-            font-size: 34px;
+            font-size: 40px;
             font-weight: 800;
-            margin-bottom: 10px;
+            margin-bottom: 12px;
             text-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
         .slide-content p {
-            font-size: 16px;
+            font-size: 18px;
             font-weight: 300;
             opacity: 0.95;
             text-shadow: 0 2px 12px rgba(0,0,0,0.25);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
         }
         .slide-content .btn-slide {
             display: inline-block;
-            padding: 10px 28px;
+            padding: 12px 32px;
             background: var(--putih);
             color: var(--hijau-tua);
             font-weight: 700;
             border-radius: 50px;
-            font-size: 14px;
+            font-size: 15px;
             transition: 0.3s;
             box-shadow: 0 4px 16px rgba(0,0,0,0.15);
         }
@@ -263,14 +259,14 @@
             top: 50%;
             transform: translateY(-50%);
             z-index: 10;
-            width: 38px;
-            height: 38px;
+            width: 44px;
+            height: 44px;
             border-radius: 50%;
             background: rgba(255,255,255,0.2);
             backdrop-filter: blur(6px);
             border: 2px solid rgba(255,255,255,0.3);
             color: var(--putih);
-            font-size: 16px;
+            font-size: 18px;
             cursor: pointer;
             transition: 0.3s;
             display: flex;
@@ -281,20 +277,20 @@
             background: var(--putih);
             color: var(--hijau-tua);
         }
-        .slider-btn.prev { left: 16px; }
-        .slider-btn.next { right: 16px; }
+        .slider-btn.prev { left: 20px; }
+        .slider-btn.next { right: 20px; }
         .slider-dots {
             position: absolute;
-            bottom: 16px;
+            bottom: 20px;
             left: 50%;
             transform: translateX(-50%);
             z-index: 10;
             display: flex;
-            gap: 8px;
+            gap: 10px;
         }
         .slider-dots span {
-            width: 10px;
-            height: 10px;
+            width: 12px;
+            height: 12px;
             border-radius: 50%;
             background: rgba(255,255,255,0.35);
             cursor: pointer;
@@ -307,11 +303,11 @@
             transform: scale(1.15);
         }
 
-        /* ===== KONTEN UTAMA ===== */
+        /* ===== KONTEN ===== */
         .content-wrapper {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 24px 16px;
+            padding: 30px 20px;
         }
 
         /* ===== SEMUA TEKS RATA KIRI ===== */
@@ -355,19 +351,14 @@
         .logo-text h1,
         .logo-text span,
         .nav-menu li a,
-        .dropdown li a,
-        .subpage-section,
-        .subpage-section h2,
-        .subpage-section p,
-        .subpage-section ul,
-        .subpage-section li {
+        .dropdown li a {
             text-align: left !important;
         }
 
         /* ===== SECTION TITLE ===== */
-        .section-title { margin-bottom: 24px; }
+        .section-title { margin-bottom: 32px; }
         .section-title h2 {
-            font-size: 26px;
+            font-size: 30px;
             font-weight: 700;
             color: var(--hijau-tua);
             position: relative;
@@ -376,45 +367,47 @@
         .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -6px;
+            bottom: -8px;
             left: 0;
-            width: 50px;
+            width: 60px;
             height: 4px;
             background: var(--hijau);
             border-radius: 4px;
         }
         .section-title p {
             color: #4a6a4a;
-            margin-top: 10px;
-            font-size: 14px;
+            margin-top: 12px;
+            font-size: 15px;
         }
 
         /* ===== GRID ===== */
         .beranda-grid {
             display: grid;
             grid-template-columns: 2fr 1fr;
-            gap: 24px;
-            margin-top: 12px;
+            gap: 30px;
+            margin-top: 16px;
         }
 
         /* ===== SAMBUTAN ===== */
         .sambutan-wrapper {
             display: flex;
-            gap: 20px;
+            gap: 30px;
             background: var(--putih);
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            padding: 20px;
-            border-left: 4px solid var(--hijau);
+            border-radius: 12px;
+            box-shadow: var(--bayangan);
+            padding: 24px;
+            border-left: 5px solid var(--hijau);
+            position: relative;
+            overflow: hidden;
             align-items: center;
         }
         .sambutan-foto {
-            flex: 0 0 100px;
-            width: 100px;
-            height: 100px;
+            flex: 0 0 180px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             overflow: hidden;
-            border: 3px solid var(--hijau-pucat);
+            border: 4px solid var(--hijau-pucat);
             flex-shrink: 0;
         }
         .sambutan-foto img {
@@ -427,35 +420,35 @@
             display: inline-block;
             background: #ff6b35;
             color: white;
-            font-size: 10px;
+            font-size: 11px;
             font-weight: 700;
-            padding: 2px 12px;
+            padding: 2px 14px;
             border-radius: 50px;
             text-transform: uppercase;
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
         .sambutan-teks h3 {
-            font-size: 18px;
+            font-size: 22px;
             color: var(--hijau-tua);
             margin-bottom: 2px;
         }
         .sambutan-teks .jabatan {
             color: var(--hijau-muda);
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 500;
-            margin-bottom: 8px;
+            margin-bottom: 10px;
         }
         .sambutan-teks p {
             color: #2a3a2a;
-            font-size: 13px;
-            line-height: 1.7;
-            margin-bottom: 8px;
+            font-size: 14px;
+            line-height: 1.8;
+            margin-bottom: 10px;
         }
         .sambutan-teks .btn-sambutan {
             display: inline-block;
             color: var(--hijau);
             font-weight: 600;
-            font-size: 13px;
+            font-size: 14px;
             transition: 0.3s;
         }
         .sambutan-teks .btn-sambutan:hover {
@@ -472,28 +465,28 @@
         .berita-list {
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            gap: 14px;
         }
         .berita-item {
             display: flex;
-            gap: 12px;
+            gap: 14px;
             background: var(--putih);
-            border-radius: 10px;
-            padding: 12px 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            border-radius: 12px;
+            padding: 14px 18px;
+            box-shadow: var(--bayangan);
             transition: 0.3s;
             align-items: center;
             cursor: pointer;
         }
         .berita-item:hover {
-            transform: translateX(4px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transform: translateX(6px);
+            box-shadow: 0 12px 40px rgba(46,125,50,0.2);
         }
         .berita-item .berita-foto {
-            flex: 0 0 70px;
-            width: 70px;
-            height: 70px;
-            border-radius: 6px;
+            flex: 0 0 100px;
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
             overflow: hidden;
             flex-shrink: 0;
             background: var(--hijau-pucat);
@@ -508,65 +501,66 @@
             display: inline-block;
             background: var(--hijau-pucat);
             border-radius: 50px;
-            padding: 2px 12px;
-            font-size: 10px;
+            padding: 2px 14px;
+            font-size: 11px;
             font-weight: 600;
             color: var(--hijau);
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
         .berita-item .berita-info h4 {
-            font-size: 14px;
+            font-size: 16px;
             font-weight: 600;
             color: var(--hijau-tua);
-            margin-bottom: 2px;
+            margin-bottom: 4px;
             line-height: 1.3;
         }
         .berita-item .berita-info p {
-            font-size: 12px;
+            font-size: 13px;
             color: #5a6a5a;
             display: -webkit-box;
-            -webkit-line-clamp: 1;
+            -webkit-line-clamp: 2;
             -webkit-box-orient: vertical;
             overflow: hidden;
+            line-height: 1.5;
         }
 
         /* ===== AGENDA ===== */
         .agenda-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: 6px;
+            gap: 16px;
+            margin-top: 8px;
         }
         .agenda-card {
             background: var(--putih);
-            border-radius: 10px;
-            padding: 14px 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            border-left: 3px solid var(--hijau-muda);
+            border-radius: 12px;
+            padding: 18px 20px;
+            box-shadow: var(--bayangan);
+            border-left: 4px solid var(--hijau-muda);
             transition: 0.3s;
             cursor: pointer;
         }
         .agenda-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(46,125,50,0.2);
         }
         .agenda-card .agenda-date {
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 600;
             color: var(--hijau-muda);
             display: flex;
             align-items: center;
-            gap: 4px;
-            margin-bottom: 2px;
+            gap: 6px;
+            margin-bottom: 4px;
         }
         .agenda-card h4 {
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 600;
             color: var(--hijau-tua);
             margin-bottom: 2px;
         }
         .agenda-card p {
-            font-size: 12px;
+            font-size: 13px;
             color: #4a5a4a;
         }
 
@@ -574,13 +568,13 @@
         .foto-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
-            margin-top: 6px;
+            gap: 14px;
+            margin-top: 8px;
         }
         .foto-card {
-            border-radius: 10px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            box-shadow: var(--bayangan);
             position: relative;
             aspect-ratio: 4/3;
             background: var(--hijau-pucat);
@@ -590,9 +584,9 @@
             align-items: center;
             justify-content: center;
             color: var(--hijau);
-            font-size: 13px;
+            font-size: 14px;
             font-weight: 500;
-            padding: 12px;
+            padding: 16px;
         }
         .foto-card img {
             width: 100%;
@@ -607,48 +601,48 @@
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 4px;
+            gap: 6px;
             background: rgba(255,255,255,0.7);
-            padding: 6px 12px;
-            border-radius: 6px;
+            padding: 8px 16px;
+            border-radius: 8px;
         }
         .foto-card .foto-placeholder i {
-            font-size: 30px;
+            font-size: 36px;
             opacity: 0.5;
         }
         .foto-card .foto-placeholder span {
-            font-size: 12px;
+            font-size: 13px;
             opacity: 0.7;
         }
         .foto-card:hover {
             transform: scale(1.02);
-            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+            box-shadow: 0 12px 40px rgba(46,125,50,0.2);
         }
 
         .side-column {
             display: flex;
             flex-direction: column;
-            gap: 20px;
+            gap: 28px;
         }
 
         /* ===== PROFIL ===== */
         .profil-section {
             background: var(--putih);
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            padding: 20px;
-            margin-top: 24px;
+            border-radius: 12px;
+            box-shadow: var(--bayangan);
+            padding: 28px;
+            margin-top: 32px;
         }
         .profil-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-            gap: 10px;
-            margin-top: 10px;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 14px;
+            margin-top: 14px;
         }
         .profil-item {
             background: var(--hijau-pucat);
-            border-radius: 8px;
-            padding: 14px 10px;
+            border-radius: 10px;
+            padding: 18px 12px;
             text-align: center;
             transition: 0.3s;
             cursor: pointer;
@@ -656,114 +650,58 @@
         }
         .profil-item:hover {
             border-color: var(--hijau-muda);
-            transform: translateY(-3px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transform: translateY(-4px);
+            box-shadow: var(--bayangan);
         }
         .profil-item i {
-            font-size: 24px;
+            font-size: 28px;
             color: var(--hijau);
-            margin-bottom: 4px;
-        }
-        .profil-item h4 {
-            font-size: 12px;
-            font-weight: 600;
-            color: var(--hijau-tua);
-        }
-
-        /* ===== SUBPAGE ===== */
-        .subpage-section {
-            display: none;
-            background: var(--putih);
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            padding: 24px;
-            margin-top: 16px;
-        }
-        .subpage-section.active {
-            display: block;
-        }
-        .subpage-section h2 {
-            font-size: 24px;
-            color: var(--hijau-tua);
             margin-bottom: 6px;
         }
-        .subpage-section .subpage-meta {
-            color: var(--hijau-muda);
+        .profil-item h4 {
             font-size: 13px;
-            margin-bottom: 12px;
-        }
-        .subpage-section p {
-            color: #3a4a3a;
-            font-size: 14px;
-            line-height: 1.8;
-            margin-bottom: 10px;
-        }
-        .subpage-section ul {
-            list-style: disc;
-            padding-left: 20px;
-            margin: 8px 0;
-            color: #3a4a3a;
-        }
-        .subpage-section ul li {
-            margin-bottom: 4px;
-            line-height: 1.6;
-        }
-        .subpage-section .btn-back {
-            display: inline-block;
-            padding: 8px 24px;
-            background: var(--hijau);
-            color: var(--putih);
-            border-radius: 50px;
             font-weight: 600;
-            font-size: 13px;
-            transition: 0.3s;
-            cursor: pointer;
-            border: none;
-            margin-top: 12px;
-        }
-        .subpage-section .btn-back:hover {
-            background: var(--hijau-tua);
-            transform: translateY(-2px);
+            color: var(--hijau-tua);
         }
 
         /* ===== DOKUMEN & AGENDA ===== */
         .dokumen-agenda {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-top: 24px;
+            gap: 30px;
+            margin-top: 32px;
         }
         .dokumen-box,
         .agenda-box {
             background: var(--putih);
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--bayangan);
+            padding: 24px;
         }
         .dokumen-box h3,
         .agenda-box h3 {
-            font-size: 18px;
+            font-size: 20px;
             color: var(--hijau-tua);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
         .dokumen-box h3 i,
         .agenda-box h3 i { color: var(--hijau); }
         .dokumen-list {
             display: flex;
             flex-direction: column;
-            gap: 6px;
+            gap: 8px;
         }
         .dokumen-list a {
             display: flex;
             align-items: center;
-            gap: 10px;
-            padding: 8px 12px;
+            gap: 12px;
+            padding: 10px 14px;
             background: var(--abu);
-            border-radius: 6px;
-            font-size: 13px;
+            border-radius: 8px;
+            font-size: 14px;
             font-weight: 500;
             color: var(--hijau-tua);
             transition: 0.3s;
@@ -775,30 +713,30 @@
         }
         .dokumen-list a i {
             color: var(--hijau);
-            font-size: 16px;
+            font-size: 18px;
         }
         .agenda-list {
             display: flex;
             flex-direction: column;
-            gap: 8px;
+            gap: 10px;
         }
         .agenda-list .agenda-item {
             display: flex;
-            gap: 10px;
-            padding: 8px 12px;
+            gap: 12px;
+            padding: 10px 14px;
             background: var(--abu);
-            border-radius: 6px;
+            border-radius: 8px;
             align-items: center;
             cursor: pointer;
         }
         .agenda-list .agenda-item .agenda-date-sm {
-            font-size: 11px;
+            font-size: 12px;
             font-weight: 700;
             color: var(--hijau);
-            min-width: 44px;
+            min-width: 48px;
         }
         .agenda-list .agenda-item p {
-            font-size: 13px;
+            font-size: 14px;
             color: var(--hijau-tua);
         }
 
@@ -806,51 +744,51 @@
         .pub-dok {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 24px;
-            margin-top: 24px;
+            gap: 30px;
+            margin-top: 32px;
         }
         .pub-box,
         .dok-box {
             background: var(--putih);
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            padding: 20px;
+            border-radius: 12px;
+            box-shadow: var(--bayangan);
+            padding: 24px;
         }
         .pub-box h3,
         .dok-box h3 {
-            font-size: 18px;
+            font-size: 20px;
             color: var(--hijau-tua);
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             display: flex;
             align-items: center;
-            gap: 8px;
+            gap: 10px;
         }
         .pub-box h3 i,
         .dok-box h3 i { color: var(--hijau); }
         .pub-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 12px;
         }
         .pub-grid .pub-item {
             background: var(--hijau-pucat);
             border-radius: 8px;
-            padding: 12px;
+            padding: 14px;
             text-align: center;
             transition: 0.3s;
             cursor: pointer;
         }
         .pub-grid .pub-item:hover {
             transform: translateY(-3px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            box-shadow: var(--bayangan);
         }
         .pub-grid .pub-item i {
-            font-size: 24px;
+            font-size: 26px;
             color: var(--hijau);
-            margin-bottom: 2px;
+            margin-bottom: 4px;
         }
         .pub-grid .pub-item span {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 500;
             color: var(--hijau-tua);
             display: block;
@@ -858,12 +796,12 @@
         .dok-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 10px;
+            gap: 12px;
         }
         .dok-grid .dok-item {
             background: var(--hijau-pucat);
             border-radius: 8px;
-            padding: 12px;
+            padding: 14px;
             text-align: center;
             transition: 0.3s;
             cursor: pointer;
@@ -876,15 +814,15 @@
         }
         .dok-grid .dok-item:hover {
             transform: translateY(-3px);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            box-shadow: var(--bayangan);
         }
         .dok-grid .dok-item i {
-            font-size: 28px;
+            font-size: 32px;
             color: var(--hijau);
             opacity: 0.6;
         }
         .dok-grid .dok-item span {
-            font-size: 12px;
+            font-size: 13px;
             font-weight: 500;
             color: var(--hijau-tua);
         }
@@ -892,29 +830,28 @@
         /* ===== SARAN ===== */
         .saran-section {
             background: var(--putih);
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            padding: 24px;
-            margin-top: 24px;
+            border-radius: 12px;
+            box-shadow: var(--bayangan);
+            padding: 32px;
+            margin-top: 32px;
         }
         .saran-section h3 {
-            font-size: 20px;
+            font-size: 22px;
             color: var(--hijau-tua);
-            margin-bottom: 4px;
+            margin-bottom: 6px;
         }
         .saran-section p {
-            color: #4a6a4a;
-            margin-bottom: 14px;
-            font-size: 14px;
+            color: #4a5a4a;
+            margin-bottom: 18px;
         }
         .saran-section .btn-saran {
             display: inline-block;
-            padding: 10px 32px;
+            padding: 12px 40px;
             background: var(--hijau);
             color: var(--putih);
             font-weight: 700;
             border-radius: 50px;
-            font-size: 14px;
+            font-size: 16px;
             transition: 0.3s;
             border: none;
             cursor: pointer;
@@ -929,8 +866,8 @@
         .footer {
             background: var(--hijau-tua);
             color: #e8f5e9;
-            padding: 30px 16px 16px;
-            margin-top: 30px;
+            padding: 40px 20px 20px;
+            margin-top: 40px;
         }
         .footer .container {
             max-width: 1200px;
@@ -939,29 +876,29 @@
         .footer-grid {
             display: grid;
             grid-template-columns: 2fr 1fr 1fr 1fr;
-            gap: 24px;
-            margin-bottom: 16px;
+            gap: 30px;
+            margin-bottom: 24px;
         }
         .footer-col h4 {
             color: var(--putih);
-            font-size: 16px;
-            margin-bottom: 10px;
+            font-size: 17px;
+            margin-bottom: 14px;
             position: relative;
         }
         .footer-col h4::after {
             content: '';
             position: absolute;
-            bottom: -4px;
+            bottom: -6px;
             left: 0;
-            width: 30px;
+            width: 32px;
             height: 3px;
             background: #66bb6a;
             border-radius: 3px;
         }
         .footer-col p,
         .footer-col li {
-            font-size: 13px;
-            line-height: 1.8;
+            font-size: 14px;
+            line-height: 2;
             opacity: 0.85;
         }
         .footer-col ul li a { transition: 0.3s; }
@@ -972,23 +909,23 @@
         .footer-col .contact-info {
             display: flex;
             flex-direction: column;
-            gap: 2px;
+            gap: 4px;
         }
         .footer-col .contact-info span {
             display: flex;
             align-items: center;
-            gap: 8px;
-            font-size: 13px;
+            gap: 10px;
+            font-size: 14px;
         }
         .footer-col .contact-info i {
             color: #66bb6a;
-            width: 18px;
+            width: 20px;
         }
         .footer-bottom {
             border-top: 1px solid rgba(255,255,255,0.1);
-            padding-top: 12px;
+            padding-top: 14px;
             text-align: center;
-            font-size: 12px;
+            font-size: 13px;
             opacity: 0.7;
         }
 
@@ -1004,172 +941,169 @@
         }
 
         @media (max-width: 768px) {
-            /* === HAMBURGER TETAP DI KANAN ATAS === */
+            /* ===== TAMPILKAN HAMBURGER ===== */
             .hamburger-btn {
-                position: relative; /* ikut scroll */
-                top: 5px;
-                right: auto;
-                font-size: 20px;
-                padding: 4px 10px;
-                margin-bottom: 8px;
-                display: inline-block;
+                display: block;
+                position: fixed;
+                top: 16px;
+                right: 20px;
+                z-index: 1100;
+                font-size: 36px; /* lebih besar */
+                padding: 8px 16px;
             }
 
-            /* === HEADER MENJADI FLEX WRAP === */
-            .header .container {
-                flex-wrap: wrap;
-            }
-
-            /* === MENU UTAMA DI MOBILE === */
+            /* ===== MENU MOBILE (Muncul di atas konten, tidak mendorong) ===== */
             .nav-menu {
-                display: none;
-                flex-direction: column;
-                width: 100%;
-                order: 2;
-                flex-basis: 100%;
+                position: fixed;
+                top: 75px;
+                right: 20px;
+                width: 280px;
                 background: var(--putih);
-                border-radius: 0 0 10px 10px;
-                box-shadow: 0 8px 24px rgba(0,0,0,0.1);
-                padding: 6px 0;
-                margin-top: 8px;
-                border-top: 1px solid #dce8dc;
+                flex-direction: column;
+                padding: 16px 0;
+                border-radius: 12px;
+                box-shadow: 0 12px 40px rgba(0,0,0,0.25);
+                gap: 0;
+                display: none;
+                z-index: 1100;
+                border: 1px solid #dce8dc;
+                max-height: 80vh;
+                overflow-y: auto;
             }
             .nav-menu.open { display: flex; }
 
             .nav-menu>li { width: 100%; }
             .nav-menu>li>a {
-                padding: 12px 16px;
+                padding: 16px 20px;
                 width: 100%;
                 justify-content: flex-start;
                 border-bottom: 1px solid #dce8dc;
-                font-size: 15px;
+                font-size: 16px;
                 font-weight: 600;
             }
             .nav-menu>li:last-child>a { border-bottom: none; }
 
-            /* === DROPDOWN SUBMENU DI MOBILE === */
+            /* ===== DROPDOWN SUBMENU DI MOBILE ===== */
             .dropdown {
                 position: static;
                 box-shadow: none;
                 border: none;
-                padding: 0 0 0 16px;
+                padding: 0 0 0 20px;
                 opacity: 1;
                 visibility: visible;
                 transform: none;
                 display: none;
                 background: var(--abu);
-                border-radius: 6px;
-                margin: 2px 0;
+                border-radius: 8px;
+                margin-bottom: 4px;
             }
             .nav-menu>li.open .dropdown { display: block; }
             .dropdown li a {
-                padding: 10px 16px;
-                font-size: 14px;
+                padding: 14px 20px;
+                font-size: 15px;
                 font-weight: 500;
                 border-left: none;
             }
             .dropdown li a:hover {
                 background: var(--hijau-pucat);
+                border-left-color: transparent;
             }
 
-            /* === SLIDER === */
-            .slider-section { height: 280px; }
-            .slide-content h2 { font-size: 24px; }
-            .slide-content p { font-size: 14px; }
-            .slider-btn { width: 32px; height: 32px; font-size: 14px; }
-            .slider-btn.prev { left: 8px; }
-            .slider-btn.next { right: 8px; }
+            /* ===== SLIDER ===== */
+            .slider-section { height: 320px; }
+            .slide-content h2 { font-size: 28px; }
+            .slide-content p { font-size: 15px; }
+            .slider-btn { width: 38px; height: 38px; font-size: 16px; }
+            .slider-btn.prev { left: 10px; }
+            .slider-btn.next { right: 10px; }
 
-            /* === SAMBUTAN === */
+            /* ===== SAMBUTAN ===== */
             .sambutan-wrapper {
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
             }
             .sambutan-foto {
-                flex: 0 0 100px;
-                width: 100px;
-                height: 100px;
+                flex: 0 0 150px;
+                width: 150px;
+                height: 150px;
             }
             .sambutan-teks { text-align: center; }
 
-            /* === BERITA === */
+            /* ===== BERITA ===== */
             .berita-item {
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 8px;
+                gap: 12px;
             }
             .berita-item .berita-foto {
                 width: 100%;
-                height: 120px;
+                height: 160px;
                 flex: 0 0 auto;
             }
 
-            /* === AGENDA & FOTO === */
+            /* ===== AGENDA & FOTO ===== */
             .agenda-grid { grid-template-columns: 1fr; }
             .foto-grid { grid-template-columns: 1fr 1fr; }
-            .footer-grid { grid-template-columns: 1fr; gap: 16px; }
+            .footer-grid { grid-template-columns: 1fr; gap: 24px; }
 
-            /* === TOP BAR === */
+            /* ===== TOP BAR ===== */
             .top-bar {
                 flex-direction: column;
                 align-items: center;
-                gap: 2px;
-                padding: 4px 12px;
-                font-size: 11px;
+                gap: 4px;
             }
             .top-bar-left {
                 justify-content: center;
-                gap: 4px 10px;
+                gap: 6px 12px;
             }
             .top-bar-right { justify-content: center; }
 
-            /* === PROFIL & LAINNYA === */
+            /* ===== PROFIL & LAINNYA ===== */
             .profil-grid { grid-template-columns: 1fr 1fr; }
             .pub-grid,
             .dok-grid { grid-template-columns: 1fr 1fr; }
             .logo-text h1 { font-size: 16px; }
-            .logo img { height: 38px; }
-
-            /* === SUBPAGE === */
-            .subpage-section { padding: 16px; }
-            .subpage-section h2 { font-size: 20px; }
+            .logo img { height: 44px; }
         }
 
         @media (max-width: 480px) {
             .hamburger-btn {
-                font-size: 18px;
-                padding: 4px 8px;
-                top: 2px;
+                top: 12px;
+                right: 12px;
+                font-size: 32px;
+                padding: 6px 14px;
             }
-            .nav-menu { margin-top: 6px; }
-            .slider-section { height: 220px; }
-            .slide-content h2 { font-size: 18px; }
-            .slide-content p { font-size: 12px; }
+            .nav-menu {
+                top: 60px;
+                right: 12px;
+                width: 240px;
+            }
+            .slider-section { height: 260px; }
+            .slide-content h2 { font-size: 20px; }
+            .slide-content p { font-size: 13px; }
             .slide-content .btn-slide {
-                padding: 6px 18px;
-                font-size: 12px;
+                padding: 8px 20px;
+                font-size: 13px;
             }
             .foto-grid { grid-template-columns: 1fr; }
             .profil-grid { grid-template-columns: 1fr; }
             .pub-grid,
             .dok-grid { grid-template-columns: 1fr; }
-            .berita-item .berita-foto { height: 100px; }
+            .berita-item .berita-foto { height: 140px; }
             .sambutan-foto {
-                flex: 0 0 80px;
-                width: 80px;
-                height: 80px;
+                flex: 0 0 120px;
+                width: 120px;
+                height: 120px;
             }
-            .sambutan-wrapper { padding: 12px; }
-            .content-wrapper { padding: 16px 12px; }
-            .subpage-section { padding: 12px; }
-            .subpage-section h2 { font-size: 18px; }
+            .sambutan-wrapper { padding: 16px; }
+            .content-wrapper { padding: 20px 12px; }
         }
     </style>
 </head>
 <body>
 
-    <!-- ===== HAMBURGER (Tombol titik 3) - POSISI BARU ===== -->
+    <!-- ===== HAMBURGER ===== -->
     <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
         <i class="fas fa-ellipsis-v"></i>
     </button>
@@ -1203,42 +1137,42 @@
                 </div>
             </div>
 
-            <!-- ===== NAVIGASI (Desktop) ===== -->
+            <!-- NAVIGASI -->
             <ul class="nav-menu" id="navMenu">
-                <li><a href="#" data-page="beranda" class="active"><i class="fas fa-home"></i> Beranda</a></li>
+                <li><a href="#" class="active"><i class="fas fa-home"></i> Beranda</a></li>
                 <li>
                     <a href="#"><i class="fas fa-building"></i> Profil PD <i class="fas fa-chevron-down arrow"></i></a>
                     <ul class="dropdown">
-                        <li><a href="#" data-page="profil-pimpinan"><i class="fas fa-user-tie"></i> Profil Pimpinan</a></li>
-                        <li><a href="#" data-page="sejarah"><i class="fas fa-history"></i> Sejarah</a></li>
-                        <li><a href="#" data-page="struktur"><i class="fas fa-sitemap"></i> Struktur</a></li>
-                        <li><a href="#" data-page="visi-misi"><i class="fas fa-bullseye"></i> Visi & Misi</a></li>
-                        <li><a href="#" data-page="tugas-fungsi"><i class="fas fa-tasks"></i> Tugas & Fungsi</a></li>
+                        <li><a href="#"><i class="fas fa-user-tie"></i> Profil Pimpinan</a></li>
+                        <li><a href="#"><i class="fas fa-history"></i> Sejarah</a></li>
+                        <li><a href="#"><i class="fas fa-sitemap"></i> Struktur</a></li>
+                        <li><a href="#"><i class="fas fa-bullseye"></i> Visi & Misi</a></li>
+                        <li><a href="#"><i class="fas fa-tasks"></i> Tugas & Fungsi</a></li>
                     </ul>
                 </li>
-                <li><a href="#" data-page="dokumen"><i class="fas fa-file-alt"></i> Dokumen</a></li>
-                <li><a href="#" data-page="agenda"><i class="fas fa-calendar-check"></i> Agenda</a></li>
+                <li><a href="#"><i class="fas fa-file-alt"></i> Dokumen</a></li>
+                <li><a href="#"><i class="fas fa-calendar-check"></i> Agenda</a></li>
                 <li>
                     <a href="#"><i class="fas fa-newspaper"></i> Publikasi <i class="fas fa-chevron-down arrow"></i></a>
                     <ul class="dropdown">
-                        <li><a href="#" data-page="berita"><i class="fas fa-bullhorn"></i> Berita</a></li>
-                        <li><a href="#" data-page="detail-berita"><i class="fas fa-file-alt"></i> Detail Berita</a></li>
+                        <li><a href="#"><i class="fas fa-bullhorn"></i> Berita</a></li>
+                        <li><a href="#"><i class="fas fa-file-alt"></i> Detail Berita</a></li>
                     </ul>
                 </li>
                 <li>
                     <a href="#"><i class="fas fa-images"></i> Dokumentasi <i class="fas fa-chevron-down arrow"></i></a>
                     <ul class="dropdown">
-                        <li><a href="#" data-page="galeri"><i class="fas fa-photo-video"></i> Galeri</a></li>
-                        <li><a href="#" data-page="video"><i class="fas fa-video"></i> Video</a></li>
+                        <li><a href="#"><i class="fas fa-photo-video"></i> Galeri</a></li>
+                        <li><a href="#"><i class="fas fa-video"></i> Video</a></li>
                     </ul>
                 </li>
-                <li><a href="#" data-page="saran"><i class="fas fa-comment-dots"></i> Saran & Kritik</a></li>
+                <li><a href="#"><i class="fas fa-comment-dots"></i> Saran & Kritik</a></li>
             </ul>
         </div>
     </header>
 
-    <!-- ===== SLIDER (Hanya tampil di halaman Beranda) ===== -->
-    <section class="slider-section" id="beranda-slider">
+    <!-- ===== SLIDER ===== -->
+    <section class="slider-section">
         <div class="slider-track" id="sliderTrack">
             <div class="slide" style="background-image: linear-gradient(135deg, #1a4d1a, #2e7d32), url('https://picsum.photos/seed/satpol1/1200/600');">
                 <div class="slide-content">
@@ -1273,8 +1207,8 @@
         </div>
     </section>
 
-    <!-- ===== KONTEN UTAMA (Beranda) ===== -->
-    <div class="content-wrapper" id="beranda-content">
+    <!-- ===== KONTEN ===== -->
+    <div class="content-wrapper">
 
         <!-- ===== BERANDA ===== -->
         <div class="section-title">
@@ -1290,7 +1224,7 @@
                 <!-- SAMBUTAN -->
                 <div class="sambutan-wrapper">
                     <div class="sambutan-foto">
-                        <img src="https://picsum.photos/seed/kepala/300/300" alt="Kepala Satpol PP" />
+                        <img src="https://picsum.photos/seed/kepala/400/400" alt="Kepala Satpol PP" />
                     </div>
                     <div class="sambutan-teks">
                         <span class="badge-terbatas"><i class="fas fa-lock"></i> Terbatas</span>
@@ -1302,53 +1236,53 @@
                 </div>
 
                 <!-- BERITA TERBARU -->
-                <div style="margin-top: 20px;">
-                    <h3 style="font-size: 18px; color: var(--hijau-tua); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                <div style="margin-top: 28px;">
+                    <h3 style="font-size: 20px; color: var(--hijau-tua); margin-bottom: 14px; display: flex; align-items: center; gap: 10px;">
                         <i class="fas fa-bullhorn" style="color: var(--hijau);"></i> Berita Terbaru
                     </h3>
                     <div class="berita-list">
 
                         <div class="berita-item">
                             <div class="berita-foto">
-                                <img src="https://picsum.photos/seed/razia/200/200" alt="Razia" />
+                                <img src="https://picsum.photos/seed/razia/300/200" alt="Razia" />
                             </div>
                             <div class="berita-info">
                                 <span class="date-badge"><i class="far fa-calendar-alt"></i> 15 Juni 2026</span>
                                 <h4>Satpol PP Gelar Razia Protokol Kesehatan</h4>
-                                <p>Kegiatan razia di pasar tradisional untuk menegakkan aturan protokol kesehatan.</p>
+                                <p>Kegiatan razia di pasar tradisional untuk menegakkan aturan protokol kesehatan. Petugas melakukan penertiban masker dan menjaga jarak.</p>
                             </div>
                         </div>
 
                         <div class="berita-item">
                             <div class="berita-foto">
-                                <img src="https://picsum.photos/seed/pelatihan/200/200" alt="Pelatihan" />
+                                <img src="https://picsum.photos/seed/pelatihan/300/200" alt="Pelatihan" />
                             </div>
                             <div class="berita-info">
                                 <span class="date-badge"><i class="far fa-calendar-alt"></i> 12 Juni 2026</span>
                                 <h4>Pembinaan Kesiapsiagaan Anggota Satpol PP</h4>
-                                <p>Pelatihan fisik dan kedisiplinan bagi anggota Satpol PP Kabupaten Muba.</p>
+                                <p>Pelatihan fisik dan kedisiplinan bagi anggota Satpol PP Kabupaten Muba untuk meningkatkan profesionalisme dan kesiapan tugas.</p>
                             </div>
                         </div>
 
                         <div class="berita-item">
                             <div class="berita-foto">
-                                <img src="https://picsum.photos/seed/rapat/200/200" alt="Rapat" />
+                                <img src="https://picsum.photos/seed/rapat/300/200" alt="Rapat" />
                             </div>
                             <div class="berita-info">
                                 <span class="date-badge"><i class="far fa-calendar-alt"></i> 08 Juni 2026</span>
                                 <h4>Rapat Koordinasi Penertiban PKL</h4>
-                                <p>Sinergi dengan Satpol PP dan Dinas Perdagangan untuk penertiban PKL.</p>
+                                <p>Sinergi dengan Satpol PP dan Dinas Perdagangan untuk penertiban PKL di wilayah Sekayu dan sekitarnya.</p>
                             </div>
                         </div>
 
                         <div class="berita-item">
                             <div class="berita-foto">
-                                <img src="https://picsum.photos/seed/bersih/200/200" alt="Muba Bersih" />
+                                <img src="https://picsum.photos/seed/bersih/300/200" alt="Muba Bersih" />
                             </div>
                             <div class="berita-info">
                                 <span class="date-badge"><i class="far fa-calendar-alt"></i> 05 Juni 2026</span>
                                 <h4>Satpol PP Dukung Program Muba Bersih</h4>
-                                <p>Partisipasi aktif dalam gerakan kebersihan dan penataan kota.</p>
+                                <p>Partisipasi aktif dalam gerakan kebersihan dan penataan kota yang dicanangkan oleh Pemerintah Kabupaten Muba.</p>
                             </div>
                         </div>
 
@@ -1362,7 +1296,7 @@
 
                 <!-- AGENDA PIMPINAN -->
                 <div>
-                    <h3 style="font-size: 18px; color: var(--hijau-tua); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                    <h3 style="font-size: 20px; color: var(--hijau-tua); margin-bottom: 14px; display: flex; align-items: center; gap: 10px;">
                         <i class="fas fa-calendar-alt" style="color: var(--hijau);"></i> Agenda Pimpinan
                     </h3>
                     <div class="agenda-grid">
@@ -1391,7 +1325,7 @@
 
                 <!-- GALERI FOTO -->
                 <div>
-                    <h3 style="font-size: 18px; color: var(--hijau-tua); margin-bottom: 12px; display: flex; align-items: center; gap: 8px;">
+                    <h3 style="font-size: 20px; color: var(--hijau-tua); margin-bottom: 14px; display: flex; align-items: center; gap: 10px;">
                         <i class="fas fa-images" style="color: var(--hijau);"></i> Galeri Foto
                     </h3>
                     <div class="foto-grid">
@@ -1429,18 +1363,18 @@
             </div>
         </div>
 
-        <!-- ===== PROFIL SATPOL PP (DIPINDAHKAN KE BAWAH BERANDA) ===== -->
+        <!-- ===== PROFIL PD ===== -->
         <div class="profil-section">
-            <div class="section-title" style="margin-bottom: 12px;">
+            <div class="section-title" style="margin-bottom: 16px;">
                 <h2>Profil Satpol PP</h2>
                 <p>Mengenal lebih dekat Satuan Polisi Pamong Praja Kabupaten Musi Banyuasin</p>
             </div>
             <div class="profil-grid">
-                <div class="profil-item" data-page="profil-pimpinan"><i class="fas fa-user-tie"></i><h4>Profil Pimpinan</h4></div>
-                <div class="profil-item" data-page="sejarah"><i class="fas fa-history"></i><h4>Sejarah</h4></div>
-                <div class="profil-item" data-page="struktur"><i class="fas fa-sitemap"></i><h4>Struktur</h4></div>
-                <div class="profil-item" data-page="visi-misi"><i class="fas fa-bullseye"></i><h4>Visi dan Misi</h4></div>
-                <div class="profil-item" data-page="tugas-fungsi"><i class="fas fa-tasks"></i><h4>Tugas dan Fungsi</h4></div>
+                <div class="profil-item"><i class="fas fa-user-tie"></i><h4>Profil Pimpinan</h4></div>
+                <div class="profil-item"><i class="fas fa-history"></i><h4>Sejarah</h4></div>
+                <div class="profil-item"><i class="fas fa-sitemap"></i><h4>Struktur</h4></div>
+                <div class="profil-item"><i class="fas fa-bullseye"></i><h4>Visi dan Misi</h4></div>
+                <div class="profil-item"><i class="fas fa-tasks"></i><h4>Tugas dan Fungsi</h4></div>
             </div>
         </div>
 
@@ -1490,83 +1424,11 @@
 
         <!-- ===== SARAN & KRITIK ===== -->
         <div class="saran-section">
-            <h3><i class="fas fa-comment-dots" style="color: var(--hijau); margin-right: 8px;"></i> Saran &amp; Kritik</h3>
+            <h3><i class="fas fa-comment-dots" style="color: var(--hijau); margin-right: 10px;"></i> Saran &amp; Kritik</h3>
             <p>Kami sangat menghargai masukan dari masyarakat untuk perbaikan pelayanan Satpol PP Kabupaten Musi Banyuasin.</p>
             <button class="btn-saran"><i class="fas fa-pen"></i> Kirim Saran &amp; Kritik</button>
         </div>
 
-    </div> <!-- end content-wrapper (Beranda) -->
-
-    <!-- ============================================================== -->
-    <!-- ===== HALAMAN SUB-FITUR ===== -->
-    <!-- ============================================================== -->
-
-    <!-- PROFIL PIMPINAN -->
-    <div class="content-wrapper subpage-section" id="page-profil-pimpinan">
-        <h2>Profil Pimpinan</h2>
-        <div class="subpage-meta"><i class="fas fa-user-tie"></i> Kepala Satuan Polisi Pamong Praja Kabupaten Muba</div>
-        <p><strong>Nama:</strong> Kolonel (Purn) Drs. H. Ahmad Fauzi, M.Si</p>
-        <p>Beliau merupakan sosok yang berpengalaman dalam bidang penegakan hukum dan ketertiban. Dengan latar belakang militer dan akademisi, beliau memimpin Satpol PP dengan tegas namun humanis, mengedepankan pendekatan preventif dalam menjaga ketertiban umum.</p>
-        <p><i class="fas fa-calendar-alt" style="color: var(--hijau);"></i> Masa Jabatan: 2023 - 2028</p>
-        <button class="btn-back" onclick="showPage('beranda')"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</button>
-    </div>
-
-    <!-- SEJARAH -->
-    <div class="content-wrapper subpage-section" id="page-sejarah">
-        <h2>Sejarah Satpol PP</h2>
-        <div class="subpage-meta"><i class="fas fa-history"></i> Perjalanan Satuan Polisi Pamong Praja Kabupaten Muba</div>
-        <p>Satuan Polisi Pamong Praja (Satpol PP) Kabupaten Musi Banyuasin dibentuk berdasarkan Peraturan Daerah Kabupaten Musi Banyuasin Nomor 7 Tahun 2016 tentang Pembentukan dan Susunan Perangkat Daerah. Sebelumnya, fungsi penegakan Perda dan ketertiban umum berada di bawah Bagian Tata Pemerintahan Sekretariat Daerah.</p>
-        <p>Seiring dengan meningkatnya kebutuhan akan penegakan Perda yang lebih terstruktur, Satpol PP resmi berdiri sebagai perangkat daerah yang bertugas membantu Bupati dalam menegakkan Perda dan menyelenggarakan ketertiban umum serta ketenteraman masyarakat.</p>
-        <button class="btn-back" onclick="showPage('beranda')"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</button>
-    </div>
-
-    <!-- STRUKTUR -->
-    <div class="content-wrapper subpage-section" id="page-struktur">
-        <h2>Struktur Organisasi</h2>
-        <div class="subpage-meta"><i class="fas fa-sitemap"></i> Bagan Struktur Satpol PP Kabupaten Muba</div>
-        <p>Struktur organisasi Satpol PP Kabupaten Musi Banyuasin terdiri dari:</p>
-        <ul>
-            <li><strong>Kepala Satpol PP</strong> - Kolonel (Purn) Drs. H. Ahmad Fauzi, M.Si</li>
-            <li><strong>Sekretariat</strong> - Bagian Umum dan Kepegawaian</li>
-            <li><strong>Bidang Penegakan Perda</strong> - Pengawasan dan Penindakan Pelanggaran Perda</li>
-            <li><strong>Bidang Ketertiban Umum</strong> - Pengendalian dan Penertiban Masyarakat</li>
-            <li><strong>Bidang Pengembangan Kapasitas</strong> - Pelatihan dan Peningkatan Kemampuan Anggota</li>
-            <li><strong>Kelompok Jabatan Fungsional</strong> - Penyidik dan Pengawas</li>
-        </ul>
-        <button class="btn-back" onclick="showPage('beranda')"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</button>
-    </div>
-
-    <!-- VISI & MISI -->
-    <div class="content-wrapper subpage-section" id="page-visi-misi">
-        <h2>Visi dan Misi</h2>
-        <div class="subpage-meta"><i class="fas fa-bullseye"></i> Arah dan Tujuan Satpol PP Kabupaten Muba</div>
-        <h4 style="color: var(--hijau-tua); margin: 10px 0 4px;">Visi</h4>
-        <p><em>"Terwujudnya Kabupaten Musi Banyuasin yang Tertib, Aman, dan Berbudaya Hukum."</em></p>
-        <h4 style="color: var(--hijau-tua); margin: 12px 0 4px;">Misi</h4>
-        <ul>
-            <li>Meningkatkan efektivitas penegakan Peraturan Daerah di Kabupaten Muba.</li>
-            <li>Menjaga ketertiban umum dan ketenteraman masyarakat secara profesional.</li>
-            <li>Membangun kesadaran hukum masyarakat melalui pendekatan preventif dan edukatif.</li>
-            <li>Meningkatkan kapasitas dan profesionalisme anggota Satpol PP.</li>
-            <li>Bersinergi dengan aparat penegak hukum dan instansi terkait dalam menjaga keamanan dan ketertiban.</li>
-        </ul>
-        <button class="btn-back" onclick="showPage('beranda')"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</button>
-    </div>
-
-    <!-- TUGAS & FUNGSI -->
-    <div class="content-wrapper subpage-section" id="page-tugas-fungsi">
-        <h2>Tugas dan Fungsi</h2>
-        <div class="subpage-meta"><i class="fas fa-tasks"></i> Pokok-Pokok Tugas Satpol PP Kabupaten Muba</div>
-        <p><strong>Tugas:</strong> Melaksanakan penegakan Peraturan Daerah dan Peraturan Bupati, serta menyelenggarakan ketertiban umum dan ketenteraman masyarakat.</p>
-        <h4 style="color: var(--hijau-tua); margin: 10px 0 4px;">Fungsi:</h4>
-        <ul>
-            <li>Perumusan kebijakan teknis di bidang penegakan Perda dan ketertiban umum.</li>
-            <li>Pelaksanaan kebijakan penegakan Perda dan ketertiban umum.</li>
-            <li>Pengawasan dan pengendalian pelaksanaan Perda dan Peraturan Bupati.</li>
-            <li>Pelaksanaan tindakan penertiban terhadap pelanggaran Perda dan ketertiban umum.</li>
-            <li>Pelaksanaan fungsi lain yang diberikan oleh Bupati terkait tugas dan fungsinya.</li>
-        </ul>
-        <button class="btn-back" onclick="showPage('beranda')"><i class="fas fa-arrow-left"></i> Kembali ke Beranda</button>
     </div>
 
     <!-- ===== FOOTER ===== -->
@@ -1576,7 +1438,7 @@
                 <div class="footer-col">
                     <h4>Satpol PP Kabupaten Muba</h4>
                     <p>Satuan Polisi Pamong Praja Kabupaten Musi Banyuasin berkomitmen untuk menegakkan Peraturan Daerah dan menjaga ketertiban umum demi terciptanya masyarakat yang aman dan tertib.</p>
-                    <div class="contact-info" style="margin-top: 8px;">
+                    <div class="contact-info" style="margin-top: 10px;">
                         <span><i class="fas fa-map-pin"></i> Jl. Kol. H. Burlian, Sekayu, Kab. Muba</span>
                         <span><i class="fas fa-phone"></i> (0711) 123456</span>
                         <span><i class="fas fa-envelope"></i> satpolpp@mubakab.go.id</span>
@@ -1585,11 +1447,11 @@
                 <div class="footer-col">
                     <h4>Profil</h4>
                     <ul>
-                        <li><a href="#" onclick="showPage('profil-pimpinan'); return false;">Profil Pimpinan</a></li>
-                        <li><a href="#" onclick="showPage('sejarah'); return false;">Sejarah</a></li>
-                        <li><a href="#" onclick="showPage('struktur'); return false;">Struktur</a></li>
-                        <li><a href="#" onclick="showPage('visi-misi'); return false;">Visi & Misi</a></li>
-                        <li><a href="#" onclick="showPage('tugas-fungsi'); return false;">Tugas & Fungsi</a></li>
+                        <li><a href="#">Profil Pimpinan</a></li>
+                        <li><a href="#">Sejarah</a></li>
+                        <li><a href="#">Struktur</a></li>
+                        <li><a href="#">Visi & Misi</a></li>
+                        <li><a href="#">Tugas & Fungsi</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1616,11 +1478,9 @@
         </div>
     </footer>
 
-    <!-- ===== JAVASCRIPT ===== -->
+    <!-- ===== JAVASCRIPT (SATU BLOK RAPI) ===== -->
     <script>
-        // ============================================================
-        // 1. SLIDER
-        // ============================================================
+        // ===== SLIDER =====
         var track = document.getElementById('sliderTrack');
         if (track) {
             var slides = track.querySelectorAll('.slide');
@@ -1694,89 +1554,7 @@
             startAutoSlide();
         }
 
-        // ============================================================
-        // 2. NAVIGASI HALAMAN
-        // ============================================================
-        var allPages = {
-            'beranda': document.getElementById('beranda-content'),
-            'profil-pimpinan': document.getElementById('page-profil-pimpinan'),
-            'sejarah': document.getElementById('page-sejarah'),
-            'struktur': document.getElementById('page-struktur'),
-            'visi-misi': document.getElementById('page-visi-misi'),
-            'tugas-fungsi': document.getElementById('page-tugas-fungsi')
-        };
-
-        // Elemen slider (hanya untuk halaman beranda)
-        var sliderElement = document.getElementById('beranda-slider');
-
-        function showPage(pageId) {
-            // Sembunyikan semua konten
-            for (var key in allPages) {
-                if (allPages[key]) {
-                    allPages[key].style.display = 'none';
-                }
-            }
-
-            // Sembunyikan slider secara default (kecuali halaman beranda)
-            if (sliderElement) {
-                sliderElement.style.display = 'none';
-            }
-
-            // Tampilkan halaman yang dipilih
-            var target = allPages[pageId];
-            if (target) {
-                target.style.display = 'block';
-                // Jika halaman beranda, tampilkan slider
-                if (pageId === 'beranda' && sliderElement) {
-                    sliderElement.style.display = 'block';
-                }
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }
-
-            // Update active class di menu
-            document.querySelectorAll('.nav-menu > li > a[data-page]').forEach(function(link) {
-                link.classList.remove('active');
-                if (link.getAttribute('data-page') === pageId) {
-                    link.classList.add('active');
-                }
-            });
-
-            // Tutup menu mobile
-            var navMenu = document.getElementById('navMenu');
-            if (navMenu) {
-                navMenu.classList.remove('open');
-                var hamburgerBtn = document.getElementById('hamburgerBtn');
-                if (hamburgerBtn) {
-                    var icon = hamburgerBtn.querySelector('i');
-                    icon.className = 'fas fa-ellipsis-v';
-                }
-            }
-        }
-
-        // Event listener untuk semua link navigasi
-        document.querySelectorAll('.nav-menu a[data-page]').forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                e.preventDefault();
-                var page = this.getAttribute('data-page');
-                if (page) {
-                    showPage(page);
-                }
-            });
-        });
-
-        // Event listener untuk profil items (di dalam beranda)
-        document.querySelectorAll('.profil-item[data-page]').forEach(function(item) {
-            item.addEventListener('click', function() {
-                var page = this.getAttribute('data-page');
-                if (page) {
-                    showPage(page);
-                }
-            });
-        });
-
-        // ============================================================
-        // 3. HAMBURGER MENU
-        // ============================================================
+        // ===== HAMBURGER + SUBMENU MOBILE =====
         var hamburgerBtn = document.getElementById('hamburgerBtn');
         var navMenu = document.getElementById('navMenu');
 
@@ -1792,13 +1570,14 @@
                 }
             });
 
-            // Submenu toggle di mobile
-            var menuItems = navMenu.querySelectorAll('li');
-            menuItems.forEach(function(li) {
+            // Submenu toggle di mobile (tanpa menutup menu utama)
+            var menuItemsWithDropdown = navMenu.querySelectorAll('li');
+            menuItemsWithDropdown.forEach(function(li) {
                 var link = li.querySelector('a');
                 var dropdown = li.querySelector('.dropdown');
                 if (dropdown) {
                     link.addEventListener('click', function(e) {
+                        // Hanya di mobile (lebar <= 768px)
                         if (window.innerWidth <= 768) {
                             e.preventDefault();
                             li.classList.toggle('open');
@@ -1807,11 +1586,11 @@
                 }
             });
 
-            // Tutup menu jika klik di luar
+            // Tutup menu saat klik di luar
             document.addEventListener('click', function(e) {
                 if (navMenu.classList.contains('open')) {
-                    var isInside = navMenu.contains(e.target) || hamburgerBtn.contains(e.target);
-                    if (!isInside) {
+                    var isClickInside = navMenu.contains(e.target) || hamburgerBtn.contains(e.target);
+                    if (!isClickInside) {
                         navMenu.classList.remove('open');
                         var icon = hamburgerBtn.querySelector('i');
                         icon.className = 'fas fa-ellipsis-v';
@@ -1820,9 +1599,7 @@
             });
         }
 
-        // ============================================================
-        // 4. SARAN BUTTON
-        // ============================================================
+        // ===== SARAN BUTTON =====
         var btnSaran = document.querySelector('.btn-saran');
         if (btnSaran) {
             btnSaran.addEventListener('click', function() {
@@ -1830,9 +1607,15 @@
             });
         }
 
-        // ============================================================
-        // 5. PUBLIKASI & DOKUMENTASI ITEMS
-        // ============================================================
+        // ===== PROFIL ITEMS =====
+        document.querySelectorAll('.profil-item').forEach(function(item) {
+            item.addEventListener('click', function() {
+                var label = this.querySelector('h4') ? this.querySelector('h4').textContent : 'Profil';
+                alert('Anda membuka halaman: ' + label + '\n(Halaman sedang dalam pengembangan.)');
+            });
+        });
+
+        // ===== PUBLIKASI & DOKUMENTASI ITEMS =====
         document.querySelectorAll('.pub-item, .dok-item, .berita-item, .foto-card, .agenda-card, .dokumen-list a, .agenda-list .agenda-item')
             .forEach(function(el) {
                 el.addEventListener('click', function(e) {
@@ -1841,11 +1624,6 @@
                     alert('Anda membuka: ' + text + '\n(Halaman sedang dalam pengembangan.)');
                 });
             });
-
-        // ============================================================
-        // 6. Default tampilkan Beranda
-        // ============================================================
-        showPage('beranda');
 
         console.log('✅ Website Satpol PP siap!');
     </script>
