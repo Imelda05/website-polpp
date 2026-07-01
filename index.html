@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
     <style>
-        /* ===== RESET ===== */
+        /* ===== RESET & WARNA ===== */
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
             font-family: 'Poppins', sans-serif;
@@ -19,7 +19,6 @@
         ul { list-style: none; }
         img { max-width: 100%; display: block; }
 
-        /* ===== WARNA ===== */
         :root {
             --hijau-tua: #1a4d1a;
             --hijau: #2e7d32;
@@ -96,23 +95,27 @@
             display: block;
         }
 
-        /* ===== HAMBURGER ===== */
+        /* ===== HAMBURGER (Tombol titik 3) - FIXED di pojok kanan ===== */
         .hamburger-btn {
-            display: none;
+            position: fixed;
+            top: 16px;
+            right: 16px;
+            z-index: 1100;
             background: var(--hijau-tua);
             border: none;
             color: white;
-            font-size: 26px;
+            font-size: 24px;
             padding: 6px 12px;
             border-radius: 6px;
             cursor: pointer;
             box-shadow: 0 2px 8px rgba(0,0,0,0.2);
             transition: 0.3s;
             line-height: 1;
+            display: block; /* Selalu terlihat */
         }
         .hamburger-btn:hover { background: var(--hijau); }
 
-        /* ===== NAVIGASI ===== */
+        /* ===== NAVIGASI (Desktop) ===== */
         .nav-menu {
             display: flex;
             align-items: center;
@@ -305,7 +308,7 @@
             transform: scale(1.15);
         }
 
-        /* ===== KONTEN ===== */
+        /* ===== KONTEN UTAMA ===== */
         .content-wrapper {
             max-width: 1200px;
             margin: 0 auto;
@@ -353,7 +356,12 @@
         .logo-text h1,
         .logo-text span,
         .nav-menu li a,
-        .dropdown li a {
+        .dropdown li a,
+        .subpage-section,
+        .subpage-section h2,
+        .subpage-section p,
+        .subpage-section ul,
+        .subpage-section li {
             text-align: left !important;
         }
 
@@ -997,12 +1005,12 @@
         }
 
         @media (max-width: 768px) {
-            /* === TAMPILKAN HAMBURGER UKURAN WAJAR === */
+            /* === HAMBURGER TETAP DI KANAN ATAS === */
             .hamburger-btn {
-                display: block;
                 font-size: 22px;
-                padding: 4px 10px;
-                /* posisi tetap di kanan atas header, tidak nutupin nomor telepon */
+                padding: 6px 12px;
+                top: 16px;
+                right: 16px;
             }
 
             /* === HEADER MENJADI FLEX WRAP === */
@@ -1129,7 +1137,9 @@
         @media (max-width: 480px) {
             .hamburger-btn {
                 font-size: 20px;
-                padding: 4px 8px;
+                padding: 4px 10px;
+                top: 12px;
+                right: 12px;
             }
             .nav-menu { margin-top: 6px; }
             .slider-section { height: 220px; }
@@ -1158,7 +1168,7 @@
 </head>
 <body>
 
-    <!-- ===== HAMBURGER ===== -->
+    <!-- ===== HAMBURGER (Tombol titik 3) - FIXED di pojok kanan ===== -->
     <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
         <i class="fas fa-ellipsis-v"></i>
     </button>
@@ -1192,7 +1202,7 @@
                 </div>
             </div>
 
-            <!-- ===== NAVIGASI ===== -->
+            <!-- ===== NAVIGASI (Desktop) ===== -->
             <ul class="nav-menu" id="navMenu">
                 <li><a href="#" data-page="beranda" class="active"><i class="fas fa-home"></i> Beranda</a></li>
                 <li>
@@ -1226,8 +1236,8 @@
         </div>
     </header>
 
-    <!-- ===== SLIDER ===== -->
-    <section class="slider-section">
+    <!-- ===== SLIDER (Hanya tampil di halaman Beranda) ===== -->
+    <section class="slider-section" id="beranda-slider">
         <div class="slider-track" id="sliderTrack">
             <div class="slide" style="background-image: linear-gradient(135deg, #1a4d1a, #2e7d32), url('https://picsum.photos/seed/satpol1/1200/600');">
                 <div class="slide-content">
@@ -1684,7 +1694,7 @@
         }
 
         // ============================================================
-        // 2. NAVIGASI HALAMAN (Single Page Application)
+        // 2. NAVIGASI HALAMAN
         // ============================================================
         var allPages = {
             'beranda': document.getElementById('beranda-content'),
@@ -1695,17 +1705,30 @@
             'tugas-fungsi': document.getElementById('page-tugas-fungsi')
         };
 
+        // Elemen slider (hanya untuk halaman beranda)
+        var sliderElement = document.getElementById('beranda-slider');
+
         function showPage(pageId) {
-            // Sembunyikan semua
+            // Sembunyikan semua konten
             for (var key in allPages) {
                 if (allPages[key]) {
                     allPages[key].style.display = 'none';
                 }
             }
+
+            // Sembunyikan slider secara default (kecuali halaman beranda)
+            if (sliderElement) {
+                sliderElement.style.display = 'none';
+            }
+
             // Tampilkan halaman yang dipilih
             var target = allPages[pageId];
             if (target) {
                 target.style.display = 'block';
+                // Jika halaman beranda, tampilkan slider
+                if (pageId === 'beranda' && sliderElement) {
+                    sliderElement.style.display = 'block';
+                }
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
