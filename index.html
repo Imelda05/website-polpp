@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&display=swap" rel="stylesheet" />
     <style>
-        /* ===== RESET & BASE ===== */
+        /* ===== RESET ===== */
         * { margin:0; padding:0; box-sizing:border-box; }
         body {
             font-family: 'Poppins', sans-serif;
@@ -392,18 +392,18 @@
             margin-top: 16px;
         }
 
-        /* ===== SAMBUTAN - FOTO LEBIH BESAR ===== */
+        /* ===== SAMBUTAN - FOTO BESAR & BULAT ===== */
         .sambutan-wrapper {
             display: flex;
             gap: 30px;
             background: var(--putih);
             border-radius: 12px;
             box-shadow: var(--bayangan);
-            padding: 30px;
+            padding: 24px;
             border-left: 5px solid var(--hijau);
             position: relative;
             overflow: hidden;
-            align-items: flex-start;
+            align-items: center;
         }
         .sambutan-foto {
             flex: 0 0 180px;
@@ -411,9 +411,8 @@
             height: 180px;
             border-radius: 50%;
             overflow: hidden;
-            border: 5px solid var(--hijau-pucat);
+            border: 4px solid var(--hijau-pucat);
             flex-shrink: 0;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
         }
         .sambutan-foto img {
             width: 100%;
@@ -466,18 +465,18 @@
             transform: translateX(4px);
         }
 
-        /* ===== BERITA - FOTO THUMBNAIL LEBIH BESAR ===== */
+        /* ===== BERITA - FOTO BESAR ===== */
         .berita-list {
             display: flex;
             flex-direction: column;
-            gap: 16px;
+            gap: 14px;
         }
         .berita-item {
             display: flex;
-            gap: 18px;
+            gap: 14px;
             background: var(--putih);
             border-radius: 12px;
-            padding: 16px 20px;
+            padding: 14px 18px;
             box-shadow: var(--bayangan);
             transition: 0.3s;
             align-items: center;
@@ -488,14 +487,13 @@
             box-shadow: 0 12px 40px rgba(46,125,50,0.2);
         }
         .berita-item .berita-foto {
-            flex: 0 0 110px;
-            width: 110px;
-            height: 110px;
-            border-radius: 10px;
+            flex: 0 0 100px;
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
             overflow: hidden;
             flex-shrink: 0;
             background: var(--hijau-pucat);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.08);
         }
         .berita-item .berita-foto img {
             width: 100%;
@@ -1000,7 +998,6 @@
                 flex-direction: column;
                 align-items: center;
                 text-align: center;
-                padding: 20px;
             }
             .sambutan-foto {
                 flex: 0 0 150px;
@@ -1012,11 +1009,12 @@
             .berita-item {
                 flex-direction: column;
                 align-items: flex-start;
+                gap: 12px;
             }
             .berita-item .berita-foto {
                 width: 100%;
-                height: 180px;
-                flex: none;
+                height: 160px;
+                flex: 0 0 auto;
             }
 
             .agenda-grid { grid-template-columns: 1fr; }
@@ -1064,14 +1062,15 @@
             .profil-grid { grid-template-columns: 1fr; }
             .pub-grid,
             .dok-grid { grid-template-columns: 1fr; }
+            .berita-item .berita-foto {
+                height: 140px;
+            }
             .sambutan-foto {
                 flex: 0 0 120px;
                 width: 120px;
                 height: 120px;
             }
-            .berita-item .berita-foto {
-                height: 140px;
-            }
+            .sambutan-wrapper { padding: 16px; }
             .content-wrapper { padding: 20px 12px; }
         }
     </style>
@@ -1113,7 +1112,7 @@
             </div>
 
             <ul class="nav-menu" id="navMenu">
-                <li><a href="index.html" class="active"><i class="fas fa-home"></i> Beranda</a></li>
+                <li><a href="#" class="active"><i class="fas fa-home"></i> Beranda</a></li>
                 <li>
                     <a href="#"><i class="fas fa-building"></i> Profil PD <i class="fas fa-chevron-down arrow"></i></a>
                     <ul class="dropdown">
@@ -1134,10 +1133,10 @@
                     </ul>
                 </li>
                 <li>
-                    <a href="dokumentasi.html"><i class="fas fa-images"></i> Dokumentasi <i class="fas fa-chevron-down arrow"></i></a>
+                    <a href="#"><i class="fas fa-images"></i> Dokumentasi <i class="fas fa-chevron-down arrow"></i></a>
                     <ul class="dropdown">
-                        <li><a href="dokumentasi.html#galeri"><i class="fas fa-photo-video"></i> Galeri</a></li>
-                        <li><a href="dokumentasi.html#video"><i class="fas fa-video"></i> Video</a></li>
+                        <li><a href="#"><i class="fas fa-photo-video"></i> Galeri</a></li>
+                        <li><a href="#"><i class="fas fa-video"></i> Video</a></li>
                     </ul>
                 </li>
                 <li><a href="#"><i class="fas fa-comment-dots"></i> Saran & Kritik</a></li>
@@ -1191,10 +1190,11 @@
         </div>
 
         <div class="beranda-grid">
-            <!-- KIRI -->
+
+            <!-- KOLOM KIRI -->
             <div>
 
-                <!-- ===== SAMBUTAN ===== -->
+                <!-- ===== SAMBUTAN KEPALA SATPOL PP ===== -->
                 <div class="sambutan-wrapper">
                     <div class="sambutan-foto">
                         <img src="https://picsum.photos/seed/kepala/400/400" alt="Kepala Satpol PP" />
@@ -1217,7 +1217,7 @@
 
                         <div class="berita-item">
                             <div class="berita-foto">
-                                <img src="https://picsum.photos/seed/razia/300/300" alt="Razia" />
+                                <img src="https://picsum.photos/seed/razia/300/200" alt="Razia" />
                             </div>
                             <div class="berita-info">
                                 <span class="date-badge"><i class="far fa-calendar-alt"></i> 15 Juni 2026</span>
@@ -1228,7 +1228,7 @@
 
                         <div class="berita-item">
                             <div class="berita-foto">
-                                <img src="https://picsum.photos/seed/pelatihan/300/300" alt="Pelatihan" />
+                                <img src="https://picsum.photos/seed/pelatihan/300/200" alt="Pelatihan" />
                             </div>
                             <div class="berita-info">
                                 <span class="date-badge"><i class="far fa-calendar-alt"></i> 12 Juni 2026</span>
@@ -1239,7 +1239,7 @@
 
                         <div class="berita-item">
                             <div class="berita-foto">
-                                <img src="https://picsum.photos/seed/rapat/300/300" alt="Rapat" />
+                                <img src="https://picsum.photos/seed/rapat/300/200" alt="Rapat" />
                             </div>
                             <div class="berita-info">
                                 <span class="date-badge"><i class="far fa-calendar-alt"></i> 08 Juni 2026</span>
@@ -1250,7 +1250,7 @@
 
                         <div class="berita-item">
                             <div class="berita-foto">
-                                <img src="https://picsum.photos/seed/bersih/300/300" alt="Muba Bersih" />
+                                <img src="https://picsum.photos/seed/bersih/300/200" alt="Muba Bersih" />
                             </div>
                             <div class="berita-info">
                                 <span class="date-badge"><i class="far fa-calendar-alt"></i> 05 Juni 2026</span>
@@ -1264,7 +1264,7 @@
 
             </div>
 
-            <!-- KANAN -->
+            <!-- KOLOM KANAN -->
             <div class="side-column">
 
                 <!-- ===== AGENDA PIMPINAN ===== -->
@@ -1389,8 +1389,8 @@
             <div class="dok-box">
                 <h3><i class="fas fa-images"></i> Dokumentasi</h3>
                 <div class="dok-grid">
-                    <a href="dokumentasi.html#galeri" class="dok-item"><i class="fas fa-photo-video"></i><span>Galeri</span></a>
-                    <a href="dokumentasi.html#video" class="dok-item"><i class="fas fa-video"></i><span>Video</span></a>
+                    <div class="dok-item"><i class="fas fa-photo-video"></i><span>Galeri</span></div>
+                    <div class="dok-item"><i class="fas fa-video"></i><span>Video</span></div>
                 </div>
             </div>
         </div>
@@ -1432,8 +1432,8 @@
                     <ul>
                         <li><a href="#">Berita</a></li>
                         <li><a href="#">Detail Berita</a></li>
-                        <li><a href="dokumentasi.html#galeri">Galeri</a></li>
-                        <li><a href="dokumentasi.html#video">Video</a></li>
+                        <li><a href="#">Galeri</a></li>
+                        <li><a href="#">Video</a></li>
                     </ul>
                 </div>
                 <div class="footer-col">
@@ -1592,7 +1592,7 @@
                 });
             });
 
-        console.log('✅ Website Satpol PP dengan foto besar siap!');
+        console.log('✅ Website Satpol PP siap!');
     </script>
 
 </body>
