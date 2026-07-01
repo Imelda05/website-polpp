@@ -948,13 +948,15 @@
                 top: 16px;
                 right: 20px;
                 z-index: 1100;
+                font-size: 36px; /* lebih besar */
+                padding: 8px 16px;
             }
 
             /* ===== MENU MOBILE (Muncul di atas konten, tidak mendorong) ===== */
             .nav-menu {
-                position: fixed; /* <-- PERUBAHAN: dari absolute ke fixed */
-                top: 70px;       /* Jarak dari atas */
-                right: 20px;     /* Muncul dari sisi kanan */
+                position: fixed;
+                top: 75px;
+                right: 20px;
                 width: 280px;
                 background: var(--putih);
                 flex-direction: column;
@@ -972,11 +974,11 @@
 
             .nav-menu>li { width: 100%; }
             .nav-menu>li>a {
-                padding: 14px 20px;
+                padding: 16px 20px;
                 width: 100%;
                 justify-content: flex-start;
                 border-bottom: 1px solid #dce8dc;
-                font-size: 15px;
+                font-size: 16px;
                 font-weight: 600;
             }
             .nav-menu>li:last-child>a { border-bottom: none; }
@@ -997,8 +999,8 @@
             }
             .nav-menu>li.open .dropdown { display: block; }
             .dropdown li a {
-                padding: 12px 20px;
-                font-size: 14px;
+                padding: 14px 20px;
+                font-size: 15px;
                 font-weight: 500;
                 border-left: none;
             }
@@ -1069,8 +1071,8 @@
             .hamburger-btn {
                 top: 12px;
                 right: 12px;
-                font-size: 24px;
-                padding: 6px 12px;
+                font-size: 32px;
+                padding: 6px 14px;
             }
             .nav-menu {
                 top: 60px;
@@ -1476,7 +1478,7 @@
         </div>
     </footer>
 
-    <!-- ===== JAVASCRIPT ===== -->
+    <!-- ===== JAVASCRIPT (SATU BLOK RAPI) ===== -->
     <script>
         // ===== SLIDER =====
         var track = document.getElementById('sliderTrack');
@@ -1552,7 +1554,7 @@
             startAutoSlide();
         }
 
-        // ===== HAMBURGER =====
+        // ===== HAMBURGER + SUBMENU MOBILE =====
         var hamburgerBtn = document.getElementById('hamburgerBtn');
         var navMenu = document.getElementById('navMenu');
 
@@ -1568,20 +1570,14 @@
                 }
             });
 
-            navMenu.querySelectorAll('a').forEach(function(link) {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth <= 768 && navMenu.classList.contains('open')) {
-                        navMenu.classList.remove('open');
-                        var icon = hamburgerBtn.querySelector('i');
-                        icon.className = 'fas fa-ellipsis-v';
-                    }
-                });
-            });
-
-            navMenu.querySelectorAll('li').forEach(function(li) {
+            // Submenu toggle di mobile (tanpa menutup menu utama)
+            var menuItemsWithDropdown = navMenu.querySelectorAll('li');
+            menuItemsWithDropdown.forEach(function(li) {
                 var link = li.querySelector('a');
-                if (li.querySelector('.dropdown')) {
+                var dropdown = li.querySelector('.dropdown');
+                if (dropdown) {
                     link.addEventListener('click', function(e) {
+                        // Hanya di mobile (lebar <= 768px)
                         if (window.innerWidth <= 768) {
                             e.preventDefault();
                             li.classList.toggle('open');
@@ -1589,72 +1585,8 @@
                     });
                 }
             });
-        }
 
-        // ===== SARAN BUTTON =====
-        var btnSaran = document.querySelector('.btn-saran');
-        if (btnSaran) {
-            btnSaran.addEventListener('click', function() {
-                alert('Terima kasih! Silakan tulis saran dan kritik Anda di form yang tersedia.');
-            });
-        }
-
-        // ===== PROFIL ITEMS =====
-        document.querySelectorAll('.profil-item').forEach(function(item) {
-            item.addEventListener('click', function() {
-                var label = this.querySelector('h4') ? this.querySelector('h4').textContent : 'Profil';
-                alert('Anda membuka halaman: ' + label + '\n(Halaman sedang dalam pengembangan.)');
-            });
-        });
-
-        // ===== PUBLIKASI & DOKUMENTASI ITEMS =====
-        document.querySelectorAll('.pub-item, .dok-item, .berita-item, .foto-card, .agenda-card, .dokumen-list a, .agenda-list .agenda-item')
-            .forEach(function(el) {
-                el.addEventListener('click', function(e) {
-                    e.stopPropagation();
-                    var text = this.textContent.trim().slice(0, 40);
-                    alert('Anda membuka: ' + text + '\n(Halaman sedang dalam pengembangan.)');
-                });
-            });
-
-        console.log('✅ Website Satpol PP siap!');
-    </script>
-    <script>
-        // ===== HAMBURGER MENU =====
-        var hamburgerBtn = document.getElementById('hamburgerBtn');
-        var navMenu = document.getElementById('navMenu');
-    
-        if (hamburgerBtn && navMenu) {
-            // Buka/tutup menu utama saat tombol titik 3 diklik
-            hamburgerBtn.addEventListener('click', function(e) {
-                e.stopPropagation();
-                navMenu.classList.toggle('open');
-                var icon = hamburgerBtn.querySelector('i');
-                if (navMenu.classList.contains('open')) {
-                    icon.className = 'fas fa-times';
-                } else {
-                    icon.className = 'fas fa-ellipsis-v';
-                }
-        });
-    
-            // ===== PERBAIKAN: Submenu tetap terbuka tanpa menutup menu utama =====
-            // Cari semua item menu yang memiliki submenu (dropdown)
-            var menuItemsWithDropdown = navMenu.querySelectorAll('li');
-            menuItemsWithDropdown.forEach(function(li) {
-                var link = li.querySelector('a');
-                var dropdown = li.querySelector('.dropdown');
-                if (dropdown) {
-                    // Saat link diklik, toggle class 'open' pada li (tanpa menutup menu utama)
-                    link.addEventListener('click', function(e) {
-                        // Cegah link berpindah halaman (karena pakai #)
-                        e.preventDefault();
-                        // Toggle class 'open' pada li (buka/tutup submenu)
-                        li.classList.toggle('open');
-                    });
-                }
-            });
-    
-            // Tutup menu utama saat klik di luar menu (opsional, untuk kenyamanan)
+            // Tutup menu saat klik di luar
             document.addEventListener('click', function(e) {
                 if (navMenu.classList.contains('open')) {
                     var isClickInside = navMenu.contains(e.target) || hamburgerBtn.contains(e.target);
@@ -1666,13 +1598,7 @@
                 }
             });
         }
-    
-        // ===== SLIDER (tetap seperti sebelumnya) =====
-        var track = document.getElementById('sliderTrack');
-        if (track) {
-            // ... kode slider yang sudah ada ...
-        }
-    
+
         // ===== SARAN BUTTON =====
         var btnSaran = document.querySelector('.btn-saran');
         if (btnSaran) {
@@ -1680,7 +1606,7 @@
                 alert('Terima kasih! Silakan tulis saran dan kritik Anda di form yang tersedia.');
             });
         }
-    
+
         // ===== PROFIL ITEMS =====
         document.querySelectorAll('.profil-item').forEach(function(item) {
             item.addEventListener('click', function() {
@@ -1688,7 +1614,7 @@
                 alert('Anda membuka halaman: ' + label + '\n(Halaman sedang dalam pengembangan.)');
             });
         });
-    
+
         // ===== PUBLIKASI & DOKUMENTASI ITEMS =====
         document.querySelectorAll('.pub-item, .dok-item, .berita-item, .foto-card, .agenda-card, .dokumen-list a, .agenda-list .agenda-item')
             .forEach(function(el) {
@@ -1698,8 +1624,9 @@
                     alert('Anda membuka: ' + text + '\n(Halaman sedang dalam pengembangan.)');
                 });
             });
-    
+
         console.log('✅ Website Satpol PP siap!');
     </script>
+
 </body>
 </html>
