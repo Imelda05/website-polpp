@@ -95,12 +95,12 @@
             display: block;
         }
 
-        /* ===== HAMBURGER (Tombol titik 3) - STICKY DI KANAN ATAS ===== */
+        /* ===== HAMBURGER (Tombol titik 3) - STICKY TIDAK MENUTUPI ===== */
         .hamburger-btn {
             position: sticky;
-            top: 16px;              /* jarak dari atas saat menempel */
-            float: right;           /* dorong ke kanan */
-            margin-right: 16px;     /* jarak dari tepi kanan */
+            top: 24px;              /* turunkan agar tidak terlalu tinggi */
+            float: right;
+            margin-right: 16px;
             margin-bottom: 10px;
             background: var(--hijau-tua);
             border: none;
@@ -1008,16 +1008,17 @@
         }
 
         @media (max-width: 768px) {
-            /* === HAMBURGER TETAP STICKY DI KANAN ATAS === */
+            /* === HAMBURGER STICKY DENGAN TOP YANG LEBIH RENDAH === */
             .hamburger-btn {
                 position: sticky;
-                top: 12px;
+                top: 20px;           /* turunkan agar tidak nutup konten */
                 float: right;
                 margin-right: 12px;
                 font-size: 20px;
                 padding: 4px 10px;
                 margin-bottom: 8px;
                 display: inline-block;
+                z-index: 100;
             }
 
             /* === HEADER MENJADI FLEX WRAP === */
@@ -1025,7 +1026,7 @@
                 flex-wrap: wrap;
             }
 
-            /* === MENU UTAMA DI MOBILE === */
+            /* === MENU UTAMA DI MOBILE - BISA DI-SCROLL === */
             .nav-menu {
                 display: none;
                 flex-direction: column;
@@ -1038,6 +1039,8 @@
                 padding: 6px 0;
                 margin-top: 8px;
                 border-top: 1px solid #dce8dc;
+                max-height: 60vh;          /* batasi tinggi */
+                overflow-y: auto;          /* scroll jika panjang */
             }
             .nav-menu.open { display: flex; }
 
@@ -1143,12 +1146,14 @@
 
         @media (max-width: 480px) {
             .hamburger-btn {
-                top: 10px;
+                top: 16px;
                 font-size: 18px;
                 padding: 4px 8px;
                 margin-right: 8px;
             }
-            .nav-menu { margin-top: 6px; }
+            .nav-menu {
+                max-height: 50vh;
+            }
             .slider-section { height: 220px; }
             .slide-content h2 { font-size: 18px; }
             .slide-content p { font-size: 12px; }
@@ -1175,7 +1180,7 @@
 </head>
 <body>
 
-    <!-- ===== HAMBURGER (Tombol titik 3) - STICKY DI KANAN ATAS ===== -->
+    <!-- ===== HAMBURGER (Tombol titik 3) - STICKY TIDAK MENUTUPI ===== -->
     <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu">
         <i class="fas fa-ellipsis-v"></i>
     </button>
@@ -1435,7 +1440,7 @@
             </div>
         </div>
 
-        <!-- ===== PROFIL SATPOL PP (DIPINDAHKAN KE BAWAH BERANDA) ===== -->
+        <!-- ===== PROFIL SATPOL PP (SETELAH BERANDA) ===== -->
         <div class="profil-section">
             <div class="section-title" style="margin-bottom: 12px;">
                 <h2>Profil Satpol PP</h2>
