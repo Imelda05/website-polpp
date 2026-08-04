@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satpol PP - Tugas dan Fungsi</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Background dasar gradasi hijau dengan aksen abu-abu gelap */
+        body {
+            background: linear-gradient(135deg, #0f2a1d 0%, #064e3b 60%, #1e293b 100%);
+            background-attachment: fixed;
+            font-family: 'Inter', sans-serif;
+        }
+        /* Efek Glassmorphism Premium */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .glass-dropdown {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .glass-footer {
+            background: rgba(15, 42, 29, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Efek Hover Glowing Glass Kustom */
+        .hover-glow {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-glow:hover {
+            transform: translateY(-4px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 10px 25px -5px rgba(6, 78, 59, 0.4), 0 0 15px rgba(16, 185, 129, 0.2);
+        }
+    </style>
+</head>
+<body class="text-white antialiased">
+
+    <!-- 1. NAVBAR (Navigasi Kaca yang Konsisten, Status Active pada Tugas dan Fungsi) -->
+    <nav class="glass-nav sticky top-0 z-50 text-slate-800 shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo & Identitas (Sisi Kiri) -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-emerald-700 rounded-full flex items-center justify-center text-white font-extrabold text-sm shadow-inner">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <a href="index.html" class="block font-bold text-emerald-950 tracking-tight text-sm sm:text-base leading-none hover:text-emerald-800 transition-colors">Satuan Polisi Pamong Praja</a>
+                        <span class="text-xs text-slate-500 font-medium">Kabupaten Musi Banyuasin</span>
+                    </div>
+                </div>
+
+                <!-- Menu Navigasi Desktop (Sisi Kanan) -->
+                <div class="hidden lg:flex items-center space-x-6 text-[15px] font-semibold">
+                    <a href="index.html" class="hover:text-emerald-600 transition-colors">Beranda</a>
+                    
+                    <!-- DROPDOWN 1: Profil PD (Status Active / Highlighted) -->
+                    <div class="relative group py-2">
+                        <button class="text-emerald-700 border-b-2 border-emerald-600 pb-1 flex items-center space-x-1 cursor-pointer transition-colors font-bold">
+                            <span>Profil PD</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] pt-0.5 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <!-- Menu Dropdown -->
+                        <div class="absolute left-0 mt-3 w-64 rounded-2xl glass-dropdown shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden py-3 text-slate-800 border border-slate-100">
+                            <a href="profil-pimpinan.html" class="flex items-center space-x-3 px-5 py-2.5 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+                                <i class="fa-solid fa-user-tie text-emerald-600 text-sm w-5"></i>
+                                <span>Profil Pimpinan</span>
+                            </a>
+                            <div class="my-1 border-t border-slate-100/80"></div>
+                            <a href="sejarah.html" class="flex items-center space-x-3 px-5 py-2 hover:bg-emerald-50/50 hover:text-emerald-700 transition-colors text-sm text-slate-600 pl-12">
+                                <span>Sejarah</span>
+                            </a>
+                            <a href="struktur.html" class="flex items-center space-x-3 px-5 py-2 hover:bg-emerald-50/50 hover:text-emerald-700 transition-colors text-sm text-slate-600 pl-12">
+                                <span>Struktur Organisasi</span>
+                            </a>
+                            <a href="visimisi.html" class="flex items-center space-x-3 px-5 py-2 hover:bg-emerald-50/50 hover:text-emerald-700 transition-colors text-sm text-slate-600 pl-12">
+                                <span>Visi dan Misi</span>
+                            </a>
+                            <!-- Submenu Tugas dan Fungsi Aktif -->
+                            <a href="tugasfungsi.html" class="flex items-center space-x-3 px-5 py-2 bg-emerald-50 text-emerald-700 transition-colors font-bold text-sm pl-12">
+                                <span>Tugas dan Fungsi</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="program.html" class="hover:text-emerald-600 transition-colors">Program</a>
+                    <a href="agenda.html" class="hover:text-emerald-600 transition-colors">Agenda Pimpinan</a>
+                    
+                    <!-- DROPDOWN: Publikasi -->
+                    <div class="relative group py-2">
+                        <button class="hover:text-emerald-600 flex items-center space-x-1 cursor-pointer transition-colors">
+                            <span>Publikasi</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] pt-0.5 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <!-- Menu Dropdown -->
+                        <div class="absolute left-0 mt-3 w-48 rounded-2xl glass-dropdown shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden py-3 text-slate-800 border border-slate-100">
+                            <a href="berita.html" class="flex items-center space-x-3 px-5 py-2.5 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+                                <i class="fa-regular fa-newspaper text-emerald-600 text-sm w-5"></i>
+                                <span>Berita</span>
+                            </a>
+                            <a href="detail-berita.html" class="flex items-center space-x-3 px-5 py-2.5 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+                                <i class="fa-solid fa-circle-info text-emerald-600 text-sm w-5"></i>
+                                <span>Detail Berita</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- DROPDOWN 2: Dokumentasi -->
+                    <div class="relative group py-2">
+                        <button class="hover:text-emerald-600 flex items-center space-x-1 cursor-pointer transition-colors">
+                            <span>Dokumentasi</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] pt-0.5 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <!-- Menu Dropdown -->
+                        <div class="absolute left-0 mt-3 w-48 rounded-2xl glass-dropdown shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden py-3 text-slate-800 border border-slate-100">
+                            <a href="galeri.html" class="flex items-center space-x-3 px-5 py-2.5 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+                                <i class="fa-solid fa-images text-emerald-600 text-sm w-5"></i>
+                                <span>Galeri Foto</span>
+                            </a>
+                            <a href="video.html" class="flex items-center space-x-3 px-5 py-2.5 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+                                <i class="fa-solid fa-video text-emerald-600 text-sm w-5"></i>
+                                <span>Video Kegiatan</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="saran.html" class="hover:text-emerald-600 transition-colors">Saran dan Kritik</a>
+                </div>
+
+                <!-- Tombol Menu Seluler (Mobile) -->
+                <div class="lg:hidden">
+                    <button id="mobileMenuBtn" class="p-2 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-emerald-600 transition-all cursor-pointer">
+                        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 py-4 space-y-3 shadow-inner">
+            <a href="index.html" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-50 font-semibold">Beranda</a>
+            
+            <!-- Mobile Accordion: Profil PD -->
+            <div class="space-y-1">
+                <button id="mobileProfilBtn" class="w-full flex items-center justify-between px-3 py-2 rounded-lg bg-emerald-50 text-emerald-700 font-bold cursor-pointer">
+                    <span>Profil PD</span>
+                    <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200 rotate-180" id="mobileProfilChevron"></i>
+                </button>
+                <div id="mobileProfil" class="pl-6 space-y-1 border-l-2 border-emerald-100 ml-3">
+                    <a href="profil-pimpinan.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Profil Pimpinan</a>
+                    <a href="sejarah.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Sejarah</a>
+                    <a href="struktur.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Struktur Organisasi</a>
+                    <a href="visimisi.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Visi dan Misi</a>
+                    <a href="tugasfungsi.html" class="block px-3 py-2 text-sm text-emerald-700 font-bold hover:text-emerald-600">Tugas dan Fungsi</a>
+                </div>
+            </div>
+
+            <a href="program.html" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-50 font-semibold">Program</a>
+            <a href="agenda.html" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-50 font-semibold">Agenda Pimpinan</a>
+            
+            <!-- Mobile Accordion: Publikasi -->
+            <div class="space-y-1">
+                <button id="mobilePublikasiBtn" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-50 font-semibold cursor-pointer">
+                    <span>Publikasi</span>
+                    <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" id="mobilePublikasiChevron"></i>
+                </button>
+                <div id="mobilePublikasi" class="hidden pl-6 space-y-1 border-l-2 border-emerald-100 ml-3">
+                    <a href="berita.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Berita</a>
+                    <a href="detail-berita.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Detail Berita</a>
+                </div>
+            </div>
+
+            <!-- Mobile Accordion: Dokumentasi -->
+            <div class="space-y-1">
+                <button id="mobileDocBtn" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-50 font-semibold cursor-pointer">
+                    <span>Dokumentasi</span>
+                    <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" id="mobileDocChevron"></i>
+                </button>
+                <div id="mobileDoc" class="hidden pl-6 space-y-1 border-l-2 border-emerald-100 ml-3">
+                    <a href="galeri.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Galeri Foto</a>
+                    <a href="video.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Video Kegiatan</a>
+                </div>
+            </div>
+
+            <a href="saran.html" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-50 font-semibold">Saran dan Kritik</a>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-16">
+
+        <!-- 2. HERO HEADER SECTION -->
+        <section class="glass-card rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="absolute -left-16 -top-16 w-64 h-64 bg-emerald-600/10 rounded-full blur-3xl"></div>
+            <div class="space-y-3 z-10 max-w-2xl">
+                <span class="bg-emerald-600/30 backdrop-blur-md text-emerald-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block border border-emerald-500/30">Profil PD</span>
+                <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">Tugas & Fungsi</h1>
+                <p class="text-slate-300 text-sm sm:text-base">Mengenal rincian tanggung jawab konstitusional serta fungsi operasional Satpol PP dalam mengawal ketertiban sipil di Kabupaten Musi Banyuasin.</p>
+            </div>
+            <div class="z-10 text-xs text-slate-300 bg-white/5 border border-white/10 px-4 py-2.5 rounded-xl flex items-center space-x-2">
+                <a href="index.html" class="hover:text-emerald-400">Beranda</a>
+                <span><i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i></span>
+                <span class="text-emerald-400 font-semibold">Tugas & Fungsi</span>
+            </div>
+        </section>
+
+        <!-- 3. TUGAS POKOK SECTION (Wow Factor / Large Glass Central Banner) -->
+        <section class="relative">
+            <div class="absolute -left-24 -bottom-24 w-96 h-96 bg-emerald-500/10 rounded-full blur-3xl -z-10"></div>
+            
+            <div class="glass-card rounded-3xl p-8 sm:p-14 shadow-2xl relative overflow-hidden border border-white/10 flex flex-col lg:flex-row items-center justify-between gap-10">
+                <!-- Sisi Kiri: Simbol Kaca yang Kuat -->
+                <div class="flex-1 space-y-6">
+                    <span class="text-xs uppercase tracking-widest text-emerald-400 font-extrabold flex items-center gap-2">
+                        <span class="w-2 h-2 bg-emerald-400 rounded-full animate-ping"></span>
+                        Amanah Utama
+                    </span>
+                    <h2 class="text-2xl sm:text-4xl font-black text-white leading-tight">
+                        Tugas Pokok Satpol PP Kabupaten Musi Banyuasin
+                    </h2>
+                    <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                        Membantu Bupati dalam menyelenggarakan Urusan Pemerintahan yang menjadi kewenangan Daerah di bidang ketentraman dan ketertiban umum serta perlindungan masyarakat.
+                    </p>
+                    <div class="border-t border-white/10 pt-4">
+                        <p class="text-xs text-slate-400 italic">
+                            Sesuai dengan peraturan perundang-undangan nasional dan regulasi daerah yang berlaku di wilayah hukum Bumi Serasan Sekate.
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Sisi Kanan: Kartu Deklarasi Visual -->
+                <div class="w-full lg:w-[400px] bg-white/5 border border-white/10 rounded-2xl p-6 space-y-4 shadow-xl">
+                    <div class="w-12 h-12 bg-emerald-600/30 text-emerald-300 border border-emerald-500/30 rounded-xl flex items-center justify-center text-2xl">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h4 class="font-bold text-lg text-white">Prinsip Pelaksanaan Tugas</h4>
+                    <ul class="space-y-2 text-xs text-slate-300 list-disc pl-5 leading-relaxed">
+                        <li>Mengedepankan tindakan persuasif dan humanis sebelum penegakan represif non-yustisial.</li>
+                        <li>Menjamin perlindungan hak asasi manusia dalam setiap pelaksanaan penertiban di lapangan.</li>
+                        <li>Sinergitas penuh bersama jajaran TNI, POLRI, dan instansi vertikal terkait.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. FUNGSI UTAMA SECTION (3 Pillars of Services) -->
+        <section class="space-y-8">
+            <div class="text-center space-y-2 max-w-xl mx-auto">
+                <span class="text-xs uppercase tracking-widest text-emerald-400 font-extrabold">Operasional Teknis</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Fungsi Utama Organisasi</h2>
+                <p class="text-xs sm:text-sm text-slate-300">Tiga pilar fungsi utama yang kami selenggarakan secara berkesinambungan demi ketentraman sipil daerah.</p>
+            </div>
+
+            <!-- Grid 3 Pilar Fungsi -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6">
+                
+                <!-- Fungsi 1: Penegakan Perda/Perkada -->
+                <div class="glass-card rounded-3xl p-6 sm:p-8 hover-glow relative overflow-hidden flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 bg-emerald-600/20 text-emerald-300 rounded-xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-gavel"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-emerald-400 transition-colors">Penegakan Perda & Perkada</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">
+                            Penyusunan program, pelaksanaan kebijakan, koordinasi penegakan, tindakan penyelidikan, hingga penyidikan pelanggaran Perda & Perkada bekerja sama dengan PPNS.
+                        </p>
+                    </div>
+                    <ul class="mt-6 space-y-1 border-t border-white/5 pt-4 text-[11px] text-slate-400">
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-500"></i> Pengawasan perizinan usaha</li>
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-emerald-500"></i> Operasi kepatuhan tata ruang</li>
+                    </ul>
+                </div>
+
+                <!-- Fungsi 2: Ketentraman & Ketertiban Umum -->
+                <div class="glass-card rounded-3xl p-6 sm:p-8 hover-glow relative overflow-hidden flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 bg-amber-500/20 text-amber-300 rounded-xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-users"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-amber-400 transition-colors">Ketentraman & Ketertiban</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">
+                            Penyelenggaraan ketertiban umum dan ketentraman melalui patroli wilayah, penertiban fasilitas publik, penataan zonasi pedagang kaki lima, serta pengamanan objek vital daerah.
+                        </p>
+                    </div>
+                    <ul class="mt-6 space-y-1 border-t border-white/5 pt-4 text-[11px] text-slate-400">
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-amber-400"></i> Patroli pengawasan kota</li>
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-amber-400"></i> Pengamanan agenda pimpinan</li>
+                    </ul>
+                </div>
+
+                <!-- Fungsi 3: Perlindungan Masyarakat -->
+                <div class="glass-card rounded-3xl p-6 sm:p-8 hover-glow relative overflow-hidden flex flex-col justify-between group">
+                    <div class="space-y-4">
+                        <div class="w-12 h-12 bg-sky-500/20 text-sky-300 rounded-xl flex items-center justify-center text-xl">
+                            <i class="fa-solid fa-shield-heart"></i>
+                        </div>
+                        <h3 class="text-lg font-bold text-white group-hover:text-sky-400 transition-colors">Perlindungan Masyarakat</h3>
+                        <p class="text-slate-300 text-xs leading-relaxed">
+                            Pembinaan, bimbingan teknis, pemberdayaan, pelatihan kesiapsiagaan, serta mobilisasi Satuan Perlindungan Masyarakat (Satlinmas) dalam bantuan kebencanaan dan pertahanan sipil.
+                        </p>
+                    </div>
+                    <ul class="mt-6 space-y-1 border-t border-white/5 pt-4 text-[11px] text-slate-400">
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-sky-400"></i> Pembinaan Satlinmas desa</li>
+                        <li class="flex items-center gap-1.5"><i class="fa-solid fa-check text-sky-400"></i> Pengamanan swakarsa pemilu</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- 5. DASAR HUKUM SECTION (Legal Foundation) -->
+        <section class="space-y-8">
+            <div class="text-center space-y-2 max-w-xl mx-auto">
+                <span class="text-xs uppercase tracking-widest text-emerald-400 font-extrabold">Dasar Konstitusi</span>
+                <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Landasan Hukum Kewenangan</h2>
+                <p class="text-xs sm:text-sm text-slate-300">Setiap gerak langkah operasional dinas kami dijalankan berlandaskan regulasi hukum nasional dan peraturan daerah yang sah.</p>
+            </div>
+
+            <!-- List Dasar Hukum -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-4xl mx-auto">
+                
+                <!-- Hukum 1 -->
+                <div class="glass-card rounded-2xl p-5 flex items-start space-x-4 border border-white/5">
+                    <div class="w-10 h-10 bg-emerald-500/20 text-emerald-300 rounded-xl flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-book-bookmark"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-sm text-white">Undang-Undang No. 23 Tahun 2014</h4>
+                        <p class="text-[11px] text-slate-400 font-semibold mb-1">Pasal 255 tentang Satuan Polisi Pamong Praja</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">Pemberian kewenangan konstitusional kepada pemerintah daerah untuk membentuk Satpol PP guna penegakan Perda dan ketertiban umum.</p>
+                    </div>
+                </div>
+
+                <!-- Hukum 2 -->
+                <div class="glass-card rounded-2xl p-5 flex items-start space-x-4 border border-white/5">
+                    <div class="w-10 h-10 bg-emerald-500/20 text-emerald-300 rounded-xl flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-scale-unbalanced-flip"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-sm text-white">Peraturan Pemerintah No. 16 Tahun 2018</h4>
+                        <p class="text-[11px] text-slate-400 font-semibold mb-1">Pedoman Pembentukan dan Operasional Satpol PP</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">Mengatur regulasi komando kedudukan, struktur organisasi, fungsi penindakan, pembinaan aparatur sipil, serta penegakan hukum persuasif.</p>
+                    </div>
+                </div>
+
+                <!-- Hukum 3 -->
+                <div class="glass-card rounded-2xl p-5 flex items-start space-x-4 border border-white/5">
+                    <div class="w-10 h-10 bg-emerald-500/20 text-emerald-300 rounded-xl flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-gavel"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-sm text-white">Peraturan Daerah Kabupaten Musi Banyuasin</h4>
+                        <p class="text-[11px] text-slate-400 font-semibold mb-1">Perda Ketentraman dan Ketertiban Umum (Tibum)</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">Menjadi landasan taktis operasional penataan jalan, ruang kota, penertiban lapak, keselamatan lingkungan, serta perlindungan hak warga sipil Muba.</p>
+                    </div>
+                </div>
+
+                <!-- Hukum 4 -->
+                <div class="glass-card rounded-2xl p-5 flex items-start space-x-4 border border-white/5">
+                    <div class="w-10 h-10 bg-emerald-500/20 text-emerald-300 rounded-xl flex items-center justify-center shrink-0">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <h4 class="font-extrabold text-sm text-white">Permendagri No. 26 Tahun 2020</h4>
+                        <p class="text-[11px] text-slate-400 font-semibold mb-1">Penyelenggaraan Ketertiban Umum dan Linmas</p>
+                        <p class="text-xs text-slate-300 leading-relaxed">Mengatur standarisasi teknis operasional, penanganan konflik sosial ringan, mitigasi swakarsa, dan tata kelola personil perlindungan sipil daerah.</p>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 7. FOOTER (Identik Dengan index.html, sejarah.html & struktur-organisasi.html) -->
+    <footer class="mt-20 glass-footer">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                
+                <!-- Kolom 1: Profil Singkat & Sosmed -->
+                <div class="md:col-span-4 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-emerald-700 rounded-full flex items-center justify-center text-white font-bold text-sm shadow">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <span class="block font-bold text-emerald-400 tracking-wide text-sm leading-none uppercase">Satpol PP Muba</span>
+                            <span class="text-[11px] text-slate-400">Praja Wibawa</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Satuan Polisi Pamong Praja Kabupaten Musi Banyuasin berkomitmen penuh dalam menyelenggarakan ketertiban umum, ketentraman, serta perlindungan masyarakat di Bumi Serasan Sekate.
+                    </p>
+                    <div class="flex items-center space-x-3 pt-2">
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-emerald-600 hover:text-white flex items-center justify-center text-slate-300 transition-all text-xs">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-emerald-600 hover:text-white flex items-center justify-center text-slate-300 transition-all text-xs">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-emerald-600 hover:text-white flex items-center justify-center text-slate-300 transition-all text-xs">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-emerald-600 hover:text-white flex items-center justify-center text-slate-300 transition-all text-xs">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kolom 2: Kontak Hubungi Kami -->
+                <div class="md:col-span-4 space-y-4">
+                    <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider pb-1 border-b border-white/10 w-28">Hubungi Kami</h3>
+                    <ul class="space-y-3 text-xs text-slate-300">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot mt-0.5 mr-3 text-emerald-400 text-sm shrink-0 w-4"></i>
+                            <span>Jl. Kolonel Wahid Udin, Kel. Serasan Jaya, Kec. Sekayu, Kab. Musi Banyuasin, Sumatera Selatan, 30711</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone mr-3 text-emerald-400 text-sm shrink-0 w-4"></i>
+                            <span>(0714) 321123</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-brands fa-whatsapp mr-3 text-emerald-400 text-sm shrink-0 w-4"></i>
+                            <span>+62 811-7890-1234 (Pengaduan)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope mr-3 text-emerald-400 text-sm shrink-0 w-4"></i>
+                            <span>satpolpp@mubakab.go.id</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3: Preview Google Maps -->
+                <div class="md:col-span-4 space-y-3 w-full">
+                    <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider pb-1 border-b border-white/10 w-28">Lokasi Mako</h3>
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-white/15 shadow-inner">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.586221199546!2d103.8378953147551!3d-2.859187997917712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b18cb62f8876b%3A0xcfe0e343bfa9bd1c!2sKantor%20Satpol%20PP%20Kabupaten%20Musi%20Banyuasin!5e0!3m2!1sid!2sid!4v1719728400000!5m2!1sid!2sid" 
+                            class="w-full h-full border-0" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bagian Hak Cipta Bawah -->
+            <div class="mt-12 pt-6 border-t border-white/5 text-center text-[11px] text-slate-500">
+                <p>&copy; 2026 Satuan Polisi Pamong Praja Kabupaten Musi Banyuasin. Hak Cipta Dilindungi.</p>
+                <p class="text-slate-600 mt-1">Dibuat dengan dedikasi penuh untuk keamanan, ketertiban, dan kenyamanan masyarakat.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- LOGIC FOR MOBILE MENU DRAWER -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ==========================================
+            // INTERAKTIVITAS MOBILE MENU & ACCORDIONS
+            // ==========================================
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menuIcon');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.remove('hidden');
+                        if (menuIcon) menuIcon.className = "fa-solid fa-xmark text-xl";
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        if (menuIcon) menuIcon.className = "fa-solid fa-bars text-xl";
+                    }
+                });
+            }
+
+            // Toggle Submenu 1: Profil PD
+            const mobileProfilBtn = document.getElementById('mobileProfilBtn');
+            const mobileProfil = document.getElementById('mobileProfil');
+            const mobileProfilChevron = document.getElementById('mobileProfilChevron');
+
+            if (mobileProfilBtn && mobileProfil) {
+                mobileProfilBtn.addEventListener('click', () => {
+                    if (mobileProfil.classList.contains('hidden')) {
+                        mobileProfil.classList.remove('hidden');
+                        if (mobileProfilChevron) mobileProfilChevron.classList.add('rotate-180');
+                    } else {
+                        mobileProfil.classList.add('hidden');
+                        if (mobileProfilChevron) mobileProfilChevron.classList.remove('rotate-180');
+                    }
+                });
+            }
+
+            // Toggle Submenu 2: Dokumentasi
+            const mobileDocBtn = document.getElementById('mobileDocBtn');
+            const mobileDoc = document.getElementById('mobileDoc');
+            const mobileDocChevron = document.getElementById('mobileDocChevron');
+
+            if (mobileDocBtn && mobileDoc) {
+                mobileDocBtn.addEventListener('click', () => {
+                    if (mobileDoc.classList.contains('hidden')) {
+                        mobileDoc.classList.remove('hidden');
+                        if (mobileDocChevron) mobileDocChevron.classList.add('rotate-180');
+                    } else {
+                        mobileDoc.classList.add('hidden');
+                        if (mobileDocChevron) mobileDocChevron.classList.remove('rotate-180');
+                    }
+                });
+            }
+
+            // Toggle Submenu 3: Publikasi Mobile
+            const mobilePublikasiBtn = document.getElementById('mobilePublikasiBtn');
+            const mobilePublikasi = document.getElementById('mobilePublikasi');
+            const mobilePublikasiChevron = document.getElementById('mobilePublikasiChevron');
+
+            if (mobilePublikasiBtn && mobilePublikasi) {
+                mobilePublikasiBtn.addEventListener('click', () => {
+                    if (mobilePublikasi.classList.contains('hidden')) {
+                        mobilePublikasi.classList.remove('hidden');
+                        if (mobilePublikasiChevron) mobilePublikasiChevron.classList.add('rotate-180');
+                    } else {
+                        mobilePublikasi.classList.add('hidden');
+                        if (mobilePublikasiChevron) mobilePublikasiChevron.classList.remove('rotate-180');
+                    }
+                });
+            }
+        });
+    </script>
+</body>
+</html>
