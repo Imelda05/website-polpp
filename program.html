@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satpol PP - Program Kerja</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome untuk Icon -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Background dasar gradasi hijau dengan aksen abu-abu gelap */
+        body {
+            background: linear-gradient(135deg, #0f2a1d 0%, #064e3b 60%, #1e293b 100%);
+            background-attachment: fixed;
+            font-family: 'Inter', sans-serif;
+        }
+        /* Efek Glassmorphism Premium */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .glass-nav {
+            background: rgba(255, 255, 255, 0.92);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .glass-dropdown {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        .glass-footer {
+            background: rgba(15, 42, 29, 0.85);
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Efek Hover Glowing Glass Kustom */
+        .hover-glow {
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .hover-glow:hover {
+            transform: translateY(-6px);
+            background: rgba(255, 255, 255, 0.15);
+            border-color: rgba(16, 185, 129, 0.5);
+            box-shadow: 0 15px 30px -5px rgba(6, 78, 59, 0.4), 0 0 15px rgba(16, 185, 129, 0.2);
+        }
+    </style>
+</head>
+<body class="text-white antialiased">
+
+    <!-- 1. NAVBAR (Navigasi Kaca yang Konsisten, Status Active pada Program) -->
+    <nav class="glass-nav sticky top-0 z-50 text-slate-800 shadow-lg transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                
+                <!-- Logo & Identitas (Sisi Kiri) -->
+                <div class="flex items-center space-x-3">
+                    <div class="w-12 h-12 bg-emerald-700 rounded-full flex items-center justify-center text-white font-extrabold text-sm shadow-inner">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <div>
+                        <a href="index.html" class="block font-bold text-emerald-950 tracking-tight text-sm sm:text-base leading-none hover:text-emerald-800 transition-colors">Satuan Polisi Pamong Praja</a>
+                        <span class="text-xs text-slate-500 font-medium">Kabupaten Musi Banyuasin</span>
+                    </div>
+                </div>
+
+                <!-- Menu Navigasi Desktop (Sisi Kanan) -->
+                <div class="hidden lg:flex items-center space-x-6 text-[15px] font-semibold">
+                    <a href="index.html" class="hover:text-emerald-600 transition-colors">Beranda</a>
+                    
+                    <!-- DROPDOWN 1: Profil PD -->
+                    <div class="relative group py-2">
+                        <button class="hover:text-emerald-600 flex items-center space-x-1 cursor-pointer transition-colors">
+                            <span>Profil PD</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] pt-0.5 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <!-- Menu Dropdown -->
+                        <div class="absolute left-0 mt-3 w-64 rounded-2xl glass-dropdown shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden py-3 text-slate-800 border border-slate-100">
+                            <a href="profil-pimpinan.html" class="flex items-center space-x-3 px-5 py-2.5 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+                                <i class="fa-solid fa-user-tie text-emerald-600 text-sm w-5"></i>
+                                <span>Profil Pimpinan</span>
+                            </a>
+                            <div class="my-1 border-t border-slate-100/80"></div>
+                            <a href="sejarah.html" class="flex items-center space-x-3 px-5 py-2 hover:bg-emerald-50/50 hover:text-emerald-700 transition-colors text-sm text-slate-600 pl-12">
+                                <span>Sejarah</span>
+                            </a>
+                            <a href="struktur.html" class="flex items-center space-x-3 px-5 py-2 hover:bg-emerald-50/50 hover:text-emerald-700 transition-colors text-sm text-slate-600 pl-12">
+                                <span>Struktur Organisasi</span>
+                            </a>
+                            <a href="visimisi.html" class="flex items-center space-x-3 px-5 py-2 hover:bg-emerald-50/50 hover:text-emerald-700 transition-colors text-sm text-slate-600 pl-12">
+                                <span>Visi dan Misi</span>
+                            </a>
+                            <a href="tugasfungsi.html" class="flex items-center space-x-3 px-5 py-2 hover:bg-emerald-50/50 hover:text-emerald-700 transition-colors text-sm text-slate-600 pl-12">
+                                <span>Tugas dan Fungsi</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Program Aktif / Highlighted -->
+                    <a href="program.html" class="text-emerald-700 border-b-2 border-emerald-600 pb-1 font-bold">Program</a>
+                    
+                    <a href="agenda.html" class="hover:text-emerald-600 transition-colors">Agenda Pimpinan</a>
+                    
+                    <!-- DROPDOWN: Publikasi (Berita diganti Publikasi sesuai arahan) -->
+                    <div class="relative group py-2">
+                        <button class="hover:text-emerald-600 flex items-center space-x-1 cursor-pointer transition-colors">
+                            <span>Publikasi</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] pt-0.5 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <!-- Menu Dropdown -->
+                        <div class="absolute left-0 mt-3 w-48 rounded-2xl glass-dropdown shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden py-3 text-slate-800 border border-slate-100">
+                            <a href="berita.html" class="flex items-center space-x-3 px-5 py-2.5 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+                                <i class="fa-regular fa-newspaper text-emerald-600 text-sm w-5"></i>
+                                <span>Berita</span>
+                            </a>
+                            <a href="detail-berita.html" class="flex items-center space-x-3 px-5 py-2.5 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+                                <i class="fa-solid fa-circle-info text-emerald-600 text-sm w-5"></i>
+                                <span>Detail Berita</span>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- DROPDOWN 2: Dokumentasi -->
+                    <div class="relative group py-2">
+                        <button class="hover:text-emerald-600 flex items-center space-x-1 cursor-pointer transition-colors">
+                            <span>Dokumentasi</span>
+                            <i class="fa-solid fa-chevron-down text-[10px] pt-0.5 transition-transform duration-200 group-hover:rotate-180"></i>
+                        </button>
+                        <!-- Menu Dropdown -->
+                        <div class="absolute left-0 mt-3 w-48 rounded-2xl glass-dropdown shadow-xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50 overflow-hidden py-3 text-slate-800 border border-slate-100">
+                            <a href="galeri.html" class="flex items-center space-x-3 px-5 py-2.5 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+                                <i class="fa-solid fa-images text-emerald-600 text-sm w-5"></i>
+                                <span>Galeri Foto</span>
+                            </a>
+                            <a href="video.html" class="flex items-center space-x-3 px-5 py-2.5 hover:bg-emerald-50 hover:text-emerald-700 transition-colors">
+                                <i class="fa-solid fa-video text-emerald-600 text-sm w-5"></i>
+                                <span>Video Kegiatan</span>
+                            </a>
+                        </div>
+                    </div>
+
+                    <a href="saran.html" class="hover:text-emerald-600 transition-colors">Saran dan Kritik</a>
+                </div>
+
+                <!-- Tombol Menu Seluler (Mobile) -->
+                <div class="lg:hidden">
+                    <button id="mobileMenuBtn" class="p-2 rounded-lg text-slate-700 hover:bg-slate-100 hover:text-emerald-600 transition-all cursor-pointer">
+                        <i class="fa-solid fa-bars text-xl" id="menuIcon"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Mobile Drawer -->
+        <div id="mobileMenu" class="hidden lg:hidden bg-white border-t border-slate-100 px-4 py-4 space-y-3 shadow-inner">
+            <a href="index.html" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-50 font-semibold">Beranda</a>
+            
+            <!-- Mobile Accordion: Profil PD -->
+            <div class="space-y-1">
+                <button id="mobileProfilBtn" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-50 font-semibold cursor-pointer">
+                    <span>Profil PD</span>
+                    <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" id="mobileProfilChevron"></i>
+                </button>
+                <div id="mobileProfil" class="hidden pl-6 space-y-1 border-l-2 border-emerald-100 ml-3">
+                    <a href="profil-pimpinan.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Profil Pimpinan</a>
+                    <a href="sejarah.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Sejarah</a>
+                    <a href="struktur.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Struktur Organisasi</a>
+                    <a href="visimisi.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Visi dan Misi</a>
+                    <a href="tugasfungsi.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Tugas dan Fungsi</a>
+                </div>
+            </div>
+
+            <a href="program.html" class="block px-3 py-2 rounded-lg bg-emerald-50 text-emerald-700 font-bold">Program</a>
+            <a href="agenda.html" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-50 font-semibold">Agenda Pimpinan</a>
+            
+            <!-- Mobile Accordion: Publikasi -->
+            <div class="space-y-1">
+                <button id="mobilePublikasiBtn" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-50 font-semibold cursor-pointer">
+                    <span>Publikasi</span>
+                    <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" id="mobilePublikasiChevron"></i>
+                </button>
+                <div id="mobilePublikasi" class="hidden pl-6 space-y-1 border-l-2 border-emerald-100 ml-3">
+                    <a href="berita.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Berita</a>
+                    <a href="detail-berita.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Detail Berita</a>
+                </div>
+            </div>
+
+            <!-- Mobile Accordion: Dokumentasi -->
+            <div class="space-y-1">
+                <button id="mobileDocBtn" class="w-full flex items-center justify-between px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-50 font-semibold cursor-pointer">
+                    <span>Dokumentasi</span>
+                    <i class="fa-solid fa-chevron-down text-xs transition-transform duration-200" id="mobileDocChevron"></i>
+                </button>
+                <div id="mobileDoc" class="hidden pl-6 space-y-1 border-l-2 border-emerald-100 ml-3">
+                    <a href="galeri.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Galeri Foto</a>
+                    <a href="video.html" class="block px-3 py-2 text-sm text-slate-600 hover:text-emerald-600">Video Kegiatan</a>
+                </div>
+            </div>
+
+            <a href="saran.html" class="block px-3 py-2 rounded-lg text-slate-700 hover:bg-slate-50 font-semibold">Saran dan Kritik</a>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT WRAPPER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+        <!-- 2. HERO HEADER SECTION -->
+        <section class="glass-card rounded-3xl p-8 sm:p-12 shadow-2xl relative overflow-hidden flex flex-col md:flex-row items-center justify-between gap-6">
+            <div class="absolute -left-16 -top-16 w-64 h-64 bg-emerald-600/10 rounded-full blur-3xl"></div>
+            <div class="space-y-3 z-10 max-w-2xl">
+                <span class="bg-emerald-600/30 backdrop-blur-md text-emerald-300 text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider inline-block border border-emerald-500/30">Dinas / Organisasi</span>
+                <h1 class="text-3xl sm:text-5xl font-black tracking-tight text-white leading-tight">Program Kerja Utama</h1>
+                <p class="text-slate-300 text-sm sm:text-base">Eksplorasi jajaran rancangan agenda strategis, inovasi penertiban sipil, dan pembinaan perlindungan sipil dinamis di Kabupaten Musi Banyuasin.</p>
+            </div>
+            <div class="z-10 text-xs text-slate-300 bg-white/5 border border-white/10 px-4 py-2.5 rounded-xl flex items-center space-x-2 shrink-0">
+                <a href="index.html" class="hover:text-emerald-400">Beranda</a>
+                <span><i class="fa-solid fa-chevron-right text-[10px] text-slate-500"></i></span>
+                <span class="text-emerald-400 font-semibold">Program</span>
+            </div>
+        </section>
+
+        <!-- 3. FILTER & SEARCH CONTROL SYSTEM -->
+        <section class="glass-card rounded-2xl p-4 sm:p-6 shadow-xl flex flex-col md:flex-row gap-4 items-center justify-between">
+            <!-- Search bar -->
+            <div class="relative w-full md:w-96">
+                <span class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none text-slate-400">
+                    <i class="fa-solid fa-magnifying-glass text-sm"></i>
+                </span>
+                <input type="text" id="searchInput" onkeyup="filterPrograms()" placeholder="Cari program kerja..." class="w-full pl-10 pr-4 py-2.5 bg-white/5 border border-white/10 focus:border-emerald-500 rounded-xl text-sm placeholder-slate-400 text-white focus:outline-none focus:ring-1 focus:ring-emerald-500 transition-all">
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex items-center space-x-2 overflow-x-auto w-full md:w-auto pb-1 md:pb-0 scrollbar-hide">
+                <button onclick="filterCategory('semua')" id="btn-cat-semua" class="filter-btn shrink-0 text-xs font-bold px-4 py-2 rounded-xl bg-emerald-600 text-white transition-all cursor-pointer">
+                    Semua
+                </button>
+                <button onclick="filterCategory('ketertiban')" id="btn-cat-ketertiban" class="filter-btn shrink-0 text-xs font-bold px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all cursor-pointer">
+                    Ketertiban Umum
+                </button>
+                <button onclick="filterCategory('pembinaan')" id="btn-cat-pembinaan" class="filter-btn shrink-0 text-xs font-bold px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all cursor-pointer">
+                    Pembinaan & Regulasi
+                </button>
+                <button onclick="filterCategory('linmas')" id="btn-cat-linmas" class="filter-btn shrink-0 text-xs font-bold px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all cursor-pointer">
+                    Perlindungan Sipil (Linmas)
+                </button>
+            </div>
+        </section>
+
+        <!-- 4. PROGRAM WORK CARDS SECTION (8 Premium Card Layout) -->
+        <section id="programGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+            <!-- Card 1 -->
+            <div class="program-card glass-card rounded-3xl p-6 hover-glow flex flex-col justify-between shadow-xl relative overflow-hidden" data-category="ketertiban">
+                <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-emerald-600/5 rounded-full blur-xl"></div>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3 py-1 rounded-full font-bold uppercase tracking-wider">Ketertiban Umum</span>
+                        <span class="text-xs font-bold text-emerald-400"><i class="fa-solid fa-circle-check mr-1.5 animate-pulse"></i> Aktif</span>
+                    </div>
+                    <div class="w-12 h-12 bg-emerald-600/20 text-emerald-300 rounded-2xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-hand-holding-hand"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white leading-snug">Penataan PKL Berbasis Zonasi Humanis (Sipinter)</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Mengorganisasikan zonasi dagang strategis yang ramah lingkungan dan tertib estetika wilayah.
+                    </p>
+                </div>
+                <!-- Action Download PDF Button -->
+                <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] text-slate-400 font-medium">Dokumen: PKL_Zonasi_Muba.pdf</span>
+                    <button onclick="simulateDownload('PKL_Zonasi_Muba.pdf')" class="inline-flex items-center space-x-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-md transition-all cursor-pointer">
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                        <span>Unduh (PDF)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="program-card glass-card rounded-3xl p-6 hover-glow flex flex-col justify-between shadow-xl relative overflow-hidden" data-category="pembinaan">
+                <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-sky-600/5 rounded-full blur-xl"></div>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs bg-sky-500/20 text-sky-300 border border-sky-500/30 px-3 py-1 rounded-full font-bold uppercase tracking-wider">Pembinaan & Regulasi</span>
+                        <span class="text-xs font-bold text-sky-400"><i class="fa-solid fa-clock mr-1.5"></i> Terjadwal</span>
+                    </div>
+                    <div class="w-12 h-12 bg-sky-600/20 text-sky-300 rounded-2xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white leading-snug">Pengawasan Kepatuhan Perizinan Daerah (Gakda)</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur vel molestie sem. Program inspeksi lapangan berkala untuk verifikasi kepatuhan hukum atas izin bangunan (IMB) dan pajak reklame usaha daerah.
+                    </p>
+                </div>
+                <!-- Action Download PDF Button -->
+                <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] text-slate-400 font-medium">Dokumen: Pengawasan_Izin_Daerah.pdf</span>
+                    <button onclick="simulateDownload('Pengawasan_Izin_Daerah.pdf')" class="inline-flex items-center space-x-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-md transition-all cursor-pointer">
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                        <span>Unduh (PDF)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="program-card glass-card rounded-3xl p-6 hover-glow flex flex-col justify-between shadow-xl relative overflow-hidden" data-category="pembinaan">
+                <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-purple-600/5 rounded-full blur-xl"></div>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs bg-purple-500/20 text-purple-300 border border-purple-500/30 px-3 py-1 rounded-full font-bold uppercase tracking-wider">Pembinaan & Regulasi</span>
+                        <span class="text-xs font-bold text-emerald-400"><i class="fa-solid fa-circle-check mr-1.5 animate-pulse"></i> Aktif</span>
+                    </div>
+                    <div class="w-12 h-12 bg-purple-600/20 text-purple-300 rounded-2xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white leading-snug">Sosialisasi Tertib Sekolah & Pencegahan Kenakalan</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut tempor est eu magna vulputate elementum. Agenda pembinaan moralitas siswa sekolah menengah atas dalam pencegahan tawuran dan balap liar.
+                    </p>
+                </div>
+                <!-- Action Download PDF Button -->
+                <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] text-slate-400 font-medium">Dokumen: Sosialisasi_Tertib_Sekolah.pdf</span>
+                    <button onclick="simulateDownload('Sosialisasi_Tertib_Sekolah.pdf')" class="inline-flex items-center space-x-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-md transition-all cursor-pointer">
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                        <span>Unduh (PDF)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="program-card glass-card rounded-3xl p-6 hover-glow flex flex-col justify-between shadow-xl relative overflow-hidden" data-category="ketertiban">
+                <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-emerald-600/5 rounded-full blur-xl"></div>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3 py-1 rounded-full font-bold uppercase tracking-wider">Ketertiban Umum</span>
+                        <span class="text-xs font-bold text-emerald-400"><i class="fa-solid fa-circle-check mr-1.5 animate-pulse"></i> Aktif</span>
+                    </div>
+                    <div class="w-12 h-12 bg-emerald-600/20 text-emerald-300 rounded-2xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-route"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white leading-snug">Patroli Sinergitas Pencegahan Gangguan Malam (Sajadah)</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer tristique convallis leo. Operasi gabungan bersama jajaran Kodim & Polres Muba guna menyisir tindak kriminalitas dan asusila di malam hari.
+                    </p>
+                </div>
+                <!-- Action Download PDF Button -->
+                <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] text-slate-400 font-medium">Dokumen: Patroli_Sajadah_Kamtibmas.pdf</span>
+                    <button onclick="simulateDownload('Patroli_Sajadah_Kamtibmas.pdf')" class="inline-flex items-center space-x-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-md transition-all cursor-pointer">
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                        <span>Unduh (PDF)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 5 -->
+            <div class="program-card glass-card rounded-3xl p-6 hover-glow flex flex-col justify-between shadow-xl relative overflow-hidden" data-category="linmas">
+                <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-amber-600/5 rounded-full blur-xl"></div>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs bg-amber-500/20 text-amber-300 border border-amber-500/30 px-3 py-1 rounded-full font-bold uppercase tracking-wider">Perlindungan Sipil</span>
+                        <span class="text-xs font-bold text-amber-400"><i class="fa-solid fa-clock mr-1.5"></i> Terjadwal</span>
+                    </div>
+                    <div class="w-12 h-12 bg-amber-500/20 text-amber-300 rounded-2xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-shield-heart"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white leading-snug">Pendidikan Kesamaptaan & Kesiagaan Satlinmas Desa</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam nec arcu ac urna efficitur pulvinar id eu mi. Pelatihan taktis evakuasi kebencanaan mandiri dan pengawasan swakarsa aparat keamanan desa.
+                    </p>
+                </div>
+                <!-- Action Download PDF Button -->
+                <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] text-slate-400 font-medium">Dokumen: Diklat_Kesamaptaan_Linmas.pdf</span>
+                    <button onclick="simulateDownload('Diklat_Kesamaptaan_Linmas.pdf')" class="inline-flex items-center space-x-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-md transition-all cursor-pointer">
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                        <span>Unduh (PDF)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 6 -->
+            <div class="program-card glass-card rounded-3xl p-6 hover-glow flex flex-col justify-between shadow-xl relative overflow-hidden" data-category="pembinaan">
+                <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-sky-600/5 rounded-full blur-xl"></div>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs bg-sky-500/20 text-sky-300 border border-sky-500/30 px-3 py-1 rounded-full font-bold uppercase tracking-wider">Pembinaan & Regulasi</span>
+                        <span class="text-xs font-bold text-emerald-400"><i class="fa-solid fa-circle-check mr-1.5 animate-pulse"></i> Aktif</span>
+                    </div>
+                    <div class="w-12 h-12 bg-sky-600/20 text-sky-300 rounded-2xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-mobile-screen-button"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white leading-snug">Modernisasi Portal Pengaduan Digital (Sistem Siap-Grak)</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam finibus nisl eget odio vulputate tristique. Optimalisasi aplikasi pelaporan aduan masyarakat atas gangguan tibum secara real-time.
+                    </p>
+                </div>
+                <!-- Action Download PDF Button -->
+                <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] text-slate-400 font-medium">Dokumen: Blueprint_Portal_SiapGrak.pdf</span>
+                    <button onclick="simulateDownload('Blueprint_Portal_SiapGrak.pdf')" class="inline-flex items-center space-x-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-md transition-all cursor-pointer">
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                        <span>Unduh (PDF)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 7 -->
+            <div class="program-card glass-card rounded-3xl p-6 hover-glow flex flex-col justify-between shadow-xl relative overflow-hidden" data-category="ketertiban">
+                <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-emerald-600/5 rounded-full blur-xl"></div>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs bg-emerald-500/20 text-emerald-300 border border-emerald-500/30 px-3 py-1 rounded-full font-bold uppercase tracking-wider">Ketertiban Umum</span>
+                        <span class="text-xs font-bold text-emerald-400"><i class="fa-solid fa-circle-check mr-1.5 animate-pulse"></i> Aktif</span>
+                    </div>
+                    <div class="w-12 h-12 bg-emerald-600/20 text-emerald-300 rounded-2xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white leading-snug">Pengamanan Obyek Vital & Fasilitas Hijau Daerah</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin elementum erat vel tellus sodales maximus. Penjagaan posko statis dan dinamis pada gedung pemerintahan daerah serta ruang terbuka hijau se-Muba.
+                    </p>
+                </div>
+                <!-- Action Download PDF Button -->
+                <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] text-slate-400 font-medium">Dokumen: Pengamanan_Aset_Obvital.pdf</span>
+                    <button onclick="simulateDownload('Pengamanan_Aset_Obvital.pdf')" class="inline-flex items-center space-x-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-md transition-all cursor-pointer">
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                        <span>Unduh (PDF)</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Card 8 -->
+            <div class="program-card glass-card rounded-3xl p-6 hover-glow flex flex-col justify-between shadow-xl relative overflow-hidden" data-category="linmas">
+                <div class="absolute -right-8 -bottom-8 w-24 h-24 bg-amber-600/5 rounded-full blur-xl"></div>
+                <div class="space-y-4">
+                    <div class="flex items-center justify-between">
+                        <span class="text-xs bg-amber-500/20 text-amber-300 border border-amber-500/30 px-3 py-1 rounded-full font-bold uppercase tracking-wider">Perlindungan Sipil</span>
+                        <span class="text-xs font-bold text-amber-400"><i class="fa-solid fa-clock mr-1.5"></i> Terjadwal</span>
+                    </div>
+                    <div class="w-12 h-12 bg-amber-500/20 text-amber-300 rounded-2xl flex items-center justify-center text-xl">
+                        <i class="fa-solid fa-people-group"></i>
+                    </div>
+                    <h3 class="text-lg font-extrabold text-white leading-snug">Sinergitas Linmas dalam Pengamanan Swakarsa Pilkada Muba</h3>
+                    <p class="text-slate-300 text-xs leading-relaxed">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed finibus nisl id libero eleifend, et porttitor magna facilisis. Koordinasi taktis penyusunan ploting pengamanan Tempat Pemungutan Suara (TPS) pemilu daerah.
+                    </p>
+                </div>
+                <!-- Action Download PDF Button -->
+                <div class="mt-6 pt-4 border-t border-white/5 flex items-center justify-between">
+                    <span class="text-[10px] text-slate-400 font-medium">Dokumen: Rencana_Sinergi_Pilkada.pdf</span>
+                    <button onclick="simulateDownload('Rencana_Sinergi_Pilkada.pdf')" class="inline-flex items-center space-x-1.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-2 rounded-xl shadow-md transition-all cursor-pointer">
+                        <i class="fa-solid fa-cloud-arrow-down"></i>
+                        <span>Unduh (PDF)</span>
+                    </button>
+                </div>
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- 7. FOOTER (Identik Dengan index.html, sejarah.html & struktur-organisasi.html) -->
+    <footer class="mt-20 glass-footer">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+                
+                <!-- Kolom 1: Profil Singkat & Sosmed -->
+                <div class="md:col-span-4 space-y-4">
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-emerald-700 rounded-full flex items-center justify-center text-white font-bold text-sm shadow">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <span class="block font-bold text-emerald-400 tracking-wide text-sm leading-none uppercase">Satpol PP Muba</span>
+                            <span class="text-[11px] text-slate-400">Praja Wibawa</span>
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-300 leading-relaxed">
+                        Satuan Polisi Pamong Praja Kabupaten Musi Banyuasin berkomitmen penuh dalam menyelenggarakan ketertiban umum, ketentraman, serta perlindungan masyarakat di Bumi Serasan Sekate.
+                    </p>
+                    <div class="flex items-center space-x-3 pt-2">
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-emerald-600 hover:text-white flex items-center justify-center text-slate-300 transition-all text-xs">
+                            <i class="fa-brands fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-emerald-600 hover:text-white flex items-center justify-center text-slate-300 transition-all text-xs">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-emerald-600 hover:text-white flex items-center justify-center text-slate-300 transition-all text-xs">
+                            <i class="fa-brands fa-youtube"></i>
+                        </a>
+                        <a href="#" class="w-8 h-8 rounded-full bg-white/10 hover:bg-emerald-600 hover:text-white flex items-center justify-center text-slate-300 transition-all text-xs">
+                            <i class="fa-brands fa-x-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Kolom 2: Kontak Hubungi Kami -->
+                <div class="md:col-span-4 space-y-4">
+                    <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider pb-1 border-b border-white/10 w-28">Hubungi Kami</h3>
+                    <ul class="space-y-3 text-xs text-slate-300">
+                        <li class="flex items-start">
+                            <i class="fa-solid fa-location-dot mt-0.5 mr-3 text-emerald-400 text-sm shrink-0 w-4"></i>
+                            <span>Jl. Kolonel Wahid Udin, Kel. Serasan Jaya, Kec. Sekayu, Kab. Musi Banyuasin, Sumatera Selatan, 30711</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-phone mr-3 text-emerald-400 text-sm shrink-0 w-4"></i>
+                            <span>(0714) 321123</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-brands fa-whatsapp mr-3 text-emerald-400 text-sm shrink-0 w-4"></i>
+                            <span>+62 811-7890-1234 (Pengaduan)</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fa-solid fa-envelope mr-3 text-emerald-400 text-sm shrink-0 w-4"></i>
+                            <span>satpolpp@mubakab.go.id</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Kolom 3: Preview Google Maps -->
+                <div class="md:col-span-4 space-y-3 w-full">
+                    <h3 class="text-sm font-bold text-emerald-400 uppercase tracking-wider pb-1 border-b border-white/10 w-28">Lokasi Mako</h3>
+                    <div class="w-full h-44 rounded-2xl overflow-hidden border border-white/15 shadow-inner">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3986.586221199546!2d103.8378953147551!3d-2.859187997917712!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e3b18cb62f8876b%3A0xcfe0e343bfa9bd1c!2sKantor%20Satpol%20PP%20Kabupaten%20Musi%20Banyuasin!5e0!3m2!1sid!2sid!4v1719728400000!5m2!1sid!2sid" 
+                            class="w-full h-full border-0" 
+                            allowfullscreen="" 
+                            loading="lazy" 
+                            referrerpolicy="no-referrer-when-downgrade">
+                        </iframe>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Bagian Hak Cipta Bawah -->
+            <div class="mt-12 pt-6 border-t border-white/5 text-center text-[11px] text-slate-500">
+                <p>&copy; 2026 Satuan Polisi Pamong Praja Kabupaten Musi Banyuasin. Hak Cipta Dilindungi.</p>
+                <p class="text-slate-600 mt-1">Dibuat dengan dedikasi penuh untuk keamanan, ketertiban, dan kenyamanan masyarakat.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- POPUP NOTIFICATION / GLASSMORTPHISM TOAST -->
+    <div id="downloadToast" class="fixed bottom-6 right-6 z-50 glass-card rounded-2xl p-4 shadow-2xl border border-emerald-500/30 max-w-sm translate-y-24 opacity-0 transition-all duration-500 flex items-center space-x-4">
+        <div class="w-10 h-10 bg-emerald-600/20 text-emerald-400 rounded-xl flex items-center justify-center shrink-0">
+            <i class="fa-solid fa-file-pdf text-xl animate-bounce"></i>
+        </div>
+        <div>
+            <h5 class="text-xs font-bold text-white uppercase tracking-wider">Mengunduh Dokumen</h5>
+            <p id="toastFileName" class="text-[11px] text-slate-300 truncate w-48">Mempersiapkan PDF...</p>
+            <!-- Progress bar simulation -->
+            <div class="w-full bg-white/10 h-1 rounded-full mt-2 overflow-hidden">
+                <div id="toastProgressBar" class="bg-emerald-400 h-full w-0 transition-all duration-1000"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LOGIC SCRIPTS -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // ==========================================
+            // 1. MOBILE MENU DRAWER LOGIC
+            // ==========================================
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const mobileMenu = document.getElementById('mobileMenu');
+            const menuIcon = document.getElementById('menuIcon');
+
+            if (mobileMenuBtn && mobileMenu) {
+                mobileMenuBtn.addEventListener('click', () => {
+                    if (mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.remove('hidden');
+                        if (menuIcon) menuIcon.className = "fa-solid fa-xmark text-xl";
+                    } else {
+                        mobileMenu.classList.add('hidden');
+                        if (menuIcon) menuIcon.className = "fa-solid fa-bars text-xl";
+                    }
+                });
+            }
+
+            // Toggle Submenu 1: Profil PD
+            const mobileProfilBtn = document.getElementById('mobileProfilBtn');
+            const mobileProfil = document.getElementById('mobileProfil');
+            const mobileProfilChevron = document.getElementById('mobileProfilChevron');
+
+            if (mobileProfilBtn && mobileProfil) {
+                mobileProfilBtn.addEventListener('click', () => {
+                    if (mobileProfil.classList.contains('hidden')) {
+                        mobileProfil.classList.remove('hidden');
+                        if (mobileProfilChevron) mobileProfilChevron.classList.add('rotate-180');
+                    } else {
+                        mobileProfil.classList.add('hidden');
+                        if (mobileProfilChevron) mobileProfilChevron.classList.remove('rotate-180');
+                    }
+                });
+            }
+
+            // Toggle Submenu 2: Dokumentasi
+            const mobileDocBtn = document.getElementById('mobileDocBtn');
+            const mobileDoc = document.getElementById('mobileDoc');
+            const mobileDocChevron = document.getElementById('mobileDocChevron');
+
+            if (mobileDocBtn && mobileDoc) {
+                mobileDocBtn.addEventListener('click', () => {
+                    if (mobileDoc.classList.contains('hidden')) {
+                        mobileDoc.classList.remove('hidden');
+                        if (mobileDocChevron) mobileDocChevron.classList.add('rotate-180');
+                    } else {
+                        mobileDoc.classList.add('hidden');
+                        if (mobileDocChevron) mobileDocChevron.classList.remove('rotate-180');
+                    }
+                });
+            }
+
+            // Toggle Submenu 3: Publikasi Mobile
+            const mobilePublikasiBtn = document.getElementById('mobilePublikasiBtn');
+            const mobilePublikasi = document.getElementById('mobilePublikasi');
+            const mobilePublikasiChevron = document.getElementById('mobilePublikasiChevron');
+
+            if (mobilePublikasiBtn && mobilePublikasi) {
+                mobilePublikasiBtn.addEventListener('click', () => {
+                    if (mobilePublikasi.classList.contains('hidden')) {
+                        mobilePublikasi.classList.remove('hidden');
+                        if (mobilePublikasiChevron) mobilePublikasiChevron.classList.add('rotate-180');
+                    } else {
+                        mobilePublikasi.classList.add('hidden');
+                        if (mobilePublikasiChevron) mobilePublikasiChevron.classList.remove('rotate-180');
+                    }
+                });
+            }
+        });
+
+        // ==========================================
+        // 2. SEARCH & CATEGORY FILTER LOGIC
+        // ==========================================
+        let currentFilter = 'semua';
+
+        function filterCategory(category) {
+            currentFilter = category;
+            
+            // Toggle Filter Buttons UI Style
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                if (btn.id === `btn-cat-${category}`) {
+                    btn.className = "filter-btn shrink-0 text-xs font-bold px-4 py-2 rounded-xl bg-emerald-600 text-white transition-all cursor-pointer shadow-lg";
+                } else {
+                    btn.className = "filter-btn shrink-0 text-xs font-bold px-4 py-2 rounded-xl bg-white/5 hover:bg-white/10 border border-white/10 text-slate-300 hover:text-white transition-all cursor-pointer";
+                }
+            });
+
+            filterPrograms();
+        }
+
+        function filterPrograms() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.program-card');
+
+            cards.forEach(card => {
+                const title = card.querySelector('h3').innerText.toLowerCase();
+                const desc = card.querySelector('p').innerText.toLowerCase();
+                const cardCategory = card.getAttribute('data-category');
+
+                const matchesQuery = title.includes(query) || desc.includes(query);
+                const matchesCategory = currentFilter === 'semua' || cardCategory === currentFilter;
+
+                if (matchesQuery && matchesCategory) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        // ==========================================
+        // 3. SIMULATED DOWNLOAD PDF NOTIFICATION SYSTEM
+        // ==========================================
+        function simulateDownload(fileName) {
+            const toast = document.getElementById('downloadToast');
+            const toastFileName = document.getElementById('toastFileName');
+            const progressBar = document.getElementById('toastProgressBar');
+
+            // Set content and trigger visibility transition
+            toastFileName.innerText = fileName;
+            toast.classList.remove('translate-y-24', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            progressBar.style.width = '0%';
+
+            // Simulated progress loading
+            setTimeout(() => {
+                progressBar.style.width = '100%';
+            }, 100);
+
+            // Close notification after animation complete
+            setTimeout(() => {
+                // Change style to "Success"
+                toast.querySelector('h5').innerText = "Berhasil Diunduh";
+                toast.querySelector('h5').className = "text-xs font-bold text-emerald-400 uppercase tracking-wider";
+                toast.querySelector('i').className = "fa-solid fa-circle-check text-xl text-emerald-400 animate-none";
+            }, 1100);
+
+            setTimeout(() => {
+                // Return elements back to standard position
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-24', 'opacity-0');
+                
+                // Reset elements back to default after closed transition finishes
+                setTimeout(() => {
+                    toast.querySelector('h5').innerText = "Mengunduh Dokumen";
+                    toast.querySelector('h5').className = "text-xs font-bold text-white uppercase tracking-wider";
+                    toast.querySelector('i').className = "fa-solid fa-file-pdf text-xl animate-bounce";
+                    progressBar.style.width = '0%';
+                }, 500);
+            }, 3500);
+        }
+    </script>
+</body>
+</html>
